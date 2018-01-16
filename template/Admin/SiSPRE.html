@@ -1,0 +1,439 @@
+{% extends "../base.html" %}
+{% block title %}General{% endblock %}
+{% block content %}
+
+<div class="container-fluid">
+    <h4>Datos SiSPRE</h4>
+    <hr>
+    <div class="row-fluid">
+        <div class="widget-box">
+            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseG3">
+                <span class="icon">
+                    <i class="icon-chevron-down"></i>
+                </span>
+                <h5> Detalles 27DCC0001X1</h5>
+            </div>
+            <div class="widget-content nopadding updates collapse in" id="collapseG3">
+                <div class="new-update clearfix">
+                    <div class="span12">
+                        <div class="span4">
+                            <span class="s1">C.C.T.:</span>
+                            <span class="s2">27DPR1188D2</span>
+                        </div>
+                        <div class="span4">
+                            <span class="s1">PROFRA. ROSARIO MARIA GUTIERREZ ESKILDSEN</span>
+                        </div>
+                        <div class="span4">
+                            <span class="s1">Fecha de Actualizaciòn:</span>
+                            <span class="s2">27/10/2017</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-update clearfix">
+                    <div class="span12">
+                        <div class="span4">
+                            <span class="s1">Componente:</span>
+                            <span class="s2">1 - Infraestructura</span>
+                        </div>
+                        <div class="span4">
+                            <span class="s1">Accion Mayor</span>
+                        </div>
+                        <div class="span4">
+                            <span class="s1">Cambio de Componente:</span>
+                            <span class="s2">No</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-update clearfix">
+                    <div class="span12">
+                        <div class="span4">
+                            <span class="s1">Monto Asignado:</span>
+                            <span class="s2">$350,000.00</span>
+                        </div>
+                        <div class="span4">
+                            <span class="s1">Monto Ejercido:</span>
+                            <span class="s2">$150,000.00</span>
+                        </div>
+                        <div class="span4">
+                            <span class="s1">Monto Restante:</span>
+                            <span class="s2">$200,000.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="widget-box">
+            <div class="widget-title">
+                <span class="icon"><i class="icon-align-justify"></i> </span>
+                <h5>Detalles</h5>
+            </div>
+            <div class="widget-content nopadding">
+                <form action="AdminInicio.html" method="get" class="form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label">Foto de la Fachada:</label>
+                        <div class="controls">
+                            <div class="span12">
+                                <div class="span5" style="display: inline-block;">
+                                    <input type="file"/>
+                                </div>
+                                <div class="actions span4" style="display: inline-block;">
+                                    <ul class="thumbnails">
+                                        <li class="span12">
+                                            <img src="assetsAdmin/img/gallery/imgbox3.jpg" alt="">
+                                            <div class="actions">
+                                                <a class="lightbox_trigger" href="assetsAdmin/img/gallery/imgbox3.jpg">
+                                                    <i class="icon-search"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseInicio">
+										<span class="icon">
+											<i class="icon-chevron-down"></i>
+										</span>
+                                <h5>Documentación de Inicio</h5>
+                            </div>
+                            <div class="widget-content nopadding updates collapse out" id="collapseInicio">
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                {{ form.acta_mancomunado }}
+                                            </div>
+                                            <div class="span8 checkCenter2">
+
+                                                <span class="s1">{{ form.acta_mancomunado.label }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span8 checkCenter2">
+                                                <span class="s1">Acta de constancia de CEPSE</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span8 checkCenter2">
+                                                <span class="s1">Acta de planeación</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Acuse de recibo de la tarjeta bancaria (Del banco color azul) - Aplica solo con los Directores que reciben nueva tarjeta</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Acuse de recibo de tarjeta bancaria (por parte del programa)</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Carta compromiso cuando comparten el inmueble (En caso de aplicar)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Carta Compromiso de la Comunidad Escolar</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Contrato – Comp. 1</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Copia de IFE o INE del CEPSE</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Copia de IFE o INE del Director</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Copia de tarjeta bancaria - Aplica solo con los Directores que reciben en ciclos pasados</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Foto de identificación del Plantel - Impresa y Digital</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Orden de Comisión</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseSeguim">
+										<span class="icon">
+											<i class="icon-chevron-down"></i>
+										</span>
+                                <h5>Documentación de seguimiento</h5>
+                            </div>
+                            <div class="widget-content nopadding updates collapse out" id="collapseSeguim">
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span8 checkCenter2">
+                                                <span class="s1">Acta de Seguimiento</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span8 checkCenter2">
+                                                <span class="s1">Evidencias Fotográficas</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span8 checkCenter2">
+                                                <span class="s1">Supervisión Técnica Comp. 1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseCierre">
+										<span class="icon">
+											<i class="icon-chevron-down"></i>
+										</span>
+                                <h5>Documentación de Cierre</h5>
+                            </div>
+                            <div class="widget-content nopadding updates collapse out" id="collapseCierre">
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span8 checkCenter2">
+                                                <span class="s1">Acta circunstanciada de hechos</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span8 checkCenter2">
+                                                <span class="s1">Acta de cierre</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span8 checkCenter2">
+                                                <span class="s1">Acta de entrega recepción del contratista</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Acta de rendición de cuentas, fotos y lista de asistencia</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Facturas impresas (firma y leyenda)</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Ficha de reintegro</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Formato de inventario</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Formato de transferencia bancaria</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Evidencia de las obras concluidas</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Evidencias de los Articulos Comprados</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Registro de gastos</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Resumen de gastos</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">Verificación SAT impreso</span>
+                                            </div>
+                                        </div>
+                                        <div class="span4">
+                                            <div class="span1 checkCenter1">
+                                                <input type="checkbox"/>
+                                            </div>
+                                            <div class="span10 checkCenter2">
+                                                <span class="s1">XML impreso y digital</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Archivo PDF:</label>
+                        <div class="controls">
+                            <div class="span8" style="display: inline-block;">
+                                <input type="file"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Observaciones:</label>
+                        <div class="controls">
+                            <textarea class="span8"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn btn-success">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{% endblock%}

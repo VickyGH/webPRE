@@ -1,0 +1,253 @@
+{% extends "../base.html" %}
+{% block title %}General{% endblock %}
+{% block content %}
+
+<div class="container-fluid" onload="resulta();">
+    <h4>Datos Generales</h4>
+    <hr>
+    <div class="row-fluid">
+        <div class="widget-box">
+            <div class="widget-title"><span class="icon"> <i class="icon-align-justify"></i> </span>
+                <h5>Detalles</h5>
+            </div>
+            <div class="widget-content nopadding">
+                <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <!-- {{ form.as_p }}-->
+                    <div class="control-group">
+                        <label class="control-label">Foto de la Fachada:</label>
+                        <div class="controls">
+                            <div class="span12">
+                                <div class="span5" style="display: inline-block;">
+                                    {{form.foto_fachada}}
+                                </div>
+                                <div class="actions span4" style="display: inline-block;">
+                                    <ul class="thumbnails">
+                                        <li class="span12">
+                                            <img src="{{ form.instance.foto_fachada.url }}" alt="">
+                                            <div class="actions">
+                                                <a class="lightbox_trigger" href="{{ form.instance.foto_fachada.url }}">
+                                                    <i class="icon-search"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">C.C.T.:</label>
+                        <div class="controls">
+                            {{ form.cct }}
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Nombre del Centro de Trabajo:</label>
+                        <div class="controls">
+                            {{ form.nombre }}
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Nivel Educativo:</label>
+                        <div class="controls">
+                            {{ form.nivel }}
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Componente:</label>
+                        <div class="controls">
+                            {{ form.componente }}
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Director:</label>
+                        <div class="controls">
+                            {{ form.director }}
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Ciclo Escolar:</label>
+                        <div class="controls">
+                            {{ form.ciclo_esc }}
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Accion:</label>
+                        <div class="controls">
+                            {{ form.accion }}
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Cambio de Componente:</label>
+                        <div class="controls">
+                            {{ form.cambio_comp }}
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseUbi">
+										<span class="icon">
+											<i class="icon-chevron-down"></i>
+										</span>
+                                <h5>Datos de Ubicación</h5>
+                            </div>
+                            <div class="widget-content nopadding updates collapse out" id="collapseUbi">
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="control-group">
+                                            <label class="control-label">Municipio:</label>
+                                            <div class="controls">
+                                                {{ form.municipio }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="control-group">
+                                            <label class="control-label">Localidad:</label>
+                                            <div class="controls">
+                                                {{ form.localidad }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="control-group">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseSuper">
+										<span class="icon">
+											<i class="icon-chevron-down"></i>
+										</span>
+                                <h5>Datos Supervición</h5>
+                            </div>
+                            <div class="widget-content nopadding updates collapse out" id="collapseSuper">
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="control-group">
+                                            <label class="control-label">Nombre del Supervisor:</label>
+                                            <div class="controls">
+                                                {{ form.supervisor}}
+                                                <input type="text" class="span8" placeholder="" value="Juan"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="control-group">
+                                            <label class="control-label">Apellido Paterno:</label>
+                                            <div class="controls">
+                                                <input type="text" class="span8" placeholder="" value="Hernández"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="control-group">
+                                            <label class="control-label">Apellido Materno:</label>
+                                            <div class="controls">
+                                                <input type="text" class="span8" placeholder="" value="Hernández"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="control-group">
+                                            <label class="control-label">Zona:</label>
+                                            <div class="controls">
+                                                <input type="text" class="span8" placeholder="" value="49"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                    <div class="control-group">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseBanco">
+										<span class="icon">
+											<i class="icon-chevron-down"></i>
+										</span>
+                                <h5>Datos Bancarios</h5>
+                            </div>
+                            <div class="widget-content nopadding updates collapse out" id="collapseBanco">
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="control-group">
+                                            <label class="control-label">Monto Asignado:</label>
+                                            <div class="controls">
+                                                {{ form.monto_asignado }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="control-group">
+                                            <label class="control-label">Monto Ejercido:</label>
+                                            <div class="controls">
+                                                {{ form.monto_ejercido }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="control-group">
+                                            <label class="control-label">Monto Restante:</label>
+                                            <div class="controls">
+                                                <input type="text" class="span8" placeholder="0.00" id="resultado" disabled=""/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Observaciones:</label>
+                        <div class="controls">
+                            {{ form.observacion }}
+
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">SiSPRE:</label>
+                        <div class="controls">
+                            {{ form.sispre }}
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Contraloria Social:</label>
+                        <div class="controls">
+                            {{ form.contraloria_s }}
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn btn-success">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+function resulta(){
+    num1 = document.getElementById("monto_asignado").value;
+    num2 = document.getElementById("monto_ejercido").value;
+    document.getElementById("resultado").value = num1 - num2;
+}
+    resulta();
+</script>
+
+{% endblock%}

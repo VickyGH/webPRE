@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <!-- Llamar a los estaticos-->
+    {% load staticfiles %}
+    <!-- {% static ''%} -->
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="{% static 'assetsAdmin/css/bootstrap.min.css'%}" />
+	<link rel="stylesheet" href="{% static 'assetsAdmin/css/bootstrap-responsive.min.css'%}" />
+	<link rel="stylesheet" href="{% static 'assetsAdmin/css/uniform.css'%}" />
+	<link rel="stylesheet" href="{% static 'assetsAdmin/css/select2.css'%}" />
+	<link rel="stylesheet" href="{% static 'assetsAdmin/css/matrix-style.css'%}" />
+	<link rel="stylesheet" href="{% static 'assetsAdmin/css/matrix-media.css'%}" />
+	<link href="{% static 'assetsAdmin/font-awesome/css/font-awesome.css'%}" rel="stylesheet" />
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<!--Header-part-->
+    <div id="header">
+		<h1><a href="dashboard.html">PRE</a></h1>
+	</div>
+	<!--close-Header-part-->
+	<!--top-Header-menu
+	<div id="search" class="navbar navbar-inverse">
+		<ul class="nav">
+			<li  class="dropdown" id="profile-messages" >
+				<a class="dropdown-toggle">
+					<i class="icon icon-user"></i>
+					<span class="text">Bienvenido Usuario</span>
+				</a>
+			</li>
+			<li class="">
+				<a title="" href="login.html">
+					<i class="icon icon-key"></i>
+					<span class="text">Salir</span>
+				</a>
+			</li>
+		</ul>
+	</div>-->
+	<!--sidebar-menu-->
+	<div id="sidebar">
+		<a href="#" class="visible-phone">
+			<i class="icon icon-th"></i>Escuelas
+		</a>
+		<ul>
+			<li>
+				<a href="{%url 'Admin:Inicio'%}">
+					<i class="icon icon-home"></i>
+					<span>Escuelas</span>
+				</a>
+			</li>
+			<li>
+				<a href="Supervisores.html">
+					<i class="icon icon-book"></i>
+					<span>Supervisores</span>
+				</a>
+			</li>
+			<li>
+				<a href="Graficos.html">
+					<i class="icon icon-signal"></i>
+					<span>Charts &amp; graphs</span>
+				</a>
+			</li>
+			<li>
+				<a href="{%url 'Admin:CerrarSesion'%}">
+					<i class="icon icon-off"></i>
+					<span>Cerrar Sesion</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- contenido -->
+	<div id="content">
+		<div id="content-header">
+			<div id="breadcrumb">
+				<h6 class="current" style="color: #fff;">a</h6>
+			</div>
+        </div>
+        {% block content %}
+
+        {% endblock %}
+    </div>
+	<!--Footer-part-->
+	<div class="row-fluid">
+		<div id="footer" class="span12"> 2013 &copy; Matrix Admin. Brought to you by <a>Themedesigner.in</a> </div>
+	</div>
+
+	<script src="{% static 'MiJS.js'%}"></script>
+
+	<script src="{% static 'assetsAdmin/js/jquery.min.js'%}"></script>
+	<script src="{% static 'assetsAdmin/js/jquery.ui.custom.js'%}"></script>
+	<script src="{% static 'assetsAdmin/js/bootstrap.min.js'%}"></script>
+	<script src="{% static 'assetsAdmin/js/jquery.uniform.js'%}"></script>
+	<script src="{% static 'assetsAdmin/js/select2.min.js'%}"></script>
+	<script src="{% static 'assetsAdmin/js/jquery.dataTables.min.js'%}"></script>
+	<script src="{% static 'assetsAdmin/js/matrix.js'%}"></script>
+	<script src="{% static 'assetsAdmin/js/matrix.tables.js'%}"></script>
+</body>
+</html>

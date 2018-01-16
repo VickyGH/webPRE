@@ -1,0 +1,67 @@
+{% extends "../base.html" %}
+{% block title %}Escuelas{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <h4>Patron de Escuelas Beneficiadas por el Programa de la Reforma Educativa</h4>
+    <hr>
+    <div class="row-fluid">
+        <div class="widget-box outer">
+            <div class="widget-title">
+                <span class="icon">
+                    <i class="icon-th"></i>
+                </span>
+                <h5>Datos de las Escuelas</h5>
+                <div class="btn-icon-pg" style="text-align:right;">
+                    <button class="btn btn-info btn-mini">
+                        <i class="icon-plus"></i> Agregar
+                    </button>
+                </div>
+            </div>
+            <div class="widget-content nopadding inner">
+                <table class="table table-bordered data-table">
+                    <thead>
+                    <tr>
+                        <th>CCT</th>
+                        <th>Nombre de la Escuela</th>
+                        <th>Nivel Escolar</th>
+                        <th>Generales</th>
+                        <th>SiSPRE</th>
+                        <th>Contraloria</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for Escuelas in object_list %}
+                    <tr class="gradeX">
+                        <td><a href="{% url 'Admin:Detalles' Escuelas.id %}">{{Escuelas.cct}}</a></td>
+                        <td>{{Escuelas.nombre}}</td>
+                        <td>{{Escuelas.nivel}}</td>
+                        <td style="text-align: center;">
+                            <a href="{% url 'Admin:General' Escuelas.id %}">
+                                <button class="btn btn-mini btn-warning ">
+                                    <i class="icon-cogs"></i>
+                                </button>
+                            </a>
+                        </td>
+                        <td style="text-align: center;">
+                            <a href="{% url 'Admin:SiSPRE' Escuelas.sispre.id %}">
+                                <button class="btn btn-mini btn-primary">
+                                    <i class="icon-dashboard"></i>
+                                </button>
+                            </a>
+                        </td>
+                        <td style="text-align: center;">
+                            <a href="Contraloria.html">
+                                <button class="btn btn-mini btn-success">
+                                    <i class="icon-legal"></i>
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+                    {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
