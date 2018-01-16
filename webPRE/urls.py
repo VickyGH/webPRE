@@ -19,20 +19,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from apps.Admin  import urls
-
+app_name='webPRE'
 
 urlpatterns = [
     path('Serendipia/', admin.site.urls),
-    path('Admin/', include('apps.Admin.urls')),
+    path('Admin/', include('apps.Admin.urls', namespace='Admin')),
     path('Director/', include('apps.Director.urls')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG is True:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-#urlpatterns = [
-#    path('Serendipia/', admin.site.urls),
-#                  path('author-polls/', include('polls.urls', namespace='author-polls')),
-#
-#]
