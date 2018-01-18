@@ -4,6 +4,7 @@
 
 <div class="container-fluid">
     <h4>Datos SiSPRE</h4>
+    <h5>{{ escuela.cct }} - {{ escuela.nombre }}</h5>
     <hr>
     <div class="row-fluid">
         <div class="widget-box">
@@ -11,21 +12,21 @@
                 <span class="icon">
                     <i class="icon-chevron-down"></i>
                 </span>
-                <h5> Detalles 27DCC0001X1</h5>
+                <h5> Detalles Generales</h5>
             </div>
             <div class="widget-content nopadding updates collapse in" id="collapseG3">
                 <div class="new-update clearfix">
                     <div class="span12">
                         <div class="span4">
                             <span class="s1">C.C.T.:</span>
-                            <span class="s2">27DPR1188D2</span>
+                            <span class="s2">{{ escuela.cct }}</span>
                         </div>
                         <div class="span4">
-                            <span class="s1">PROFRA. ROSARIO MARIA GUTIERREZ ESKILDSEN</span>
+                            <span class="s1">{{ escuela.nombre }}</span>
                         </div>
                         <div class="span4">
-                            <span class="s1">Fecha de Actualizaciòn:</span>
-                            <span class="s2">27/10/2017</span>
+                            <span class="s1">Fecha de Actualización:</span>
+                            <span class="s2">{{ escuela.actualizacion }}</span>
                         </div>
                     </div>
                 </div>
@@ -33,14 +34,15 @@
                     <div class="span12">
                         <div class="span4">
                             <span class="s1">Componente:</span>
-                            <span class="s2">1 - Infraestructura</span>
+                            <span class="s2">{{ escuela.componente }}</span>
                         </div>
                         <div class="span4">
-                            <span class="s1">Accion Mayor</span>
+                            <span class="s1">Acción:</span>
+                            <span class="s2">{{ escuela.accion }}</span>
                         </div>
                         <div class="span4">
                             <span class="s1">Cambio de Componente:</span>
-                            <span class="s2">No</span>
+                            <span class="s2">{{ escuela.cambi_comp }}</span>
                         </div>
                     </div>
                 </div>
@@ -48,15 +50,15 @@
                     <div class="span12">
                         <div class="span4">
                             <span class="s1">Monto Asignado:</span>
-                            <span class="s2">$350,000.00</span>
+                            <span class="s2" id="monto_asignado">$ {{ escuela.monto_asignado }}</span>
                         </div>
                         <div class="span4">
                             <span class="s1">Monto Ejercido:</span>
-                            <span class="s2">$150,000.00</span>
+                            <span class="s2" id="monto_ejercido">$ {{ escuela.monto_ejercido }}</span>
                         </div>
                         <div class="span4">
                             <span class="s1">Monto Restante:</span>
-                            <span class="s2">$200,000.00</span>
+                            <span class="s2">$ {{ escuela.monto_restante}}</span>
                         </div>
                     </div>
                 </div>
@@ -65,21 +67,17 @@
         <div class="widget-box">
             <div class="widget-title">
                 <span class="icon"><i class="icon-align-justify"></i> </span>
-                <h5>Detalles</h5>
+                <h5>Detalles SiSPRE</h5>
             </div>
             <div class="widget-content nopadding">
-                <form action="AdminInicio.html" method="get" class="form-horizontal">
+                <form action="AdminInicio.html" method="POST" class="form-horizontal">
                     <div class="control-group">
-                        <label class="control-label">Foto de la Fachada:</label>
                         <div class="controls">
                             <div class="span12">
-                                <div class="span5" style="display: inline-block;">
-                                    <input type="file"/>
-                                </div>
                                 <div class="actions span4" style="display: inline-block;">
                                     <ul class="thumbnails">
                                         <li class="span12">
-                                            <img src="assetsAdmin/img/gallery/imgbox3.jpg" alt="">
+                                            <img src="{{ sispre.inicio.foto_fachada }}" alt="">
                                             <div class="actions">
                                                 <a class="lightbox_trigger" href="assetsAdmin/img/gallery/imgbox3.jpg">
                                                     <i class="icon-search"></i>
@@ -97,7 +95,7 @@
 										<span class="icon">
 											<i class="icon-chevron-down"></i>
 										</span>
-                                <h5>Documentación de Inicio</h5>
+                                <h5>Documentación de Inicio - {{ sispre.inicio }}</h5>
                             </div>
                             <div class="widget-content nopadding updates collapse out" id="collapseInicio">
                                 <div class="new-update clearfix">
@@ -234,7 +232,7 @@
 										<span class="icon">
 											<i class="icon-chevron-down"></i>
 										</span>
-                                <h5>Documentación de seguimiento</h5>
+                                <h5>Documentación de seguimiento - {{ sispre.seguimiento }}</h5>
                             </div>
                             <div class="widget-content nopadding updates collapse out" id="collapseSeguim">
                                 <div class="new-update clearfix">
@@ -274,7 +272,7 @@
 										<span class="icon">
 											<i class="icon-chevron-down"></i>
 										</span>
-                                <h5>Documentación de Cierre</h5>
+                                <h5>Documentación de Cierre - {{ sispre.cierre }}</h5>
                             </div>
                             <div class="widget-content nopadding updates collapse out" id="collapseCierre">
                                 <div class="new-update clearfix">
@@ -433,7 +431,5 @@
             </div>
         </div>
     </div>
-</div>
-</div>
 </div>
 {% endblock%}

@@ -49,10 +49,29 @@ class General(UpdateView):
     template_name = 'Admin/General.html'
     success_url = reverse_lazy('Admin:Inicio')
 
-class Sispre (UpdateView):
+class Sispre1 (UpdateView):
     form_class = SispreForm
     model = SISPRE
     template_name = 'Admin/SiSPRE.html'
     success_url = reverse_lazy('Admin:Inicio')
+
+def Sispre (request,pk_escuela):
+    data_escuela = get_object_or_404(Escuelas,id=pk_escuela)
+    data_sispre = get_object_or_404(SISPRE, id=data_escuela.sispre.id)
+    if request.method == "POST":
+        form = SispreForm(data = request.POST or None , instance=data_sispre)
+        if form.is_valid():
+            update= form.save()
+            return HttpResponseRedirect(reverse_lazy('Admin:Inicio'))
+    else:
+        form = SispreForm()
+    return render_to_response(
+        'Admin/SiSPRE.html',
+        {
+            'form':form,
+            'escuela':data_escuela,
+            'sispre':data_sispre
+        })
+
 
 
