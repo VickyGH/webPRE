@@ -10,11 +10,20 @@ from django.urls import reverse_lazy
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 
-from apps.Admin.forms import EscuelasForm,SispreForm
+from apps.Admin.forms import EscuelasForm, SispreForm, InicioSForm
 from .models import *
 from django.contrib.auth.models import User
 
 # Create your views here.
+def error_404(request):
+    data = {}
+    return render(request, '404.html', data)
+
+
+def error_500(request):
+    data = {}
+    return render(request, '500.html', data)
+
 class InicioS_Admin(FormView):
     # Establecemos la plantilla a utilizar
     template_name = 'Admin/InicioSesion.html'
@@ -59,16 +68,31 @@ def Sispre (request,pk_escuela):
     data_escuela = get_object_or_404(Escuelas,id=pk_escuela)
     data_sispre = get_object_or_404(SISPRE, id=data_escuela.sispre.id)
     if request.method == "POST":
-        form = SispreForm(data = request.POST or None , instance=data_sispre)
-        if form.is_valid():
-            update= form.save()
-            return HttpResponseRedirect(reverse_lazy('Admin:Inicio'))
+        #form = SispreForm(data = request.POST, instance=data_sispre)
+        formIni = SispreForm(data=request.POST, instance=data_sispre.inicio.id)
+        #formSeg = SispreForm(data=request.POST, instance=data_sispre.seguimiento.id)
+        #formCie = SispreForm(data=request.POST, instance=data_sispre.cierre.id)
+        if formIni.is_valid(): #& formIni.is_valid() & formSeg.is_valid() & formCie.is_valid():
+            #update= form.save()
+            update1=formIni.save()
+            #update2 = formSeg.save()
+            #update3 = formCie.save()
+            return reverse_lazy('Admin:Inicio')
+        else:
+            print('Error')
     else:
-        form = SispreForm()
+        #form = SispreForm(instance=SISPRE.objects.get(id=data_escuela.sispre.id))
+        formIni = InicioSForm(instance=InicioS.objects.get(id=data_sispre.inicio.id))
+        #formSeg = SispreForm(instance=SeguimientoS.objects.get(id=data_sispre.seguimiento.id))
+        #formCie = SispreForm(instance=CierreS.objects.get(id=data_sispre.cierre.id))
+
     return render_to_response(
         'Admin/SiSPRE.html',
         {
-            'form':form,
+            #'form':form,
+            'formI': formIni,
+            #'formS': formSeg,
+            #'formC': formCie,
             'escuela':data_escuela,
             'sispre':data_sispre
         })

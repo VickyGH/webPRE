@@ -22,6 +22,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 #include((pattern_list, app_namespace), namespace=None)
+from apps.Admin import views
+
 urlpatterns = [
     path('Serendipia/', admin.site.urls),
     path('Admin/', include('apps.Admin.urls', namespace="Admin")),
@@ -30,3 +32,6 @@ urlpatterns = [
 
 if settings.DEBUG is True:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'apps.Admin.views.error_404'
+handler500 = views.error_500

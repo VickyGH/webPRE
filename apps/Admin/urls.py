@@ -15,3 +15,6 @@ urlpatterns = [
     url(r'^General/(?P<pk>\d+)$', login_required(General.as_view()), name='General'),
     url(r'^SiSPRE/(?P<pk_escuela>\d+)$', login_required(views.Sispre), name='SiSPRE'),
 ]
+
+handler404 = error_404
+handler500 = error_500

@@ -4,7 +4,7 @@ from django import forms
 
 from django.forms import Textarea, TextInput, Select, FileInput, RadioSelect, CheckboxInput, BooleanField
 
-from .models import Escuelas, SISPRE
+from .models import Escuelas, SISPRE, InicioS
 
 class EscuelasForm(forms.ModelForm):
     class Meta:
@@ -43,72 +43,67 @@ class SispreForm (forms.ModelForm):
         model = SISPRE
         fields = '__all__'
         labels = {
-            'estatus': 'Estatus',
-            'acta_mancomunado' : 'Acta de acuerdo para el ejercicio mancomunado de los recursos',
-            'constancia_cepse' : '',
-            'acta_planeacion': '',
-            'acuse_banco': '',
-            'acuse_prog': '',
-            'acuse_prog_anterior': '',
-            'carta_compromiso_inmueble': '',
-            'carta_compromiso_comunidad': '',
-            'contrato': '',
-            'ife_cepse': '',
-            'ife_plantel': '',
-            'foto_plantel': '',
-            'orden_comision_director': '',
-            'acta_seguimiento': '',
-            'sup_tecnica': '',
-            'evid_seguimiento': '',
-            'acta_circunstanciada': '',
-            'acta_cierre': '',
-            'acta_er_contratista': '',
-            'acta_rendicion': '',
-            'facturas': '',
-            'ficha_reintegro': '',
-            'form_inventario': '',
-            'form_transferencia': '',
-            'evid_obra_concluida': '',
-            'evid_compras': '',
-            'registro_gastos': '',
-            'resumen_gastos': '',
-            'verificacion_sat': '',
-            'xml': '',
-            'pdf': '',
-            'observacion': ''
+            'inicio': 'Estatus de Inicio',
+            'seguimiento' : 'Estatus de Seguimiento',
+            'cierre' : 'Estatus de Cierre',
+            'pdfCompleto': 'Archivo de PDF',
         }
-        widgets = {
-            'estatus' : TextInput(attrs={'':''}),
-            'acta_mancomunado' : CheckboxInput(),
-            'constancia_cepse' : CheckboxInput(),
-            'acta_planeacion' : CheckboxInput(),
-            'acuse_banco' : TextInput(),
-            'acuse_prog' : CheckboxInput(),
-            'acuse_prog_anterior' : TextInput(),
-            'carta_compromiso_inmueble' : TextInput(),
-            'carta_compromiso_comunidad' : CheckboxInput(),
-            'contrato' : TextInput(),
-            'ife_cepse' : CheckboxInput(),
-            'ife_plantel' : CheckboxInput(),
-            'foto_plantel' : CheckboxInput(),
-            'orden_comision_director' : CheckboxInput(),
-            'acta_seguimiento' : CheckboxInput(),
-            'sup_tecnica' : TextInput(),
-            'evid_seguimiento' : CheckboxInput(),
-            'acta_circunstanciada' : TextInput(),
-            'acta_cierre' : CheckboxInput(),
-            'acta_er_contratista' : TextInput(),
-            'acta_rendicion' : CheckboxInput(),
-            'facturas' : TextInput(),
-            'ficha_reintegro' : CheckboxInput(),
-            'form_inventario' : TextInput(),
-            'form_transferencia' : TextInput(),
-            'evid_obra_concluida' : TextInput(),
-            'evid_compras' : CheckboxInput(),
-            'registro_gastos' : TextInput(),
-            'resumen_gastos' : TextInput(),
-            'verificacion_sat' : CheckboxInput(),
-            'xml' : CheckboxInput(),
-            #'pfd' : models.FileField(),
-            'observacion' : TextInput()
+
+class InicioSForm (forms.ModelForm):
+    class Meta:
+        model = InicioS
+        fields = '__all__'
+        labels = {
+            'estatus': 'Estatus de Inicio',
+
+            'acta_mancomunado' : 'Estatus del Acta de Acuerdo Mancomunado',
+            'acta_mArchivo' : 'Archivo de Acta de Acuerdo Mancomunado',
+            'acta_mObservacion': 'Observaciones',
+
+            'constancia_cepse': 'Estatus de Constancia de CEPSE',
+            'constancia_cArchivo': 'Archivo de Constancia de CEPSE',
+            'constancia_cObservacion': 'Observaciones',
+
+            'acta_planeacion': 'Estatus de Acta de Planeación',
+            'acta_pArchivo': 'Archivo',
+            'acta_pObservacion': 'Observaciones',
+
+            'acuse_banco': 'Estatus de Acuse de Banco',
+            'acuse_bArchivo': 'Archivo de Acuse de Banco',
+            'acuse_bObservacion': 'Observaciones',
+
+            'acuse_prog': 'Estatus del Acuse del Programa',
+            'acuse_pArchivo': 'Archivo del Acuse del Programa',
+            'acuse_pObservacion': 'Observaciones',
+
+            'acuse_prog_anterior': 'Estatus de Acuse del Programa del Ciclo Anterior',
+            'acuse_prog_aArchivo': 'Archivo de Acuse del Programa del Ciclo Anterior',
+            'acuse_prog_aObservacion': 'Observaciones',
+
+            'compromiso_inmueble': 'Estatus del Acta de Compromiso de Inmueble',
+            'compromiso_iArchivo': 'Archivo del Acta de Compromiso de Inmueble',
+            'compromiso_iObservacion': 'Observaciones',
+
+            'compromiso_comunidad': 'Estatus del Carta de Compromiso de la Comunidad Escolar',
+            'compromiso_cArchivo': 'Archivo del Carta de Compromiso de la Comunidad Escolar',
+            'compromiso_cObservacion': 'Observaciones',
+
+            'contrato': 'Estado de Documento de Contrato',
+            'contratoArchivo': 'Archivo de Documento de Contrato',
+            'contratoObservacion': 'Observaciones',
+
+            'ife_cepse': 'Estado de Copia del INE del CEPSE',
+            'ife_cArchivo': 'Archivo Copia del INE del CEPSE',
+            'ife_cObservacion': 'Observaciones',
+
+            'ife_plantel': 'Estado de Copia del INE del Director',
+            'ife_pArchivo': 'Archivo Copia del INE del Director',
+            'ife_pObservacion': 'Observaciones',
+
+            'comision_director': 'Estado de Acta de Comisión del Director',
+            'comision_dArchivo': 'Archivo de Acta de Comisión del Director',
+            'comision_dObservacion': 'Observaciones',
+
+            'observacion': 'Observaciones Generales',
+            'foto_fachada': 'Fotografia de la Fachada de la Comunidad Escolar ',
         }
