@@ -10,7 +10,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 
-from apps.Admin.forms import EscuelasForm, SispreForm, InicioSForm
+from apps.Admin.forms import EscuelasForm, SispreForm, ContraloriaForm, InicioSForm, SeguimientoForm, CierreForm
 from .models import *
 from django.contrib.auth.models import User
 
@@ -58,44 +58,58 @@ class General(UpdateView):
     template_name = 'Admin/General.html'
     success_url = reverse_lazy('Admin:Inicio')
 
-class Sispre1 (UpdateView):
-    form_class = SispreForm
-    model = SISPRE
-    template_name = 'Admin/SiSPRE.html'
-    success_url = reverse_lazy('Admin:Inicio')
 
-def Sispre (request,pk_escuela):
-    data_escuela = get_object_or_404(Escuelas,id=pk_escuela)
-    data_sispre = get_object_or_404(SISPRE, id=data_escuela.sispre.id)
+def Sispre(request, pk):
+    data_escuela = get_object_or_404(Escuelas, id=pk)
+    data_sispre = get_object_or_404(SISPRE, pk=data_escuela.sispre.id)
+    fecha = get_object_or_404(Fechas_Finales, pk=1)
+
+    data_inicio = get_object_or_404(InicioS, pk=data_sispre.inicio.id)
+    data_seg = get_object_or_404(SeguimientoS, pk=data_sispre.seguimiento.id)
+    data_cierre = get_object_or_404(SeguimientoS, pk=data_sispre.cierre.id)
+
     if request.method == "POST":
-        #form = SispreForm(data = request.POST, instance=data_sispre)
-        formIni = SispreForm(data=request.POST, instance=data_sispre.inicio.id)
-        #formSeg = SispreForm(data=request.POST, instance=data_sispre.seguimiento.id)
-        #formCie = SispreForm(data=request.POST, instance=data_sispre.cierre.id)
-        if formIni.is_valid(): #& formIni.is_valid() & formSeg.is_valid() & formCie.is_valid():
-            #update= form.save()
-            update1=formIni.save()
-            #update2 = formSeg.save()
-            #update3 = formCie.save()
-            return reverse_lazy('Admin:Inicio')
-        else:
-            print('Error')
+        form = InicioSForm(request.POST, instance=data_inicio)
+        formS = SeguimientoForm(request.POST, instance=data_seg)
+        formC = CierreForm(request.POST, instance=data_cierre)
+        if all([form.is_valid(), formS.is_valid(), formC.is_valid()]):
+        #if form.is_valid():
+            data_inicio = form.save(commit=False)
+            data_inicio.save()
+            data_seg = formS.save(commit=False)
+            data_seg.save()
+            data_cierre = formC.save(commit=False)
+            data_cierre.save()
+            return redirect('Admin:Inicio')
     else:
-        #form = SispreForm(instance=SISPRE.objects.get(id=data_escuela.sispre.id))
-        formIni = InicioSForm(instance=InicioS.objects.get(id=data_sispre.inicio.id))
-        #formSeg = SispreForm(instance=SeguimientoS.objects.get(id=data_sispre.seguimiento.id))
-        #formCie = SispreForm(instance=CierreS.objects.get(id=data_sispre.cierre.id))
+        form = InicioSForm(instance=data_inicio)
+        formS = SeguimientoForm(instance=data_seg)
+        formC = CierreForm(instance = data_cierre)
+    return render(request, 'Admin/SiSPRE.html',
+                  {'formI': form,
+                   'formS':formS,
+                   'formC':formC,
+                   'escuela':data_escuela,
+                   'sispre':data_sispre,
+                   'fecha' : fecha})
 
-    return render_to_response(
-        'Admin/SiSPRE.html',
-        {
-            #'form':form,
-            'formI': formIni,
-            #'formS': formSeg,
-            #'formC': formCie,
-            'escuela':data_escuela,
-            'sispre':data_sispre
-        })
+def ContraloriaS(request, pk):
+    data_escuela = get_object_or_404(Escuelas, id=pk)
+    data_contraloria = get_object_or_404(Contraloria_Social, pk=data_escuela.contraloria_s.id)
+    fecha = get_object_or_404(Fechas_Finales, pk=1)
 
+    if request.method == "POST":
+        form = ContraloriaForm(request.POST, instance=data_contraloria)
+        if form.is_valid():
+            data_contraloria = form.save(commit=False)
+            data_contraloria.save()
+            return redirect('Admin:Inicio')
+    else:
+        form = ContraloriaForm(instance=data_contraloria)
+    return render(request, 'Admin/ContraloriaS.html',
+                  {'form': form,
+                   'escuela':data_escuela,
+                   'fecha': fecha,
+                   'contraloria':data_contraloria})
 
 

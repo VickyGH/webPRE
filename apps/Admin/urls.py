@@ -13,7 +13,8 @@ urlpatterns = [
     #>-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<
     url(r'^Detalles/(?P<pk>\d+)$', login_required(Detalles.as_view()), name='Detalles'),
     url(r'^General/(?P<pk>\d+)$', login_required(General.as_view()), name='General'),
-    url(r'^SiSPRE/(?P<pk_escuela>\d+)$', login_required(views.Sispre), name='SiSPRE'),
+    url(r'^SiSPRE/(?P<pk>\d+)$', login_required(views.Sispre), name='SiSPRE'),
+    url(r'^Contraloria/(?P<pk>\d+)$', login_required(views.ContraloriaS), name='ContraloriaS'),
 ]
 
 handler404 = error_404

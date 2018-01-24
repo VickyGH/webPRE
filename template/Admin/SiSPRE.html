@@ -42,7 +42,7 @@
                         </div>
                         <div class="span4">
                             <span class="s1">Cambio de Componente:</span>
-                            <span class="s2">{{ escuela.cambi_comp }}</span>
+                            <span class="s2">{{ escuela.cambio_comp }}</span>
                         </div>
                     </div>
                 </div>
@@ -69,53 +69,392 @@
                 <span class="icon"><i class="icon-align-justify"></i> </span>
                 <h5>Detalles SiSPRE</h5>
             </div>
-            <div class="widget-content nopadding">
+            <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
+                {% csrf_token %}
 
-                <div class="control-group">
-                    <div class="controls">
-                        <div class="span12">
-                            <div class="actions span4" style="display: inline-block;">
-                                <ul class="thumbnails">
-                                    <li class="span12">
-                                        <img src="{{ sispre.inicio.foto_fachada }}" alt="">
-                                        <div class="actions">
-                                            <a class="lightbox_trigger" href="assetsAdmin/img/gallery/imgbox3.jpg">
-                                                <i class="icon-search"></i>
-                                            </a>
-                                        </div>
-                                    </li>
-                                </ul>
+                <div class="new-update clearfix">
+                    <div class="control-group">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseInicio">
+                                <span class="icon">
+                                    <i class="icon-chevron-down"></i>
+                                </span>
+                                <div>
+                                    <h5>Documentación Inicio</h5>
+                                    <span class="badge badge-warning"> Estatus: {{ sispre.inicio }} </span>
+                                    <span class="badge badge-success"> {{ fecha.fecha_inicio }} </span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <div class="widget-box">
-                        <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseInicio">
-										<span class="icon">
-											<i class="icon-chevron-down"></i>
-										</span>
-                            <h5>Documentación de Inicio - {{ sispre.inicio }}</h5>
-                        </div>
-                        <div action="" role="form" class="widget-content nopadding updates collapse out"
-                             id="collapseInicio">
-                            <form method="POST" class="form-horizontal">
-                                {% csrf_token %}
+                            <div action="" role="form" class="widget-content nopadding updates collapse out"
+                                 id="collapseInicio">
                                 <div class="new-update clearfix">
                                     <div class="span12">
-                                        <div class="span4">
-                                            <div class="span1 checkCenter1">
-                                                <span class="s1">{{ formI.acta_mancomunado.label }}</span>
-                                            </div>
-                                            <div class="span10 checkCenter2">
-                                                {{ formI.acta_mancomunado.label }}
-                                            </div>
+                                        <span class="s1">
+                                            Fecha de Entrega de la Documentación de Inicio en la Coordinación del PRE:
+                                        </span>
+                                        <span class="label label-success">{{ fecha.fecha_inicio }}</span>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ formI.estatus.label }}</span>
+                                            {{ formI.estatus }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="widget-content nopadding inner">
+                                        <table class="table table-bordered data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Estatus</th>
+                                                    <th>Archivo</th>
+                                                    <th>Observaciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="s1">{{ formI.acta_mancomunado.label }}</span></td>
+                                                    <td>{{ formI.acta_mancomunado }}</td>
+                                                    <td>{{ formI.acta_mArchivo }}</td>
+                                                    <td>{{ formI.acta_mObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formI.constancia_cepse.label }}</span></td>
+                                                    <td>{{ formI.constancia_cepse }}</td>
+                                                    <td>{{ formI.constancia_cArchivo }}</td>
+                                                    <td>{{ formI.constancia_cObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formI.acta_planeacion.label }}</span></td>
+                                                    <td>{{ formI.acta_planeacion }}</td>
+                                                    <td>{{ formI.acta_pArchivo }}</td>
+                                                    <td>{{ formI.acta_pObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formI.acuse_banco.label }}</span></td>
+                                                    <td>{{ formI.acuse_banco }}</td>
+                                                    <td>{{ formI.acuse_bArchivo }}</td>
+                                                    <td>{{ formI.acuse_bObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formI.acuse_prog.label }}</span></td>
+                                                    <td>{{ formI.acuse_prog }}</td>
+                                                    <td>{{ formI.acuse_pArchivo }}</td>
+                                                    <td>{{ formI.acuse_pObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formI.acuse_prog_anterior.label }}</span></td>
+                                                    <td>{{ formI.acuse_prog_anterior }}</td>
+                                                    <td>{{ formI.acuse_prog_aArchivo }}</td>
+                                                    <td>{{ formI.acuse_prog_aObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formI.compromiso_inmueble.label }}</span></td>
+                                                    <td>{{ formI.compromiso_inmueble }}</td>
+                                                    <td>{{ formI.compromiso_iArchivo }}</td>
+                                                    <td>{{ formI.compromiso_iObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formI.compromiso_comunidad.label }}</span></td>
+                                                    <td>{{ formI.compromiso_comunidad }}</td>
+                                                    <td>{{ formI.compromiso_cArchivo }}</td>
+                                                    <td>{{ formI.compromiso_cObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formI.contrato.label }}</span></td>
+                                                    <td>{{ formI.contrato }}</td>
+                                                    <td>{{ formI.contratoArchivo }}</td>
+                                                    <td>{{ formI.contratoObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formI.ife_cepse.label }}</span></td>
+                                                    <td>{{ formI.ife_cepse }}</td>
+                                                    <td>{{ formI.ife_cArchivo }}</td>
+                                                    <td>{{ formI.ife_cObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formI.ife_plantel.label }}</span></td>
+                                                    <td>{{ formI.ife_plantel }}</td>
+                                                    <td>{{ formI.ife_pArchivo }}</td>
+                                                    <td>{{ formI.ife_pObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formI.comision_director.label }}</span></td>
+                                                    <td>{{ formI.comision_director }}</td>
+                                                    <td>{{ formI.comision_dArchivo }}</td>
+                                                    <td>{{ formI.comision_dObservacion }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ formI.observacion.label }}</span>
+                                            {{ formI.observacion }}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="new-update clearfix">
                                     <div class="span12">
-                                        <table class="table table-bordered table-striped">
+                                        <div class="span6">
+                                            <span class="s1">{{ formI.foto_fachada.label }}</span>
+                                            {{ formI.foto_fachada }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-update clearfix">
+                    <div class="control-group">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseSeguimiento">
+                                <span class="icon">
+                                    <i class="icon-chevron-down"></i>
+                                </span>
+                                <div>
+                                    <h5>Documentación Seguimiento</h5>
+                                    <span class="badge badge-warning"> Estatus: {{ sispre.seguimiento }} </span>
+                                    <span class="badge badge-success"> {{ fecha.fecha_seguimiento }} </span>
+                                </div>
+
+                            </div>
+                            <div action="" role="form" class="widget-content nopadding updates collapse out"
+                                 id="collapseSeguimiento">
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <span class="s1">
+                                            Fecha de Entrega de la Documentación del Seguimiento en la Coordinación del PRE:
+                                        </span>
+                                        <span class="label label-success">{{ fecha.fecha_seguimiento }}</span>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ formS.estatus.label }}</span>
+                                            {{ formS.estatus }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="widget-content nopadding inner">
+                                        <table class="table table-bordered data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Estatus</th>
+                                                    <th>Archivo</th>
+                                                    <th>Observaciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="s1">{{ formS.acta_seguimiento.label }}</span></td>
+                                                    <td>{{ formS.acta_seguimiento }}</td>
+                                                    <td>{{ formS.acta_sArchivo }}</td>
+                                                    <td>{{ formS.acta_sObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formS.sup_tecnica.label }}</span></td>
+                                                    <td>{{ formS.sup_tecnica }}</td>
+                                                    <td>{{ formS.sup_tArchivo }}</td>
+                                                    <td>{{ formS.sup_tObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formS.evid_seguimiento.label }}</span></td>
+                                                    <td>{{ formS.evid_seguimiento }}</td>
+                                                    <td>{{ formS.evid_sArchivo }}</td>
+                                                    <td>{{ formS.evid_sObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formS.acta_circunstanciada.label }}</span></td>
+                                                    <td>{{ formS.acta_circunstanciada }}</td>
+                                                    <td>{{ formS.acta_cArchivo }}</td>
+                                                    <td>{{ formS.acta_cObservacion }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ formS.observacion.label }}</span>
+                                            {{ formS.observacion }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-update clearfix">
+                    <div class="control-group">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseCierre">
+                                <span class="icon">
+                                    <i class="icon-chevron-down"></i>
+                                </span>
+                                <div>
+                                    <h5>Documentación Cierre</h5>
+                                    <span class="badge badge-warning"> Estatus: {{ sispre.cierre }} </span>
+                                    <span class="badge badge-success"> {{ fecha.fecha_cierre }} </span>
+                                </div>
+                            </div>
+                            <div action="" role="form" class="widget-content nopadding updates collapse out"
+                                 id="collapseCierre">
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <span class="s1">
+                                            Fecha de Entrega de la Documentación de Cierre en la Coordinación del PRE:
+                                        </span>
+                                        <span class="label label-success">{{ fecha.fecha_cierre }}</span>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ formC.estatus.label }}</span>
+                                            {{ formC.estatus }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="widget-content nopadding inner">
+                                        <table class="table table-bordered data-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Estatus</th>
+                                                    <th>Archivo</th>
+                                                    <th>Observaciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><span class="s1">{{ formC.acta_cierre.label }}</span></td>
+                                                    <td>{{ formC.acta_cierre }}</td>
+                                                    <td>{{ formC.acta_cArchivo }}</td>
+                                                    <td>{{ formC.acta_cObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formC.acta_entrega.label }}</span></td>
+                                                    <td>{{ formC.acta_entrega }}</td>
+                                                    <td>{{ formC.acta_eArchivo }}</td>
+                                                    <td>{{ formC.acta_eObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formC.acta_rendicion.label }}</span></td>
+                                                    <td>{{ formC.acta_rendicion }}</td>
+                                                    <td>{{ formC.acta_rArchivo }}</td>
+                                                    <td>{{ formC.acta_rObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formC.facturas.label }}</span></td>
+                                                    <td>{{ formC.facturas }}</td>
+                                                    <td>{{ formC.facturasArchivo }}</td>
+                                                    <td>{{ formC.facturasObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formC.ficha_reintegro.label }}</span></td>
+                                                    <td>{{ formC.ficha_reintegro }}</td>
+                                                    <td>{{ formC.ficha_rArchivo }}</td>
+                                                    <td>{{ formC.ficha_rObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formC.form_inventario.label }}</span></td>
+                                                    <td>{{ formC.form_inventario }}</td>
+                                                    <td>{{ formC.form_iArchivo }}</td>
+                                                    <td>{{ formC.form_iObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formC.form_transferencia.label }}</span></td>
+                                                    <td>{{ formC.form_transferencia }}</td>
+                                                    <td>{{ formC.form_tArchivo }}</td>
+                                                    <td>{{ formC.form_tObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formC.evid_obra_concluida.label }}</span></td>
+                                                    <td>{{ formC.evid_obra_concluida }}</td>
+                                                    <td>{{ formC.evid_obraArchivo }}</td>
+                                                    <td>{{ formC.evid_obraObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formC.evid_compras.label }}</span></td>
+                                                    <td>{{ formC.evid_compras }}</td>
+                                                    <td>{{ formC.evid_cArchivo }}</td>
+                                                    <td>{{ formC.evid_cObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formC.registro_gastos.label }}</span></td>
+                                                    <td>{{ formC.registro_gastos }}</td>
+                                                    <td>{{ formC.registro_gArchivo }}</td>
+                                                    <td>{{ formC.registro_gObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formC.resumen_gastos.label }}</span></td>
+                                                    <td>{{ formC.resumen_gastos }}</td>
+                                                    <td>{{ formC.resumen_gArchivo }}</td>
+                                                    <td>{{ formC.resumen_gObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formC.verificacion_sat.label }}</span></td>
+                                                    <td>{{ formC.verificacion_sat }}</td>
+                                                    <td>{{ formC.verificacionArchivo }}</td>
+                                                    <td>{{ formC.verificacionObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formC.xml.label }}</span></td>
+                                                    <td>{{ formC.xml }}</td>
+                                                    <td>{{ formC.xmlArchivo }}</td>
+                                                    <td>{{ formC.xmlObservacion }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ formC.observacion.label }}</span>
+                                            {{ formC.observacion }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <div class="new-update clearfix">
+                    <div class="control-group">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseSeguimiento">
+                                <span class="icon">
+                                    <i class="icon-chevron-down"></i>
+                                </span>
+                                <h5>Documentación Seguimiento - {{ contraloria.estatusC }}</h5>
+                            </div>
+                            <div action="" role="form" class="widget-content nopadding updates collapse out"
+                                 id="collapseSeguimiento">
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ form.estatusS.label }}</span>
+                                            {{ form.estatusS }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="widget-content nopadding inner">
+                                        <table class="table table-bordered data-table">
                                             <thead>
                                             <tr>
                                                 <th>#</th>
@@ -126,296 +465,150 @@
                                             </thead>
                                             <tbody>
                                             <tr>
-                                                <td><span class="s1">{{ formI.acta_mancomunado.label }}</span></td>
-                                                <td>{{ formI.acta_mancomunado }}</td>
-                                                <td>{{ formI.acta_mArchivo }}</td>
-                                                <td>{{ formI.acta_mObservacion }}</td>
+                                                <td><span class="s1">{{ form.acta_seguimiento.label }}</span></td>
+                                                <td>{{ form.acta_seguimiento }}</td>
+                                                <td>{{ form.acta_sArchivo }}</td>
+                                                <td>{{ form.acta_sObservacion }}</td>
                                             </tr>
                                             <tr>
-                                                <td><span class="s1">{{ formI.constancia_cepse.label }}</span></td>
-                                                <td>{{ formI.constancia_cepse }}</td>
-                                                <td>{{ formI.constancia_cArchivo }}</td>
-                                                <td>{{ formI.constancia_cObservacion }}</td>
+                                                <td><span class="s1">{{ form.minuta_seguimiento.label }}</span></td>
+                                                <td>{{ form.minuta_seguimiento }}</td>
+                                                <td>{{ form.minuta_sArchivo }}</td>
+                                                <td>{{ form.minuta_sObservacion }}</td>
                                             </tr>
                                             <tr>
-                                                <td><span class="s1">{{ formI.acta_planeacion.label }}</span></td>
-                                                <td>{{ formI.acta_planeacion }}</td>
-                                                <td>{{ formI.acta_pArchivo }}</td>
-                                                <td>{{ formI.acta_pObservacion }}</td>
+                                                <td><span class="s1">{{ form.lista_seguimiento.label }}</span></td>
+                                                <td>{{ form.lista_seguimiento }}</td>
+                                                <td>{{ form.lista_sArchivo }}</td>
+                                                <td>{{ form.lista_sObservacion }}</td>
                                             </tr>
                                             <tr>
-                                                <td><span class="s1">{{ formI.acuse_banco.label }}</span></td>
-                                                <td>{{ formI.acuse_banco }}</td>
-                                                <td>{{ formI.acuse_bArchivo }}</td>
-                                                <td>{{ formI.acuse_bObservacion }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="s1">{{ formI.acuse_prog.label }}</span></td>
-                                                <td>{{ formI.acuse_prog }}</td>
-                                                <td>{{ formI.acuse_pArchivo }}</td>
-                                                <td>{{ formI.acuse_pObservacion }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="s1">{{ formI.acuse_prog_anterior.label }}</span></td>
-                                                <td>{{ formI.acuse_prog_anterior }}</td>
-                                                <td>{{ formI.acuse_prog_aArchivo }}</td>
-                                                <td>{{ formI.acuse_prog_aObservacion }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="s1">{{ formI.compromiso_inmueble.label }}</span></td>
-                                                <td>{{ formI.compromiso_inmueble }}</td>
-                                                <td>{{ formI.compromiso_iArchivo }}</td>
-                                                <td>{{ formI.compromiso_iObservacion }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="s1">{{ formI.compromiso_comunidad.label }}</span></td>
-                                                <td>{{ formI.compromiso_comunidad }}</td>
-                                                <td>{{ formI.compromiso_cArchivo }}</td>
-                                                <td>{{ formI.compromiso_cObservacion }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="s1">{{ formI.contrato.label }}</span></td>
-                                                <td>{{ formI.contrato }}</td>
-                                                <td>{{ formI.contratoArchivo }}</td>
-                                                <td>{{ formI.contratoObservacion }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="s1">{{ formI..label }}</span></td>
-                                                <td>{{ formI. }}</td>
-                                                <td>{{ formI. }}</td>
-                                                <td>{{ formI. }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="s1">{{ formI.ife_plantel.label }}</span></td>
-                                                <td>{{ formI.ife_plantel }}</td>
-                                                <td>{{ formI.ife_pArchivo }}</td>
-                                                <td>{{ formI.ife_pObservacion }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="s1">{{ formI.comision_director.label }}</span></td>
-                                                <td>{{ formI.comision_director }}</td>
-                                                <td>{{ formI.comision_dArchivo }}</td>
-                                                <td>{{ formI.comision_dObservacion }}</td>
+                                                <td><span class="s1">{{ form.foto_seguimiento.label }}</span></td>
+                                                <td>{{ form.foto_seguimiento }}</td>
+                                                <td>{{ form.foto_sArchivo }}</td>
+                                                <td>{{ form.foto_sObservacion }}</td>
                                             </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-
                                 <div class="new-update clearfix">
                                     <div class="span12">
-                                        <div class="new">
-                                            <button class="btn btn-success">Guardar</button>
+                                        <div class="span6">
+                                            <span class="s1">{{ form.cd_seguimiento.label }}</span>
+                                            {{ form.cd_seguimiento }}
                                         </div>
                                     </div>
                                 </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ form.pdf_seguimiento.label }}</span>
+                                            {{ form.pdf_seguimiento }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-update clearfix">
+                    <div class="control-group">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseAnual">
+                                <span class="icon">
+                                    <i class="icon-chevron-down"></i>
+                                </span>
+                                <h5>Documentación Anual - {{ contraloria.estatusA }}</h5>
+                            </div>
+                            <div action="" role="form" class="widget-content nopadding updates collapse out"
+                                 id="collapseAnual">
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ form.estatusA.label }}</span>
+                                            {{ form.estatusA }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="widget-content nopadding inner">
+                                        <table class="table table-bordered data-table">
+                                            <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Estatus</th>
+                                                <th>Archivo</th>
+                                                <th>Observaciones</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td><span class="s1">{{ form.acta_anual.label }}</span></td>
+                                                <td>{{ form.acta_anual }}</td>
+                                                <td>{{ form.acta_aArchivo }}</td>
+                                                <td>{{ form.acta_aObservacion }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="s1">{{ form.minuta_anual.label }}</span></td>
+                                                <td>{{ form.minuta_anual }}</td>
+                                                <td>{{ form.minuta_aArchivo }}</td>
+                                                <td>{{ form.minuta_aObservacion }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="s1">{{ form.lista_anual.label }}</span></td>
+                                                <td>{{ form.lista_anual }}</td>
+                                                <td>{{ form.lista_aArchivo }}</td>
+                                                <td>{{ form.lista_aObservacion }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="s1">{{ form.foto_anual.label }}</span></td>
+                                                <td>{{ form.foto_anual }}</td>
+                                                <td>{{ form.foto_aArchivo }}</td>
+                                                <td>{{ form.foto_aObservacion }}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ form.cd_anual.label }}</span>
+                                            {{ form.cd_anual }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ form.pdf_anual.label }}</span>
+                                            {{ form.pdf_anual }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-update clearfix">
+                    <div class="span12">
+                        <div class="span6">
+                            <span class="s1">{{ form.observacion.label }}</span>
+                            {{ form.observacion }}
+                        </div>
+                    </div>
+                </div>
+                -->
+                <div class="new-update clearfix">
+                    <div class="span12">
+                        <div class="new">
+                            <button class="btn btn-success">Guardar</button>
+                        </div>
+                    </div>
+                </div>
 
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <div class="widget-box">
-                        <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseSeguim">
-										<span class="icon">
-											<i class="icon-chevron-down"></i>
-										</span>
-                            <h5>Documentación de seguimiento - {{ sispre.seguimiento }}</h5>
-                        </div>
-                        <div class="widget-content nopadding updates collapse out" id="collapseSeguim">
-                            <div class="new-update clearfix">
-                                <div class="span12">
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span8 checkCenter2">
-                                            <span class="s1">Acta de Seguimiento</span>
-                                        </div>
-                                    </div>
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span8 checkCenter2">
-                                            <span class="s1">Evidencias Fotográficas</span>
-                                        </div>
-                                    </div>
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span8 checkCenter2">
-                                            <span class="s1">Supervisión Técnica Comp. 1</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <div class="widget-box">
-                        <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseCierre">
-										<span class="icon">
-											<i class="icon-chevron-down"></i>
-										</span>
-                            <h5>Documentación de Cierre - {{ sispre.cierre }}</h5>
-                        </div>
-                        <div class="widget-content nopadding updates collapse out" id="collapseCierre">
-                            <div class="new-update clearfix">
-                                <div class="span12">
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span8 checkCenter2">
-                                            <span class="s1">Acta circunstanciada de hechos</span>
-                                        </div>
-                                    </div>
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span8 checkCenter2">
-                                            <span class="s1">Acta de cierre</span>
-                                        </div>
-                                    </div>
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span8 checkCenter2">
-                                            <span class="s1">Acta de entrega recepción del contratista</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="new-update clearfix">
-                                <div class="span12">
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span10 checkCenter2">
-                                            <span class="s1">Acta de rendición de cuentas, fotos y lista de asistencia</span>
-                                        </div>
-                                    </div>
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span10 checkCenter2">
-                                            <span class="s1">Facturas impresas (firma y leyenda)</span>
-                                        </div>
-                                    </div>
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span10 checkCenter2">
-                                            <span class="s1">Ficha de reintegro</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="new-update clearfix">
-                                <div class="span12">
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span10 checkCenter2">
-                                            <span class="s1">Formato de inventario</span>
-                                        </div>
-                                    </div>
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span10 checkCenter2">
-                                            <span class="s1">Formato de transferencia bancaria</span>
-                                        </div>
-                                    </div>
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span10 checkCenter2">
-                                            <span class="s1">Evidencia de las obras concluidas</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="new-update clearfix">
-                                <div class="span12">
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span10 checkCenter2">
-                                            <span class="s1">Evidencias de los Articulos Comprados</span>
-                                        </div>
-                                    </div>
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span10 checkCenter2">
-                                            <span class="s1">Registro de gastos</span>
-                                        </div>
-                                    </div>
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span10 checkCenter2">
-                                            <span class="s1">Resumen de gastos</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="new-update clearfix">
-                                <div class="span12">
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span10 checkCenter2">
-                                            <span class="s1">Verificación SAT impreso</span>
-                                        </div>
-                                    </div>
-                                    <div class="span4">
-                                        <div class="span1 checkCenter1">
-                                            <input type="checkbox"/>
-                                        </div>
-                                        <div class="span10 checkCenter2">
-                                            <span class="s1">XML impreso y digital</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">Archivo PDF:</label>
-                    <div class="controls">
-                        <div class="span8" style="display: inline-block;">
-                            <input type="file"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">Observaciones:</label>
-                    <div class="controls">
-                        <textarea class="span8"></textarea>
-                    </div>
-                </div>
-                <div class="form-actions">
-                    <button class="btn btn-success">Guardar</button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

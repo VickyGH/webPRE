@@ -1,0 +1,366 @@
+{% extends "../base.html" %}
+{% block title %}General{% endblock %}
+{% block content %}
+
+<div class="container-fluid">
+    <h4>Datos Contraloria Social</h4>
+    <h5>{{ escuela.cct }} - {{ escuela.nombre }}</h5>
+    <hr>
+    <div class="row-fluid">
+        <div class="widget-box">
+            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseG3">
+                <span class="icon">
+                    <i class="icon-chevron-down"></i>
+                </span>
+                <h5> Detalles Generales</h5>
+            </div>
+            <div class="widget-content nopadding updates collapse in" id="collapseG3">
+                <div class="new-update clearfix">
+                    <div class="span12">
+                        <div class="span4">
+                            <span class="s1">C.C.T.:</span>
+                            <span class="s2">{{ escuela.cct }}</span>
+                        </div>
+                        <div class="span4">
+                            <span class="s1">{{ escuela.nombre }}</span>
+                        </div>
+                        <div class="span4">
+                            <span class="s1">Fecha de Actualización:</span>
+                            <span class="s2">{{ escuela.actualizacion }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-update clearfix">
+                    <div class="span12">
+                        <div class="span4">
+                            <span class="s1">Componente:</span>
+                            <span class="s2">{{ escuela.componente }}</span>
+                        </div>
+                        <div class="span4">
+                            <span class="s1">Acción:</span>
+                            <span class="s2">{{ escuela.accion }}</span>
+                        </div>
+                        <div class="span4">
+                            <span class="s1">Cambio de Componente:</span>
+                            <span class="s2">{{ escuela.cambio_comp }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-update clearfix">
+                    <div class="span12">
+                        <div class="span4">
+                            <span class="s1">Monto Asignado:</span>
+                            <span class="s2" id="monto_asignado">$ {{ escuela.monto_asignado }}</span>
+                        </div>
+                        <div class="span4">
+                            <span class="s1">Monto Ejercido:</span>
+                            <span class="s2" id="monto_ejercido">$ {{ escuela.monto_ejercido }}</span>
+                        </div>
+                        <div class="span4">
+                            <span class="s1">Monto Restante:</span>
+                            <span class="s2">$ {{ escuela.monto_restante}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="widget-box">
+            <div class="widget-title">
+                <span class="icon"><i class="icon-align-justify"></i> </span>
+                <h5>Detalles Contraloria Social</h5>
+            </div>
+            <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="new-update clearfix">
+                    <div class="control-group">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseInicio">
+                                <span class="icon">
+                                    <i class="icon-chevron-down"></i>
+                                </span>
+                                <div>
+                                    <h5>Documentación Constitución</h5>
+                                    <span class="badge badge-warning"> Estatus: {{ contraloria.estatusC }} </span>
+                                    <span class="badge badge-success"> {{ fecha.fecha_constitucion }} </span>
+                                </div>
+                            </div>
+                            <div action="" role="form" class="widget-content nopadding updates collapse out"
+                                 id="collapseInicio">
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <span class="s1">
+                                            Fecha de Entrega de la Documentación de Actas de Constitucion en la Coordinación del PRE:
+                                        </span>
+                                        <span class="label label-success">{{ fecha.fecha_constitucion }}</span>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ form.estatusC.label }}</span>
+                                            {{ form.estatusC }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="widget-content nopadding inner">
+                                        <table class="table table-bordered data-table">
+                                            <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Estatus</th>
+                                                <th>Archivo</th>
+                                                <th>Observaciones</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td><span class="s1">{{ form.acta_constitucion.label }}</span></td>
+                                                <td>{{ form.acta_constitucion }}</td>
+                                                <td>{{ form.acta_cArchivo }}</td>
+                                                <td>{{ form.acta_cObservacion }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="s1">{{ form.minuta_constitucion.label }}</span></td>
+                                                <td>{{ form.minuta_constitucion }}</td>
+                                                <td>{{ form.minuta_cArchivo }}</td>
+                                                <td>{{ form.minuta_cObservacion }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="s1">{{ form.lista_constitucion.label }}</span></td>
+                                                <td>{{ form.lista_constitucion }}</td>
+                                                <td>{{ form.lista_cArchivo }}</td>
+                                                <td>{{ form.lista_cObservacion }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="s1">{{ form.foto_constitucion.label }}</span></td>
+                                                <td>{{ form.foto_constitucion }}</td>
+                                                <td>{{ form.foto_cArchivo }}</td>
+                                                <td>{{ form.foto_cObservacion }}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ form.cd_constitucion.label }}</span>
+                                            {{ form.cd_constitucion }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ form.pdf_constitucion.label }}</span>
+                                            {{ form.pdf_constitucion }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-update clearfix">
+                    <div class="control-group">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseSeguimiento">
+                                <span class="icon">
+                                    <i class="icon-chevron-down"></i>
+                                </span>
+                                <div>
+                                    <h5>Documentación Seguimiento</h5>
+                                    <span class="badge badge-warning"> Estatus: {{ contraloria.estatusS }} </span>
+                                    <span class="badge badge-success"> {{ fecha.fecha_seguimientoC }} </span>
+                                </div>
+                            </div>
+                            <div action="" role="form" class="widget-content nopadding updates collapse out"
+                                 id="collapseSeguimiento">
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <span class="s1">
+                                            Fecha de Entrega de la Documentación de Actas de Seguimiento en la Coordinación del PRE:
+                                        </span>
+                                        <span class="label label-success">{{ fecha.fecha_seguimientoC }}</span>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ form.estatusS.label }}</span>
+                                            {{ form.estatusS }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="widget-content nopadding inner">
+                                        <table class="table table-bordered data-table">
+                                            <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Estatus</th>
+                                                <th>Archivo</th>
+                                                <th>Observaciones</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td><span class="s1">{{ form.acta_seguimiento.label }}</span></td>
+                                                <td>{{ form.acta_seguimiento }}</td>
+                                                <td>{{ form.acta_sArchivo }}</td>
+                                                <td>{{ form.acta_sObservacion }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="s1">{{ form.minuta_seguimiento.label }}</span></td>
+                                                <td>{{ form.minuta_seguimiento }}</td>
+                                                <td>{{ form.minuta_sArchivo }}</td>
+                                                <td>{{ form.minuta_sObservacion }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="s1">{{ form.lista_seguimiento.label }}</span></td>
+                                                <td>{{ form.lista_seguimiento }}</td>
+                                                <td>{{ form.lista_sArchivo }}</td>
+                                                <td>{{ form.lista_sObservacion }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="s1">{{ form.foto_seguimiento.label }}</span></td>
+                                                <td>{{ form.foto_seguimiento }}</td>
+                                                <td>{{ form.foto_sArchivo }}</td>
+                                                <td>{{ form.foto_sObservacion }}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ form.cd_seguimiento.label }}</span>
+                                            {{ form.cd_seguimiento }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ form.pdf_seguimiento.label }}</span>
+                                            {{ form.pdf_seguimiento }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-update clearfix">
+                    <div class="control-group">
+                        <div class="widget-box">
+                            <div class="widget-title bg_lo" data-toggle="collapse" href="#collapseAnual">
+                                <span class="icon">
+                                    <i class="icon-chevron-down"></i>
+                                </span>
+                                <div>
+                                    <h5>Documentación Anual</h5>
+                                    <span class="badge badge-warning"> Estatus: {{ contraloria.estatusA }} </span>
+                                    <span class="badge badge-success"> {{ fecha.fecha_anual }} </span>
+                                </div>
+                            </div>
+                            <div action="" role="form" class="widget-content nopadding updates collapse out"
+                                 id="collapseAnual">
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <span class="s1">
+                                            Fecha de Entrega de la Documentación de Actas Informe Anual en la Coordinación del PRE:
+                                        </span>
+                                        <span class="label label-success">{{ fecha.fecha_anual }}</span>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ form.estatusA.label }}</span>
+                                            {{ form.estatusA }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="widget-content nopadding inner">
+                                        <table class="table table-bordered data-table">
+                                            <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Estatus</th>
+                                                <th>Archivo</th>
+                                                <th>Observaciones</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td><span class="s1">{{ form.acta_anual.label }}</span></td>
+                                                <td>{{ form.acta_anual }}</td>
+                                                <td>{{ form.acta_aArchivo }}</td>
+                                                <td>{{ form.acta_aObservacion }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="s1">{{ form.minuta_anual.label }}</span></td>
+                                                <td>{{ form.minuta_anual }}</td>
+                                                <td>{{ form.minuta_aArchivo }}</td>
+                                                <td>{{ form.minuta_aObservacion }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="s1">{{ form.lista_anual.label }}</span></td>
+                                                <td>{{ form.lista_anual }}</td>
+                                                <td>{{ form.lista_aArchivo }}</td>
+                                                <td>{{ form.lista_aObservacion }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="s1">{{ form.foto_anual.label }}</span></td>
+                                                <td>{{ form.foto_anual }}</td>
+                                                <td>{{ form.foto_aArchivo }}</td>
+                                                <td>{{ form.foto_aObservacion }}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ form.cd_anual.label }}</span>
+                                            {{ form.cd_anual }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="new-update clearfix">
+                                    <div class="span12">
+                                        <div class="span6">
+                                            <span class="s1">{{ form.pdf_anual.label }}</span>
+                                            {{ form.pdf_anual }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-update clearfix">
+                    <div class="span12">
+                        <div class="span6">
+                            <span class="s1">{{ form.observacion.label }}</span>
+                            {{ form.observacion }}
+                        </div>
+                    </div>
+                </div>
+                <div class="new-update clearfix">
+                    <div class="span12">
+                        <div class="new">
+                            <button class="btn btn-success">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock%}

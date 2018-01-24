@@ -30,6 +30,16 @@ class CustomUserAdmin(UserAdmin):
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
 
+class Fechas_FinalesAdmin (admin.ModelAdmin):
+    fields = [
+        'fecha_inicio',
+        'fecha_seguimiento',
+        'fecha_cierre',
+        'fecha_constitucion',
+        'fecha_seguimientoC',
+        'fecha_anual'
+    ]
+
 class EscuelaAdmin(admin.ModelAdmin):
     fields = ['cct',
               'nombre',
@@ -43,8 +53,8 @@ class EscuelaAdmin(admin.ModelAdmin):
               'localidad',
               'monto_asignado',
               'monto_ejercido',
-              'sispre'
-              #contraloria_s',
+              'sispre',
+              'contraloria_s',
               #'observacion'
     ]
 
@@ -52,26 +62,69 @@ class DirectoresAdmin (admin.ModelAdmin):
     fields = ['nombre','a_paterno','a_materno','telefono']
 
 class Contraloria_SocialAdmin (admin.ModelAdmin):
-    fields = ['estatus',
-              'acta_constitucion',
-              'minuta_constitucion',
-              'lista_constitucion',
-              'foto_constitucion',
-              'cd_constitucion',
-              'pdf_constitucion',
-              'acta_seguimiento',
-              'minuta_seguimiento',
-              'lista_seguimiento',
-              'foto_seguimiento',
-              'cd_seguimiento',
-              'pdf_seguimiento',
-              'acta_anual',
-              'minuta_anual',
-              'lista_anual',
-              'foto_anual',
-              'cd_anual',
-              'pdf_anual',
-              'observacion',
+    fields = [
+            'estatusC',
+            'acta_constitucion',
+            'acta_cArchivo',
+            'acta_cObservacion',
+
+
+            'minuta_constitucion',
+            'minuta_cArchivo',
+            'minuta_cObservacion',
+
+            'lista_constitucion',
+            'lista_cArchivo',
+            'lista_cObservacion',
+
+            'foto_constitucion',
+            'foto_cArchivo',
+            'foto_cObservacion',
+
+            'cd_constitucion',
+            'pdf_constitucion',
+
+            'estatusS',
+            'acta_seguimiento',
+            'acta_sArchivo',
+            'acta_sObservacion',
+
+            'minuta_seguimiento',
+            'minuta_sArchivo',
+            'minuta_sObservacion',
+
+            'lista_seguimiento',
+            'lista_sArchivo',
+            'lista_sObservacion',
+
+            'foto_seguimiento',
+            'foto_sArchivo',
+            'foto_sObservacion',
+
+            'cd_seguimiento',
+            'pdf_seguimiento',
+
+            'estatusA',
+            'acta_anual',
+            'acta_aArchivo',
+            'acta_aObservacion',
+
+            'minuta_anual',
+            'minuta_aArchivo',
+            'minuta_aObservacion',
+
+            'lista_anual',
+            'lista_aArchivo',
+            'lista_aObservacion',
+
+            'foto_anual',
+            'foto_aArchivo',
+            'foto_aObservacion',
+
+            'cd_anual',
+            'pdf_anual',
+
+            'observacion'
               ]
 
 class InicioSAdmin (admin.ModelAdmin):
@@ -196,7 +249,7 @@ class SupervisoresAdmin(admin.ModelAdmin):
               'escuelas_zona',
               ]
 
-#admin.site.register(Municipios,MunicipiosAdmin)
+admin.site.register(Fechas_Finales,Fechas_FinalesAdmin)
 admin.site.register(Escuelas,EscuelaAdmin)
 admin.site.register(Directores,DirectoresAdmin)
 admin.site.register(Contraloria_Social,Contraloria_SocialAdmin)
@@ -206,16 +259,3 @@ admin.site.register(Supervisores,SupervisoresAdmin)
 admin.site.register(InicioS,InicioSAdmin)
 admin.site.register(SeguimientoS,SeguimientoAdmin)
 admin.site.register(CierreS,CierreSAdmin)
-
-
-
-
-
-
-
-
-
-
-
-
-
