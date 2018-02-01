@@ -10,15 +10,13 @@ from django.urls import reverse_lazy
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 
-from apps.Admin.forms import EscuelasForm, SispreForm, ContraloriaForm, InicioSForm, SeguimientoForm, CierreForm
+from apps.Admin.forms import EscuelasForm, InicioSForm, SeguimientoForm, CierreForm, ConstitucionForm, CedulaForm, AnualForm
 from .models import *
-from django.contrib.auth.models import User
 
 # Create your views here.
 def error_404(request):
     data = {}
     return render(request, '404.html', data)
-
 
 def error_500(request):
     data = {}
@@ -57,7 +55,6 @@ class General(UpdateView):
     model = Escuelas
     template_name = 'Admin/General.html'
     success_url = reverse_lazy('Admin:Inicio')
-
 
 def Sispre(request, pk):
     data_escuela = get_object_or_404(Escuelas, id=pk)
@@ -98,18 +95,31 @@ def ContraloriaS(request, pk):
     data_contraloria = get_object_or_404(Contraloria_Social, pk=data_escuela.contraloria_s.id)
     fecha = get_object_or_404(Fechas_Finales, pk=1)
 
+    data_constitucion = get_object_or_404(Constitucion, pk=data_contraloria.constitucion.id)
+    data_seg = get_object_or_404(Cedula, pk=data_contraloria.cedula.id)
+    data_cierre = get_object_or_404(Anual, pk=data_contraloria.anual.id)
+
     if request.method == "POST":
-        form = ContraloriaForm(request.POST, instance=data_contraloria)
-        if form.is_valid():
-            data_contraloria = form.save(commit=False)
-            data_contraloria.save()
+        form = ConstitucionForm(request.POST, instance=data_constitucion)
+        formS = CedulaForm(request.POST, instance=data_seg)
+        formC = AnualForm(request.POST, instance=data_cierre)
+        if all([form.is_valid(), formC.is_valid()]):#, formC.is_valid()]):
+        #if form.is_valid():
+            data_constitucion = form.save(commit=False)
+            data_constitucion.save()
+            data_seg = formS.save(commit=False)
+            data_seg.save()
+            data_cierre = formC.save(commit=False)
+            data_cierre.save()
             return redirect('Admin:Inicio')
     else:
-        form = ContraloriaForm(instance=data_contraloria)
+        form = ConstitucionForm(instance=data_constitucion)
+        formS = CedulaForm(instance=data_seg)
+        formC = AnualForm(instance = data_cierre)
     return render(request, 'Admin/ContraloriaS.html',
-                  {'form': form,
+                  {'formC': form,
+                   'formCe':formS,
+                   'formA':formC,
                    'escuela':data_escuela,
-                   'fecha': fecha,
-                   'contraloria':data_contraloria})
-
-
+                   'contraloria':data_contraloria,
+                   'fecha' : fecha})

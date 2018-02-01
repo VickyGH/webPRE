@@ -1,10 +1,602 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "../base3.html" %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+{% load staticfiles %}
+<div class="section section-tabs">
+    <div class="container">
+        <!-- Tabla con los datos de la escuela -->
+        <div class="card">
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <label class="control-Title1">C.C.T.:</label>
+                    <label class="control-Content1">{{ escuela.cct }}</label>
+                </div>
+                <div class="col-md-5" style="text-align: center;">
+                    <label class="control-Title1">{{ escuela.nombre }}</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="control-Title">Componente:</label>
+                    <label class="control-Content">{{ escuela.componente }}</label>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <label class="control-Title">Monto Asignado:</label>
+                    <label class="control-Content">$ {{ escuela.monto_asignado }}</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="control-Title">Monto Ejercido:</label>
+                    <label class="control-Content">$ {{ escuela.monto_ejercido }}</label>
+                </div>
+                <div class="col-md-4">
+                    <label class="control-Title">Monto Restante:</label>
+                    <label class="control-Content">$ {{ escuela.monto_restante }}</label>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <label class="control-Title">Acción:</label>
+                    <label class="control-Content">{{ escuela.accion }}</label>
+                </div>
+                {% if escuela.cambio_accion != 'No' %}
+                <div class="col-md-4">
+                    <label class="control-Title">Cambio de Acción:</label>
+                    <label class="control-Content">{{ escuela.accion }}</label>
+                </div>
+                {% endif %}
+                <div class="col-md-4">
+                    <label class="control-Title">Actualización:</label>
+                    <label class="control-Content">{{ escuela.actualizacion }}</label>
+                </div>
+            </div>
+            <p class="col-md-12"></p>
+            <p class="col-md-12"></p>
+        </div>
+        <!-- Tabs with icons on Card input-group-addon -->
+        <div class="card card-nav-tabs">
+            <!-- Barra de Contenido Principal -->
+            <div class="header header-primary">
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <ul class="nav nav-tabs" data-tabs="tabs">
+                            <li class="active">
+                                <a href="#sispre" data-toggle="tab">
+                                    <i class="material-icons">dashboard</i>
+                                    SiSPRE
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#contraloria" data-toggle="tab">
+                                    <i class="material-icons">supervisor_account</i>
+                                    Contraloria Social
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin Barra de Contenido Principal -->
+            <!-- Contenido -->
+            <div class="content">
+                <div class="tab-content text-center">
 
-</body>
-</html>
+                    <!-- SiSPRE -->
+                    <div class="tab-pane active" id="sispre">
+                        <!-- Tab Inicio, Seguimiento y Cierre -->
+                        <div class="header header-danger">
+                            <div class="nav-tabs-navigation">
+                                <div class="nav-tabs-wrapper">
+                                    <ul class="nav nav-tabs" data-tabs="tabs">
+                                        <li class="active">
+                                            <a href="#inicio" role="tab" data-toggle="tab">Inicio</a>
+                                        </li>
+                                        {% if sispre.seguimiento != 'No Aplica' %}
+                                        <li>
+                                            <a href="#seguimiento" role="tab" data-toggle="tab">Seguimiento</a>
+                                        </li>
+                                        {% endif %}
+                                        <li>
+                                            <a href="#cierre" role="tab" data-toggle="tab">Cierre</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="tab-content text-center">
+                                <!-- Inicio -->
+                                <div class="tab-pane active" id="inicio">
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="col-sm-10 col-md-10">
+                                                <h4>Estatus: </h4><span
+                                                    class="label label-info">{{inicio.estatus}}</span>
+                                            </div>
+                                            <button type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"
+                                                    data-toggle="tooltip" data-placement="top"
+                                                    title="Agregar Información"
+                                                    data-container="body">
+                                                <i class="material-icons">border_color</i>
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-center col-sm-3">#</th>
+                                                        <th class="text-center col-sm-2">Estatus</th>
+                                                        <th class="text-center col-sm-3">Archivo</th>
+                                                        <th class="text-center col-sm-4">Observaciones</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>Acta de Acuerdo Mancomunado</td>
+                                                        <td>{{inicio.acta_mancomunado}}</td>
+                                                        <td>{{inicio.acta_mArchivo}}</td>
+                                                        <td>{{inicio.acta_mObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Constancia de CEPSE</td>
+                                                        <td>{{inicio.constancia_cepse}}</td>
+                                                        <td>{{inicio.constancia_cArchivo}}</td>
+                                                        <td>{{inicio.constancia_cObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Acta de Planeación</td>
+                                                        <td>{{inicio.acta_planeacion}}</td>
+                                                        <td>{{inicio.acta_pArchivo}}</td>
+                                                        <td>{{inicio.acta_pObservacion}}</td>
+                                                    </tr>
+                                                    {% if inicio.acuse_banco != 'No Aplica' %}
+                                                    <tr>
+                                                        <td>Acuse de Tarjeta Bancaria</td>
+                                                        <td>{{inicio.acuse_banco}}</td>
+                                                        <td>{{inicio.acuse_bArchivo}}</td>
+                                                        <td>{{inicio.acuse_bObservacion}}</td>
+                                                    </tr>
+                                                    {% endif %}
+                                                    <tr>
+                                                        <td>Acuse del Programa</td>
+                                                        <td>{{inicio.acuse_prog}}</td>
+                                                        <td>{{inicio.acuse_pArchivo}}</td>
+                                                        <td>{{inicio.acuse_pObservacion}}</td>
+                                                    </tr>
+                                                    {% if inicio.acuse_prog_anterior != 'No Aplica' %}
+                                                    <tr>
+                                                        <td>Acuse del Programa del Ciclo Anterior</td>
+                                                        <td>{{inicio.acuse_prog_anterior}}</td>
+                                                        <td>{{inicio.acuse_prog_aArchivo}}</td>
+                                                        <td>{{inicio.acuse_prog_aObservacion}}</td>
+                                                    </tr>
+                                                    {% endif %}
+                                                    {% if inicio.compromiso_inmueble != 'No Aplica' %}
+                                                    <tr>
+                                                        <td>Acta de Compromiso de Inmueble</td>
+                                                        <td>{{inicio.compromiso_inmueble}}</td>
+                                                        <td>{{inicio.compromiso_iArchivo}}</td>
+                                                        <td>{{inicio.compromiso_iObservacion}}</td>
+                                                    </tr>
+                                                    {% endif %}
+                                                    <tr>
+                                                        <td>Carta de Compromiso de la Comunidad Escolar</td>
+                                                        <td>{{inicio.compromiso_comunidad}}</td>
+                                                        <td>{{inicio.compromiso_cArchivo}}</td>
+                                                        <td>{{inicio.compromiso_cObservacion}}</td>
+                                                    </tr>
+                                                    {% if inicio.contrato != 'No Aplica' %}
+                                                    <tr>
+                                                        <td>Documento de Contrato</td>
+                                                        <td>{{inicio.contrato}}</td>
+                                                        <td>{{inicio.contratoArchivo}}</td>
+                                                        <td>{{inicio.contratoObservacion.}}</td>
+                                                    </tr>
+                                                    {% endif %}
+                                                    <tr>
+                                                        <td>Copia del INE del CEPSE</td>
+                                                        <td>{{inicio.ife_cepse}}</td>
+                                                        <td>{{inicio.ife_cArchivo}}</td>
+                                                        <td>{{inicio.ife_cObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Copia del INE del Director</td>
+                                                        <td>{{inicio.ife_plantel}}</td>
+                                                        <td>{{inicio.ife_pArchivo}}</td>
+                                                        <td>{{inicio.ife_pObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Acta de Comisión del Director</td>
+                                                        <td>{{inicio.comision_director}}</td>
+                                                        <td>{{inicio.comision_dArchivo}}</td>
+                                                        <td>{{inicio.comision_dObservacion}}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 ">
+                                            <label class="control-Title">Observaciones Generales</label>
+                                            <label class="control-Content">{{inicio.observacion}}</label>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <h4>Foto de la Fachada</h4>
+                                                <img src="{% static 'assets/img/logo.jpg'%}" alt="Raised Image"
+                                                     class="img-rounded img-responsive img-raised">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Seguimiento -->
+                                <div class="tab-pane" id="seguimiento">
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="col-sm-10 col-md-10">
+                                                <h4>Estatus: </h4><span
+                                                    class="label label-info">{{seguimiento.estatus}}</span>
+                                            </div>
+                                            <button type="button" class="btn btn-warning btn-fab btn-fab-mini btn-round"
+                                                    data-toggle="tooltip" data-placement="top"
+                                                    title="Agregar Información"
+                                                    data-container="body">
+                                                <i class="material-icons">border_color</i>
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-center col-sm-3">#</th>
+                                                        <th class="text-center col-sm-2">Estatus</th>
+                                                        <th class="text-center col-sm-3">Archivo</th>
+                                                        <th class="text-center col-sm-4">Observaciones</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>Acta de Seguimiento</td>
+                                                        <td>{{seguimiento.acta_seguimiento}}</td>
+                                                        <td>{{seguimiento.acta_sArchivo}}</td>
+                                                        <td>{{seguimiento.acta_sObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Supervición Técnica</td>
+                                                        <td>{{seguimiento.sup_tecnica}}</td>
+                                                        <td>{{seguimiento.sup_tArchivo}}</td>
+                                                        <td>{{seguimiento.sup_tObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Evidencia de Seguimiento</td>
+                                                        <td>{{seguimiento.evid_seguimiento}}</td>
+                                                        <td>{{seguimiento.evid_sArchivo}}</td>
+                                                        <td>{{seguimiento.evid_sObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Acta Circunstanciada</td>
+                                                        <td>{{seguimiento.acta_circunstanciada}}</td>
+                                                        <td>{{seguimiento.acta_cArchivo}}</td>
+                                                        <td>{{seguimientoacta_cObservacion.}}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 ">
+                                            <label class="control-Title">Observaciones Generales</label>
+                                            <label class="control-Content">{{seguimiento.observacion}}</label>
+                                        </div>
+                                        <p class="col-md-12"></p>
+                                        <p class="col-md-12"></p>
+                                        <p class="col-md-12"></p>
+                                        <p class="col-md-12"></p>
+                                    </div>
+                                </div>
+                                <!-- Cierre -->
+                                <div class="tab-pane" id="cierre">
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="col-sm-10 col-md-10">
+                                                <h4>Estatus: </h4><span
+                                                    class="label label-info">{{cierre.estatus}}</span>
+                                            </div>
+                                            <button type="button" class="btn btn-danger btn-fab btn-fab-mini btn-round"
+                                                    data-toggle="tooltip" data-placement="top"
+                                                    title="Agregar Información"
+                                                    data-container="body">
+                                                <i class="material-icons">border_color</i>
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-center col-sm-3">#</th>
+                                                        <th class="text-center col-sm-2">Estatus</th>
+                                                        <th class="text-center col-sm-3">Archivo</th>
+                                                        <th class="text-center col-sm-4">Observaciones</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>Acta de Cierre</td>
+                                                        <td>{{cierre.acta_cierre}}</td>
+                                                        <td>{{cierre.acta_cArchivo}}</td>
+                                                        <td>{{cierre.acta_cObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Acta de Entrega Recepción</td>
+                                                        <td>{{cierre.acta_entrega}}</td>
+                                                        <td>{{cierre.acta_eArchivo}}</td>
+                                                        <td>{{cierre.acta_eObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Acta de Rendición de Cuentas</td>
+                                                        <td>{{cierre.acta_rendicion}}</td>
+                                                        <td>{{cierre.acta_rArchivo}}</td>
+                                                        <td>{{cierre.acta_rObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Facturas</td>
+                                                        <td>{{cierre.facturas}}</td>
+                                                        <td>{{cierre.facturasArchivo}}</td>
+                                                        <td>{{cierre.facturasObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Ficha de Reintegro</td>
+                                                        <td>{{cierre.ficha_reintegro}}</td>
+                                                        <td>{{cierre.ficha_rArchivo}}</td>
+                                                        <td>{{cierre.ficha_rObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Formato de Inventario</td>
+                                                        <td>{{cierre.form_inventario}}</td>
+                                                        <td>{{cierre.form_iArchivo}}</td>
+                                                        <td>{{cierre.form_iObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Formato de Transferencia</td>
+                                                        <td>{{cierre.form_transferencia}}</td>
+                                                        <td>{{cierre.form_tArchivo}}</td>
+                                                        <td>{{cierre.form_tObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Evidencia de Obra Concluida</td>
+                                                        <td>{{cierre.evid_obra_concluida}}</td>
+                                                        <td>{{cierre.evid_obraArchivo}}</td>
+                                                        <td>{{cierre.evid_obraObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Evidencias de Compras</td>
+                                                        <td>{{cierre.evid_compras}}</td>
+                                                        <td>{{cierre.evid_cArchivo}}</td>
+                                                        <td>{{cierre.evid_cObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Registro de Gastos</td>
+                                                        <td>{{cierre.registro_gastos}}</td>
+                                                        <td>{{cierre.registro_gArchivo}}</td>
+                                                        <td>{{cierre.registro_gObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Resumen de Gastos</td>
+                                                        <td>{{cierre.resumen_gastos}}</td>
+                                                        <td>{{cierre.resumen_gArchivo}}</td>
+                                                        <td>{{cierre.resumen_gObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Verificacin SAT</td>
+                                                        <td>{{cierre.verificacion_sat}}</td>
+                                                        <td>{{cierre.verificacionArchivo}}</td>
+                                                        <td>{{cierre.verificacionObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>XML</td>
+                                                        <td>{{cierre.xml}}</td>
+                                                        <td>{{cierre.xmlArchivo}}</td>
+                                                        <td>{{cierre.xmlObservacion}}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 ">
+                                            <label class="control-Title">Observaciones Generales</label>
+                                            <label class="control-Content">{{cierre.observacion}}</label>
+                                        </div>
+                                        <p class="col-md-12"></p>
+                                        <p class="col-md-12"></p>
+                                        <p class="col-md-12"></p>
+                                        <p class="col-md-12"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fin Tab Inicio, Seguimiento y Cierre -->
+                    </div>
+
+                    <!-- Contraloria Social-->
+                    <div class="tab-pane" id="contraloria">
+                        <div class="header header-danger">
+                            <div class="nav-tabs-navigation">
+                                <div class="nav-tabs-wrapper">
+                                    <ul class="nav nav-tabs" data-tabs="tabs">
+                                        <li class="active">
+                                            <a href="#consti" role="tab" data-toggle="tab">Constitución</a>
+                                        </li>
+                                        <li>
+                                            <a href="#segui" role="tab" data-toggle="tab">Seguimiento</a>
+                                        </li>
+                                        <li>
+                                            <a href="#anual" role="tab" data-toggle="tab">Anual</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="tab-content text-center">
+                                <!-- Inicio -->
+                                <div class="tab-pane active" id="consti">
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="col-sm-10 col-md-10">
+                                                <h4>Estatus: </h4><span
+                                                    class="label label-info">{{contraloria.estatus}}</span>
+                                            </div>
+                                            <button type="button" class="btn btn-info"><i
+                                                    class="material-icons">edit</i>
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-center col-sm-3">#</th>
+                                                        <th class="text-center col-sm-2">Estatus</th>
+                                                        <th class="text-center col-sm-2">Descargar</th>
+                                                        <th class="text-center col-sm-3">Archivo</th>
+                                                        <th class="text-center col-sm-4">Observaciones</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>Acta Constitución</td>
+                                                        <td>{{const.actaC}}</td>
+                                                        <td>
+                                                            <button class="btn btn-primary btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="tooltip" data-placement="top"
+                                                                    title="Descargar formato"
+                                                                    data-container="body">
+                                                                <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn btn-primary btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="tooltip" data-placement="top"
+                                                                    title="Visualizar Archivo"
+                                                                    data-container="body">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn btn-primary btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="tooltip" data-placement="top"
+                                                                    title="Visualizar Observaciones"
+                                                                    data-container="body">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 ">
+                                            <label class="control-Title">Observaciones Generales</label>
+                                            <label class="control-Content">{{inicio.observacion}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--<div class="col-md-4">
+                            <span class="label label-default">Inicio</span>
+                            <div class="checkbox" align="left">
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Acta de
+                                    Constitución
+                                </label>
+                                <br>
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Minuta del Acta de
+                                    Constitución
+                                </label>
+                                <br>
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Lista de Asistencia
+                                </label>
+                                <br>
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Evidencias
+                                    Fotográficas
+                                </label>
+                                <br>
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>CD con Evidencias
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="label label-default">Seguimiento</span>
+                            <div class="checkbox" align="left">
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Cedula de
+                                    Seguimiento
+                                </label>
+                                <br>
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Minuta de la Cedula
+                                    de Seguimiento
+                                </label>
+                                <br>
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Lista de Asistencia
+                                </label>
+                                <br>
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Evidencias
+                                    Fotográficas
+                                </label>
+                                <br>
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>CD con Evidencias
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="label label-default">Cierre</span>
+                            <div class="checkbox" align="left">
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" disabled>Informe Anual
+                                </label>
+                                <br>
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" disabled>Minuta de la Informe Anual
+                                </label>
+                                <br>
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" disabled>Lista de Asistencia
+                                </label>
+                                <br>
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" disabled>Evidencias Fotográficas
+                                </label>
+                                <br>
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes" disabled>CD con Evidencias
+                                </label>
+                            </div>
+                        </div>
+                        <p class="col-md-12"></p>-->
+                    </div>
+
+                </div>
+            </div>
+            <!-- Fin Contenido -->
+        </div>
+        <!-- End Tabs with icons on Card -->
+    </div>
+</div>
+<script>
+window.onload = (function(){
+alert(randomColorChange());
+}
+
+</script>
+
+{% endblock %}

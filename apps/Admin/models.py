@@ -1,13 +1,14 @@
 from django.db import models
 
 comp  = (
-    ('1 - A Infraestructura','1 - A Infraestructura'),
-    ('2 - B Aut. Gest. Escolar', '2 - B Aut. Gest. Escolar'),
-    ('2 - C Eval. de Impacto','2 - C Eval. de Impacto')
+    #('1 - A Infraestructura','1 - A Infraestructura'),
+    #('2 - B Aut. Gest. Escolar', '2 - B Aut. Gest. Escolar'),
+    #('2 - C Eval. de Impacto','2 - C Eval. de Impacto')
+    ('2 - Aut. Gest. Escolar', '2 - Aut. Gest. Escolar'),
 )
 
 acciones = (
-    ('No Aplica','No Aplica'),
+    #('No Aplica','No Aplica'),
     ('Mayor', 'Mayor'),
     ('Menor','Menor'),
 )
@@ -107,78 +108,117 @@ class Directores (models.Model):
         ordering = ['nombre']
         verbose_name_plural = "Directores"
 
-class Contraloria_Social (models.Model):
-    #Constitucion
+class Constitucion (models.Model):
+    # Constitucion
     estatusC = models.CharField(max_length=20, choices=IC, default='Incompleto')
-    acta_constitucion = models.CharField(max_length=40, choices=DT, default=False)
-    acta_cArchivo = models.FileField(upload_to='Contraloria_S/Inicio/', blank=True, null=True)
-    acta_cObservacion = models.CharField(max_length=250, blank=True)
+    actaC = models.CharField(max_length=40, choices=DT, default=False)
+    acta_CArchivo = models.FileField(upload_to='Contraloria_S/Inicio/', blank=True, null=True)
+    acta_CObservacion = models.CharField(max_length=250, blank=True)
 
-    minuta_constitucion = models.CharField(max_length=40, choices=DT, default=False)
-    minuta_cArchivo = models.FileField(upload_to='Contraloria_S/Inicio/', blank=True, null=True)
-    minuta_cObservacion = models.CharField(max_length=250, blank=True)
+    minutaC = models.CharField(max_length=40, choices=DT, default=False)
+    minuta_CArchivo = models.FileField(upload_to='Contraloria_S/Inicio/', blank=True, null=True)
+    minuta_CObservacion = models.CharField(max_length=250, blank=True)
 
-    lista_constitucion = models.CharField(max_length=40, choices=DT, default=False)
-    lista_cArchivo = models.FileField(upload_to='Contraloria_S/Inicio/', blank=True, null=True)
-    lista_cObservacion = models.CharField(max_length=250, blank=True)
+    listaC = models.CharField(max_length=40, choices=DT, default=False)
+    lista_CArchivo = models.FileField(upload_to='Contraloria_S/Inicio/', blank=True, null=True)
+    lista_CObservacion = models.CharField(max_length=250, blank=True)
 
-    foto_constitucion = models.CharField(max_length=40, choices=DT, default=False)
-    foto_cArchivo = models.FileField(upload_to='Contraloria_S/Inicio/Fotos/', blank=True, null=True)
-    foto_cObservacion = models.CharField(max_length=250, blank=True)
+    fotoC = models.CharField(max_length=40, choices=DT, default=False)
+    foto_CArchivo = models.FileField(upload_to='Contraloria_S/Inicio/Fotos/', blank=True, null=True)
+    foto_CObservacion = models.CharField(max_length=250, blank=True)
 
-    cd_constitucion = models.CharField(max_length=10, choices=SN, default='No')
-    pdf_constitucion = models.FileField(upload_to='Contraloria_S/Inicio/', blank=True, null=True)
-
-    #Seguimiento
-    estatusS = models.CharField(max_length=20, choices=IC, default='Incompleto')
-    acta_seguimiento = models.CharField(max_length=40, choices=DT, default=False)
-    acta_sArchivo = models.FileField(upload_to='Contraloria_S/Seguimiento/', blank=True, null=True)
-    acta_sObservacion = models.CharField(max_length=250, blank=True)
-
-    minuta_seguimiento = models.CharField(max_length=40, choices=DT, default=False)
-    minuta_sArchivo = models.FileField(upload_to='Contraloria_S/Seguimiento/', blank=True, null=True)
-    minuta_sObservacion = models.CharField(max_length=250, blank=True)
-
-    lista_seguimiento = models.CharField(max_length=40, choices=DT, default=False)
-    lista_sArchivo = models.FileField(upload_to='Contraloria_S/Seguimiento/', blank=True, null=True)
-    lista_sObservacion = models.CharField(max_length=250, blank=True)
-
-    foto_seguimiento= models.CharField(max_length=40, choices=DT, default=False)
-    foto_sArchivo = models.FileField(upload_to='Contraloria_S/Seguimiento/Fotos/', blank=True, null=True)
-    foto_sObservacion = models.CharField(max_length=250, blank=True)
-
-    cd_seguimiento = models.CharField(max_length=10, choices=SN, default='No')
-    pdf_seguimiento = models.FileField(upload_to='Contraloria_S/Seguimiento/', blank=True, null=True)
-
-    #Anual
-    estatusA = models.CharField(max_length=20, choices=IC, default='Incompleto')
-    acta_anual =models.CharField(max_length=40, choices=DT, default=False)
-    acta_aArchivo = models.FileField(upload_to='Contraloria_S/Anual/', blank=True, null=True)
-    acta_aObservacion = models.CharField(max_length=250, blank=True)
-
-    minuta_anual  = models.CharField(max_length=40, choices=DT, default=False)
-    minuta_aArchivo = models.FileField(upload_to='Contraloria_S/Anual/', blank=True, null=True)
-    minuta_aObservacion = models.CharField(max_length=250, blank=True)
-
-    lista_anual = models.CharField(max_length=40, choices=DT, default=False)
-    lista_aArchivo = models.FileField(upload_to='Contraloria_S/Anual/', blank=True, null=True)
-    lista_aObservacion = models.CharField(max_length=250, blank=True)
-
-    foto_anual = models.CharField(max_length=40, choices=DT, default=False)
-    foto_aArchivo = models.FileField(upload_to='Contraloria_S/Anual/Fotos/', blank=True, null=True)
-    foto_aObservacion = models.CharField(max_length=250, blank=True)
-
-    cd_anual = models.CharField(max_length=10, choices=SN, default='No')
-    pdf_anual = models.FileField(upload_to='Contraloria_S/Anual/',blank=True, null=True)
-
-    observacion = models.TextField(default=sinOb)
-    actualizacion = models.DateTimeField(auto_now_add=True)
+    cdC = models.CharField(max_length=10, choices=SN, default='No')
+    pdfC = models.FileField(upload_to='Contraloria_S/Inicio/', blank=True, null=True)
+    observacionC = models.TextField(default=sinOb)
 
     def __unicode__(self):
-        return 'Actualización de Contraloria Social - '+self.estatusC
+        return 'Actualización de Contraloria Social - Constitución - '+self.estatusC
 
     def __str__(self):
         return '%s' % (self.estatusC)
+
+    class Meta:
+        ordering = ['estatusC']
+        verbose_name_plural = "Contraloria Social - Constitución"
+
+class Cedula(models.Model):
+    # Seguimiento
+    estatusCe = models.CharField(max_length=20, choices=IC, default='Incompleto')
+    actaCe = models.CharField(max_length=40, choices=DT, default=False)
+    acta_CeArchivo = models.FileField(upload_to='Contraloria_S/Seguimiento/', blank=True, null=True)
+    acta_CeObservacion = models.CharField(max_length=250, blank=True)
+
+    minutaCe = models.CharField(max_length=40, choices=DT, default=False)
+    minuta_CeArchivo = models.FileField(upload_to='Contraloria_S/Seguimiento/', blank=True, null=True)
+    minuta_CeObservacion = models.CharField(max_length=250, blank=True)
+
+    listaCe = models.CharField(max_length=40, choices=DT, default=False)
+    lista_CeArchivo = models.FileField(upload_to='Contraloria_S/Seguimiento/', blank=True, null=True)
+    lista_CeObservacion = models.CharField(max_length=250, blank=True)
+
+    fotoCe = models.CharField(max_length=40, choices=DT, default=False)
+    foto_CeArchivo = models.FileField(upload_to='Contraloria_S/Seguimiento/Fotos/', blank=True, null=True)
+    foto_CeObservacion = models.CharField(max_length=250, blank=True)
+
+    cdCe = models.CharField(max_length=10, choices=SN, default='No')
+    pdfCe = models.FileField(upload_to='Contraloria_S/Seguimiento/', blank=True, null=True)
+    observacionCe = models.TextField(default=sinOb)
+
+    def __unicode__(self):
+        return 'Actualización de Contraloria Social - Cedula - '+self.estatusCe
+
+    def __str__(self):
+        return '%s' % (self.estatusCe)
+
+    class Meta:
+        ordering = ['estatusCe']
+        verbose_name_plural = "Contraloria Social - Cedula"
+
+
+class Anual(models.Model):
+    # Anual
+    estatusA = models.CharField(max_length=20, choices=IC, default='Incompleto')
+    actaA = models.CharField(max_length=40, choices=DT, default=False)
+    acta_AArchivo = models.FileField(upload_to='Contraloria_S/Anual/', blank=True, null=True)
+    acta_AObservacion = models.CharField(max_length=250, blank=True)
+
+    minutaA = models.CharField(max_length=40, choices=DT, default=False)
+    minuta_AArchivo = models.FileField(upload_to='Contraloria_S/Anual/', blank=True, null=True)
+    minuta_AObservacion = models.CharField(max_length=250, blank=True)
+
+    listaA = models.CharField(max_length=40, choices=DT, default=False)
+    lista_AArchivo = models.FileField(upload_to='Contraloria_S/Anual/', blank=True, null=True)
+    lista_AObservacion = models.CharField(max_length=250, blank=True)
+
+    fotoA = models.CharField(max_length=40, choices=DT, default=False)
+    foto_AArchivo = models.FileField(upload_to='Contraloria_S/Anual/Fotos/', blank=True, null=True)
+    foto_AObservacion = models.CharField(max_length=250, blank=True)
+
+    cdA = models.CharField(max_length=10, choices=SN, default='No')
+    pdfA = models.FileField(upload_to='Contraloria_S/Anual/', blank=True, null=True)
+    observacionA = models.TextField(default=sinOb)
+
+    def __unicode__(self):
+        return 'Actualización de Contraloria Social - Anual - '+self.estatusA
+
+    def __str__(self):
+        return '%s' % (self.estatusA)
+
+    class Meta:
+        ordering = ['estatusA']
+        verbose_name_plural = "Contraloria Social - Anual"
+
+class Contraloria_Social (models.Model):
+    constitucion = models.ForeignKey(Constitucion, on_delete=False)
+    cedula = models.ForeignKey(Cedula, on_delete=False)
+    anual = models.ForeignKey(Anual, on_delete=False)
+    actualizacion = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return 'Actualización de Contraloria Social - '+self.constitucion
+
+    def __str__(self):
+        return '%s' % (self.constitucion)
 
     class Meta:
         ordering = ['actualizacion']
@@ -199,7 +239,7 @@ class InicioS (models.Model):
     acta_pArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
     acta_pObservacion = models.CharField(max_length=250,blank=True)
 
-    acuse_banco = models.CharField(max_length=25, choices=acciones, default='No Aplica')
+    acuse_banco = models.CharField(max_length=25, choices=DTN, default='No Aplica')
     acuse_bArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
     acuse_bObservacion = models.CharField(max_length=250,blank=True)
 
@@ -207,11 +247,11 @@ class InicioS (models.Model):
     acuse_pArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
     acuse_pObservacion = models.CharField(max_length=250,blank=True)
 
-    acuse_prog_anterior = models.CharField(max_length=25, choices=acciones, default='No Aplica')
+    acuse_prog_anterior = models.CharField(max_length=25, choices=DTN, default='No Aplica')
     acuse_prog_aArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
     acuse_prog_aObservacion = models.CharField(max_length=250,blank=True)
 
-    compromiso_inmueble = models.CharField(max_length=25, choices=acciones, default='No Aplica')
+    compromiso_inmueble = models.CharField(max_length=25, choices=DT, default='No Aplica')
     compromiso_iArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
     compromiso_iObservacion = models.CharField(max_length=250,blank=True)
 
@@ -354,9 +394,9 @@ class Escuelas (models.Model):
     cct = models.CharField(max_length=11, verbose_name='C.C.T', )
     nombre = models.CharField(max_length=250, verbose_name='Nombre de la Escuela')
     nivel = models.CharField(max_length=50, choices=nivelE,verbose_name='Nivel Educativo')
-    componente = models.CharField(max_length=50, choices=comp, default='2 - B Aut. Gest. Escolar', verbose_name='Componente')
-    accion = models.CharField(max_length=25,choices=acciones, default='No Aplica',verbose_name='Accion')
-    cambio_comp = models.CharField(max_length=25,default='No', choices=SN, verbose_name='Cambio de Componente')
+    componente = models.CharField(max_length=50, choices=comp, default='2 - Aut. Gest. Escolar', verbose_name='Componente')
+    accion = models.CharField(max_length=25,choices=acciones, default='Menor',verbose_name='Accion')
+    cambio_accion = models.CharField(max_length=25, default='No', choices=SN, verbose_name='Cambio de Acción')
     ciclo_esc = models.CharField(max_length=100,default="2017-2018")
     municipio = models.CharField(max_length=50,choices=Municipios)
     localidad = models.CharField(max_length=250)

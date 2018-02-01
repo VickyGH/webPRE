@@ -27,7 +27,7 @@ from apps.Admin import views
 urlpatterns = [
     path('Serendipia/', admin.site.urls),
     path('Admin/', include('apps.Admin.urls', namespace="Admin")),
-    path('Director/', include('apps.Director.urls', namespace='Direc')),
+    path('Director/', include('apps.Director.urls', namespace='Director')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG is True:

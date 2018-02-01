@@ -46,7 +46,7 @@ class EscuelaAdmin(admin.ModelAdmin):
               'nivel',
               'componente',
               'accion',
-              'cambio_comp',
+              'cambio_accion',
               'director',
               'ciclo_esc',
               'municipio',
@@ -61,70 +61,85 @@ class EscuelaAdmin(admin.ModelAdmin):
 class DirectoresAdmin (admin.ModelAdmin):
     fields = ['nombre','a_paterno','a_materno','telefono']
 
+
+class ConstitucionAdmin (admin.ModelAdmin):
+    fields = [
+        'estatusC',
+        'actaC',
+        'acta_ArchivoC',
+        'acta_ObservacionC',
+
+        'minutaC',
+        'minuta_CArchivo',
+        'minuta_CObservacion',
+
+        'listaC',
+        'lista_CArchivo',
+        'lista_CObservacion',
+
+        'fotoC',
+        'foto_CArchivo',
+        'foto_CObservacion',
+
+        'cdC',
+        'pdfC',
+        'observacionC'
+    ]
+
+class CedulaAdmin (admin.ModelAdmin):
+    fields = [
+        'estatusCe',
+        'actaCe',
+        'acta_ArchivoCe',
+        'acta_ObservacionCe',
+
+        'minutaCe',
+        'minuta_ArchivoCe',
+        'minuta_ObservacionCe',
+
+        'listaCe',
+        'lista_ArchivoCe',
+        'lista_ObservacionCe',
+
+        'fotoCe',
+        'foto_ArchivoCe',
+        'foto_ObservacionCe',
+
+        'cdCe',
+        'pdfCe',
+        'observacionCe'
+    ]
+
+class AnualAdmin (admin.ModelAdmin):
+    fields = [
+        'estatusA',
+        'actaA',
+        'acta_AArchivo',
+        'acta_AObservacion',
+
+        'minutaA',
+        'minuta_AArchivo',
+        'minuta_AObservacion',
+
+        'listaA',
+        'lista_AArchivo',
+        'lista_AObservacion',
+
+        'fotoA',
+        'foto_AArchivo',
+        'foto_AObservacion',
+
+        'cdA',
+        'pdfA',
+        'observacionA'
+    ]
+
+
 class Contraloria_SocialAdmin (admin.ModelAdmin):
     fields = [
-            'estatusC',
-            'acta_constitucion',
-            'acta_cArchivo',
-            'acta_cObservacion',
-
-
-            'minuta_constitucion',
-            'minuta_cArchivo',
-            'minuta_cObservacion',
-
-            'lista_constitucion',
-            'lista_cArchivo',
-            'lista_cObservacion',
-
-            'foto_constitucion',
-            'foto_cArchivo',
-            'foto_cObservacion',
-
-            'cd_constitucion',
-            'pdf_constitucion',
-
-            'estatusS',
-            'acta_seguimiento',
-            'acta_sArchivo',
-            'acta_sObservacion',
-
-            'minuta_seguimiento',
-            'minuta_sArchivo',
-            'minuta_sObservacion',
-
-            'lista_seguimiento',
-            'lista_sArchivo',
-            'lista_sObservacion',
-
-            'foto_seguimiento',
-            'foto_sArchivo',
-            'foto_sObservacion',
-
-            'cd_seguimiento',
-            'pdf_seguimiento',
-
-            'estatusA',
-            'acta_anual',
-            'acta_aArchivo',
-            'acta_aObservacion',
-
-            'minuta_anual',
-            'minuta_aArchivo',
-            'minuta_aObservacion',
-
-            'lista_anual',
-            'lista_aArchivo',
-            'lista_aObservacion',
-
-            'foto_anual',
-            'foto_aArchivo',
-            'foto_aObservacion',
-
-            'cd_anual',
-            'pdf_anual',
-
-            'observacion'
+            'constitucion',
+            'cedula',
+            'anual'
               ]
 
 class InicioSAdmin (admin.ModelAdmin):
@@ -252,10 +267,14 @@ class SupervisoresAdmin(admin.ModelAdmin):
 admin.site.register(Fechas_Finales,Fechas_FinalesAdmin)
 admin.site.register(Escuelas,EscuelaAdmin)
 admin.site.register(Directores,DirectoresAdmin)
-admin.site.register(Contraloria_Social,Contraloria_SocialAdmin)
-admin.site.register(SISPRE,SISPREAdmin)
 admin.site.register(Supervisores,SupervisoresAdmin)
+
+admin.site.register(Constitucion,ConstitucionAdmin)
+admin.site.register(Cedula,CedulaAdmin)
+admin.site.register(Anual,AnualAdmin)
+admin.site.register(Contraloria_Social,Contraloria_SocialAdmin)
 
 admin.site.register(InicioS,InicioSAdmin)
 admin.site.register(SeguimientoS,SeguimientoAdmin)
 admin.site.register(CierreS,CierreSAdmin)
+admin.site.register(SISPRE,SISPREAdmin)

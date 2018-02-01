@@ -7,20 +7,19 @@ from django.urls import reverse_lazy, reverse
 
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
-from apps.Admin.models import Escuelas
-from apps.Admin.views import Inicio
+from apps.Admin.models import Escuelas, SISPRE, InicioS, SeguimientoS, CierreS, Contraloria_Social, Constitucion, \
+    Cedula, Anual
 
-from .models import *
 
 # Create your views here.
 
-class InicioSesion(FormView):
+class InicioSesionDir(FormView):
     # Establecemos la plantilla a utilizar
     template_name = 'Admin/InicioSesion.html'
     # Le indicamos que el formulario a utilizar es el formulario de autenticación de Django
     form_class = AuthenticationForm
     # Le decimos que cuando se haya completado exitosamente la operación nos redireccione a la url bienvenida de la aplicación personas
-    success_url = reverse_lazy('Direc:Inicio')
+    success_url = reverse_lazy('Director:InicioD')
 
     def dispatch(self, request, *args, **kwargs):
         # Si el usuario está autenticado entonces nos direcciona a la url establecida en success_url
@@ -28,11 +27,11 @@ class InicioSesion(FormView):
             return HttpResponseRedirect(self.get_success_url())
         # Sino lo está entonces nos muestra la plantilla del login simplemente
         else:
-            return super(InicioSesion, self).dispatch(request, *args, **kwargs)
+            return super(InicioSesionDir, self).dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
         login(self.request, form.get_user())
-        return super(InicioSesion, self).form_valid(form)
+        return super(InicioSesionDir, self).form_valid(form)
 
 def InicioDir(request):
     data_user = get_object_or_404(User, id=request.user.id)
@@ -40,12 +39,24 @@ def InicioDir(request):
     if data_user.perfil.escuela != None:
         id = data_user.perfil.escuela.id
         data_escuela = get_object_or_404(Escuelas, pk=id)
-        data_sispre =   get_object_or_404(Escuelas, pk=data_escuela.sispre.id)
-        data_contra =   get_object_or_404(Escuelas, pk=data_escuela.contraloria_s.id)
+        data_sispre =   get_object_or_404(SISPRE, pk=data_escuela.sispre.id)
+        data_contra =   get_object_or_404(Contraloria_Social, pk=data_escuela.contraloria_s.id)
+
+        inicio = get_object_or_404(InicioS, pk=data_sispre.inicio.id)
+        seguimiento = get_object_or_404(SeguimientoS, pk=data_sispre.seguimiento.id)
+        cierre = get_object_or_404(CierreS, pk=data_sispre.cierre.id)
+
+        const = get_object_or_404(Constitucion, pk=data_contra.constitucion.id)
+        cedula = get_object_or_404(Cedula, pk=data_contra.cedula.id)
+        anual = get_object_or_404(Anual, pk=data_contra.anual.id)
 
         return render(request, 'Director/Inicio.html',
                   {'escuela': data_escuela,
-                   'sispre': data_sispre,
-                   'contraloria':data_contra})
+                   'inicio':inicio,
+                   'seguimiento': seguimiento,
+                   'cierre': cierre,
+                   'const':const,
+                   'cedula':cedula,
+                   'anual':anual})
     else :
         return render(request, 'Director/NoData.html')
