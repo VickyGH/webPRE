@@ -2,6 +2,28 @@
 {% block title %}Inicio{% endblock %}
 {% block content %}
 {% load staticfiles %}
+<!-- Sart Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					<i class="material-icons">clear</i>
+				</button>
+				<h4 class="modal-title">Modal title</h4>
+			</div>
+			<div class="modal-body">
+				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
+				</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default btn-simple">Nice Button</button>
+				<button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--  End Modal -->
 <div class="section section-tabs">
     <div class="container">
         <!-- Tabla con los datos de la escuela -->
@@ -126,16 +148,43 @@
                                                     <tr>
                                                         <th class="text-center col-sm-3">#</th>
                                                         <th class="text-center col-sm-2">Estatus</th>
-                                                        <th class="text-center col-sm-3">Archivo</th>
-                                                        <th class="text-center col-sm-4">Observaciones</th>
+                                                        <th class="text-center col-sm-2" >
+                                                            <span data-toggle="tooltip" data-placement="top" title="Descargar los formatos"
+                                                                    data-container="body">Formatos</span>
+                                                        </th>
+                                                        <th class="text-center col-sm-3">
+                                                            <span data-toggle="tooltip" data-placement="top" title="Visualizar archivo"
+                                                                  data-container="body">Archivo</span>
+                                                        </th>
+                                                        <th class="text-center col-sm-3">
+                                                            <span data-toggle="tooltip" data-placement="top" title="Visualizar las observaciones"
+                                                                  data-container="body">Observaciones</span>
+                                                        </th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
                                                     <tr>
                                                         <td>Acta de Acuerdo Mancomunado</td>
                                                         <td>{{inicio.acta_mancomunado}}</td>
-                                                        <td>{{inicio.acta_mArchivo}}</td>
-                                                        <td>{{inicio.acta_mObservacion}}</td>
+                                                        <td>
+                                                            <button class="btn btn-primary btn-fab btn-fab-mini btn-round">
+                                                                <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-primary btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal" data-whatever="Archivo"
+                                                            data-datas="{{inicio.acta_mArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-primary btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal" data-whatever="Observaciones"
+                                                            data-datas="{{inicio.acta_mObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>Constancia de CEPSE</td>
@@ -503,88 +552,7 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!--<div class="col-md-4">
-                            <span class="label label-default">Inicio</span>
-                            <div class="checkbox" align="left">
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Acta de
-                                    Constitución
-                                </label>
-                                <br>
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Minuta del Acta de
-                                    Constitución
-                                </label>
-                                <br>
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Lista de Asistencia
-                                </label>
-                                <br>
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Evidencias
-                                    Fotográficas
-                                </label>
-                                <br>
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>CD con Evidencias
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <span class="label label-default">Seguimiento</span>
-                            <div class="checkbox" align="left">
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Cedula de
-                                    Seguimiento
-                                </label>
-                                <br>
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Minuta de la Cedula
-                                    de Seguimiento
-                                </label>
-                                <br>
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Lista de Asistencia
-                                </label>
-                                <br>
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>Evidencias
-                                    Fotográficas
-                                </label>
-                                <br>
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled checked>CD con Evidencias
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <span class="label label-default">Cierre</span>
-                            <div class="checkbox" align="left">
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled>Informe Anual
-                                </label>
-                                <br>
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled>Minuta de la Informe Anual
-                                </label>
-                                <br>
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled>Lista de Asistencia
-                                </label>
-                                <br>
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled>Evidencias Fotográficas
-                                </label>
-                                <br>
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes" disabled>CD con Evidencias
-                                </label>
-                            </div>
-                        </div>
-                        <p class="col-md-12"></p>-->
                     </div>
-
                 </div>
             </div>
             <!-- Fin Contenido -->

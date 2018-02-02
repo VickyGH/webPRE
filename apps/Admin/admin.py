@@ -66,8 +66,8 @@ class ConstitucionAdmin (admin.ModelAdmin):
     fields = [
         'estatusC',
         'actaC',
-        'acta_ArchivoC',
-        'acta_ObservacionC',
+        'acta_CArchivo',
+        'acta_CObservacion',
 
         'minutaC',
         'minuta_CArchivo',
@@ -90,20 +90,20 @@ class CedulaAdmin (admin.ModelAdmin):
     fields = [
         'estatusCe',
         'actaCe',
-        'acta_ArchivoCe',
-        'acta_ObservacionCe',
+        'acta_CeArchivo',
+        'acta_CeObservacion',
 
         'minutaCe',
-        'minuta_ArchivoCe',
-        'minuta_ObservacionCe',
+        'minuta_CeArchivo',
+        'minuta_CeObservacion',
 
         'listaCe',
-        'lista_ArchivoCe',
-        'lista_ObservacionCe',
+        'lista_CeArchivo',
+        'lista_CeObservacion',
 
         'fotoCe',
-        'foto_ArchivoCe',
-        'foto_ObservacionCe',
+        'foto_CeArchivo',
+        'foto_CeObservacion',
 
         'cdCe',
         'pdfCe',
