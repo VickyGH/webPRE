@@ -62,29 +62,29 @@ def Sispre(request, pk):
     fecha = get_object_or_404(Fechas_Finales, pk=1)
 
     data_inicio = get_object_or_404(InicioS, pk=data_sispre.inicio.id)
-    data_seg = get_object_or_404(SeguimientoS, pk=data_sispre.seguimiento.id)
-    data_cierre = get_object_or_404(SeguimientoS, pk=data_sispre.cierre.id)
+    #data_seg = get_object_or_404(SeguimientoS, pk=data_sispre.seguimiento.id)
+    data_cierre = get_object_or_404(CierreS, pk=data_sispre.cierre.id)
 
     if request.method == "POST":
         form = InicioSForm(request.POST, instance=data_inicio)
-        formS = SeguimientoForm(request.POST, instance=data_seg)
+        #formS = SeguimientoForm(request.POST, instance=data_seg)
         formC = CierreForm(request.POST, instance=data_cierre)
-        if all([form.is_valid(), formS.is_valid(), formC.is_valid()]):
+        if all([form.is_valid(), formC.is_valid()]):
         #if form.is_valid():
             data_inicio = form.save(commit=False)
             data_inicio.save()
-            data_seg = formS.save(commit=False)
-            data_seg.save()
+            #data_seg = formS.save(commit=False)
+            #data_seg.save()
             data_cierre = formC.save(commit=False)
             data_cierre.save()
             return redirect('Admin:Inicio')
     else:
         form = InicioSForm(instance=data_inicio)
-        formS = SeguimientoForm(instance=data_seg)
+        #formS = SeguimientoForm(instance=data_seg)
         formC = CierreForm(instance = data_cierre)
     return render(request, 'Admin/SiSPRE.html',
                   {'formI': form,
-                   'formS':formS,
+                   #'formS':formS,
                    'formC':formC,
                    'escuela':data_escuela,
                    'sispre':data_sispre,

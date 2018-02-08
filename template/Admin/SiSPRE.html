@@ -98,8 +98,8 @@
                                 <div class="new-update clearfix">
                                     <div class="span12">
                                         <div class="span6">
-                                            <span class="s1">{{ formI.estatus.label }}</span>
-                                            {{ formI.estatus }}
+                                            <span class="s1">{{ formI.estatusInicioS.label }}</span>
+                                            {{ formI.estatusInicioS }}
                                         </div>
                                     </div>
                                 </div>
@@ -116,16 +116,28 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
+                                                    <td><span class="s1">{{ formI.compromiso_comunidad.label }}</span></td>
+                                                    <td>{{ formI.compromiso_comunidad }}</td>
+                                                    <td>{{ formI.compromiso_cArchivo }}</td>
+                                                    <td>{{ formI.compromiso_cObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formI.compromiso_inmueble.label }}</span></td>
+                                                    <td>{{ formI.compromiso_inmueble }}</td>
+                                                    <td>{{ formI.compromiso_iArchivo }}</td>
+                                                    <td>{{ formI.compromiso_iObservacion }}</td>
+                                                </tr>
+                                                <tr>
                                                     <td><span class="s1">{{ formI.acta_mancomunado.label }}</span></td>
                                                     <td>{{ formI.acta_mancomunado }}</td>
                                                     <td>{{ formI.acta_mArchivo }}</td>
                                                     <td>{{ formI.acta_mObservacion }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="s1">{{ formI.constancia_cepse.label }}</span></td>
-                                                    <td>{{ formI.constancia_cepse }}</td>
-                                                    <td>{{ formI.constancia_cArchivo }}</td>
-                                                    <td>{{ formI.constancia_cObservacion }}</td>
+                                                    <td><span class="s1">{{ formI.registro_asignado.label }}</span></td>
+                                                    <td>{{ formI.registro_asignado }}</td>
+                                                    <td>{{ formI.registro_aArchivo }}</td>
+                                                    <td>{{ formI.registro_aObservacion }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td><span class="s1">{{ formI.acta_planeacion.label }}</span></td>
@@ -151,18 +163,8 @@
                                                     <td>{{ formI.acuse_prog_aArchivo }}</td>
                                                     <td>{{ formI.acuse_prog_aObservacion }}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td><span class="s1">{{ formI.compromiso_inmueble.label }}</span></td>
-                                                    <td>{{ formI.compromiso_inmueble }}</td>
-                                                    <td>{{ formI.compromiso_iArchivo }}</td>
-                                                    <td>{{ formI.compromiso_iObservacion }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="s1">{{ formI.compromiso_comunidad.label }}</span></td>
-                                                    <td>{{ formI.compromiso_comunidad }}</td>
-                                                    <td>{{ formI.compromiso_cArchivo }}</td>
-                                                    <td>{{ formI.compromiso_cObservacion }}</td>
-                                                </tr>
+
+
                                                 <tr>
                                                     <td><span class="s1">{{ formI.contrato.label }}</span></td>
                                                     <td>{{ formI.contrato }}</td>
@@ -174,6 +176,12 @@
                                                     <td>{{ formI.ife_cepse }}</td>
                                                     <td>{{ formI.ife_cArchivo }}</td>
                                                     <td>{{ formI.ife_cObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formI.constancia_cepse.label }}</span></td>
+                                                    <td>{{ formI.constancia_cepse }}</td>
+                                                    <td>{{ formI.constancia_cArchivo }}</td>
+                                                    <td>{{ formI.constancia_cObservacion }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td><span class="s1">{{ formI.ife_plantel.label }}</span></td>
@@ -211,6 +219,7 @@
                         </div>
                     </div>
                 </div>
+                <!--
                 <div class="new-update clearfix">
                     <div class="control-group">
                         <div class="widget-box">
@@ -295,6 +304,7 @@
                         </div>
                     </div>
                 </div>
+                -->
                 <div class="new-update clearfix">
                     <div class="control-group">
                         <div class="widget-box">
@@ -321,8 +331,8 @@
                                 <div class="new-update clearfix">
                                     <div class="span12">
                                         <div class="span6">
-                                            <span class="s1">{{ formC.estatus.label }}</span>
-                                            {{ formC.estatus }}
+                                            <span class="s1">{{ formC.estatusCierreS.label }}</span>
+                                            {{ formC.estatusCierreS }}
                                         </div>
                                     </div>
                                 </div>
@@ -343,6 +353,12 @@
                                                     <td>{{ formC.acta_cierre }}</td>
                                                     <td>{{ formC.acta_cArchivo }}</td>
                                                     <td>{{ formC.acta_cObservacion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="s1">{{ formC.registro_gastos.label }}</span></td>
+                                                    <td>{{ formC.registro_gastos }}</td>
+                                                    <td>{{ formC.registro_gArchivo }}</td>
+                                                    <td>{{ formC.registro_gObservacion }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td><span class="s1">{{ formC.acta_entrega.label }}</span></td>
@@ -392,18 +408,7 @@
                                                     <td>{{ formC.evid_cArchivo }}</td>
                                                     <td>{{ formC.evid_cObservacion }}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td><span class="s1">{{ formC.registro_gastos.label }}</span></td>
-                                                    <td>{{ formC.registro_gastos }}</td>
-                                                    <td>{{ formC.registro_gArchivo }}</td>
-                                                    <td>{{ formC.registro_gObservacion }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="s1">{{ formC.resumen_gastos.label }}</span></td>
-                                                    <td>{{ formC.resumen_gastos }}</td>
-                                                    <td>{{ formC.resumen_gArchivo }}</td>
-                                                    <td>{{ formC.resumen_gObservacion }}</td>
-                                                </tr>
+
                                                 <tr>
                                                     <td><span class="s1">{{ formC.verificacion_sat.label }}</span></td>
                                                     <td>{{ formC.verificacion_sat }}</td>
@@ -423,8 +428,8 @@
                                 <div class="new-update clearfix">
                                     <div class="span12">
                                         <div class="span6">
-                                            <span class="s1">{{ formC.observacion.label }}</span>
-                                            {{ formC.observacion }}
+                                            <span class="s1">{{ formC.observacionCierre.label }}</span>
+                                            {{ formC.observacionCierre }}
                                         </div>
                                     </div>
                                 </div>

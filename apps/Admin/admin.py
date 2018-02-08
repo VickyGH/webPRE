@@ -3,14 +3,15 @@ from django.contrib import admin
 from .models import *
 
 # Register your models here.
-#from django.contrib.auth.admin import UserAdmin
-#admin.site.register(User, UserAdmin)
+# from django.contrib.auth.admin import UserAdmin
+# admin.site.register(User, UserAdmin)
 
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 
 from .models import Perfil
+
 
 class PerfilInline(admin.StackedInline):
     model = Perfil
@@ -19,8 +20,10 @@ class PerfilInline(admin.StackedInline):
     fk_name = 'user'
     list = ['admin']
 
+
 class CustomUserAdmin(UserAdmin):
-    inlines = (PerfilInline, )
+    inlines = (PerfilInline,)
+
     def get_inline_instances(self, request, obj=None):
         if not obj:
             return list()
@@ -30,7 +33,8 @@ class CustomUserAdmin(UserAdmin):
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
 
-class Fechas_FinalesAdmin (admin.ModelAdmin):
+
+class Fechas_FinalesAdmin(admin.ModelAdmin):
     fields = [
         'fecha_inicio',
         'fecha_seguimiento',
@@ -39,6 +43,27 @@ class Fechas_FinalesAdmin (admin.ModelAdmin):
         'fecha_seguimientoC',
         'fecha_anual'
     ]
+
+
+class DocumentosAdmin(admin.ModelAdmin):
+    fields = [
+        'acta_mancomunado',
+        'constancia_cepse',
+        'acta_planeacion',
+        'acuse_prog',
+        'compromiso_inmueble',
+        'compromiso_comunidad',
+        'contrato',
+        'acta_cierre',
+        'acta_entrega',
+        'acta_rendicion',
+        'ficha_reintegro',
+        'form_inventario',
+        'form_transferencia',
+        'registro_gastos',
+        'verificacion_sat'
+    ]
+
 
 class EscuelaAdmin(admin.ModelAdmin):
     fields = ['cct',
@@ -55,14 +80,15 @@ class EscuelaAdmin(admin.ModelAdmin):
               'monto_ejercido',
               'sispre',
               'contraloria_s',
-              #'observacion'
-    ]
-
-class DirectoresAdmin (admin.ModelAdmin):
-    fields = ['nombre','a_paterno','a_materno','telefono']
+              # 'observacion'
+              ]
 
 
-class ConstitucionAdmin (admin.ModelAdmin):
+class DirectoresAdmin(admin.ModelAdmin):
+    fields = ['nombre', 'a_paterno', 'a_materno', 'telefono']
+
+
+class ConstitucionAdmin(admin.ModelAdmin):
     fields = [
         'estatusC',
         'actaC',
@@ -86,7 +112,8 @@ class ConstitucionAdmin (admin.ModelAdmin):
         'observacionC'
     ]
 
-class CedulaAdmin (admin.ModelAdmin):
+
+class CedulaAdmin(admin.ModelAdmin):
     fields = [
         'estatusCe',
         'actaCe',
@@ -110,7 +137,8 @@ class CedulaAdmin (admin.ModelAdmin):
         'observacionCe'
     ]
 
-class AnualAdmin (admin.ModelAdmin):
+
+class AnualAdmin(admin.ModelAdmin):
     fields = [
         'estatusA',
         'actaA',
@@ -135,53 +163,59 @@ class AnualAdmin (admin.ModelAdmin):
     ]
 
 
-class Contraloria_SocialAdmin (admin.ModelAdmin):
+class Contraloria_SocialAdmin(admin.ModelAdmin):
     fields = [
-            'constitucion',
-            'cedula',
-            'anual'
-              ]
+        'constitucion',
+        'cedula',
+        'anual'
+    ]
 
-class InicioSAdmin (admin.ModelAdmin):
-    fields = ['estatus',
-              'acta_mancomunado',
-              'acta_mArchivo',
-              'acta_mObservacion',
-              'constancia_cepse',
-              'constancia_cArchivo',
-              'constancia_cObservacion',
-              'acta_planeacion',
-              'acta_pArchivo',
-              'acta_pObservacion',
-              'acuse_banco',
-              'acuse_bArchivo',
-              'acuse_bObservacion',
-              'acuse_prog',
-              'acuse_pArchivo',
-              'acuse_pObservacion',
-              'acuse_prog_anterior',
-              'acuse_prog_aArchivo',
-              'acuse_prog_aObservacion',
-              'compromiso_inmueble',
-              'compromiso_iArchivo',
-              'compromiso_iObservacion',
-              'compromiso_comunidad',
-              'compromiso_cArchivo',
-              'compromiso_cObservacion',
-              'contrato',
-              'contratoArchivo',
-              'contratoObservacion',
-              'ife_cepse',
-              'ife_cArchivo',
-              'ife_cObservacion',
-              'ife_plantel',
-              'ife_pArchivo',
-              'ife_pObservacion',
-              'comision_director',
-              'comision_dArchivo',
-              'comision_dObservacion',
-              'observacion',
-              'foto_fachada']
+
+class InicioSAdmin(admin.ModelAdmin):
+    fields = [
+        'estatusInicioS',
+        'compromiso_comunidad',
+        'compromiso_cArchivo',
+        'compromiso_cObservacion',
+        'compromiso_inmueble',
+        'compromiso_iArchivo',
+        'compromiso_iObservacion',
+        'acta_mancomunado',
+        'acta_mArchivo',
+        'acta_mObservacion',
+        'registro_asignado',
+        'registro_aArchivo',
+        'registro_aObservacion',
+        'acta_planeacion',
+        'acta_pArchivo',
+        'acta_pObservacion',
+        'acuse_banco',
+        'acuse_bArchivo',
+        'acuse_bObservacion',
+        'acuse_prog',
+        'acuse_pArchivo',
+        'acuse_pObservacion',
+        'acuse_prog_anterior',
+        'acuse_prog_aArchivo',
+        'acuse_prog_aObservacion',
+        'contrato',
+        'contratoArchivo',
+        'contratoObservacion',
+        'ife_cepse',
+        'ife_cArchivo',
+        'ife_cObservacion',
+        'constancia_cepse',
+        'constancia_cArchivo',
+        'constancia_cObservacion',
+        'ife_plantel',
+        'ife_pArchivo',
+        'ife_pObservacion',
+        'comision_director',
+        'comision_dArchivo',
+        'comision_dObservacion',
+        'observacion',
+        'foto_fachada']
+
 
 class SeguimientoAdmin(admin.ModelAdmin):
     fields = [
@@ -203,10 +237,13 @@ class SeguimientoAdmin(admin.ModelAdmin):
 
 class CierreSAdmin(admin.ModelAdmin):
     fields = [
-        'estatus',
+        'estatusCierreS',
         'acta_cierre',
         'acta_cArchivo',
         'acta_cObservacion',
+        'registro_gastos',
+        'registro_gArchivo',
+        'registro_gObservacion',
         'acta_entrega',
         'acta_eArchivo',
         'acta_eObservacion',
@@ -231,28 +268,23 @@ class CierreSAdmin(admin.ModelAdmin):
         'evid_compras',
         'evid_cArchivo',
         'evid_cObservacion',
-        'registro_gastos',
-        'registro_gArchivo',
-        'registro_gObservacion',
-        'resumen_gastos',
-        'resumen_gArchivo',
-        'resumen_gObservacion',
         'verificacion_sat',
         'verificacionArchivo',
         'verificacionObservacion',
         'xml',
         'xmlArchivo',
         'xmlObservacion',
-        'observacion',
+        'observacionCierre',
     ]
 
-class SISPREAdmin (admin.ModelAdmin):
+class SISPREAdmin(admin.ModelAdmin):
     fields = [
         'inicio',
-        'seguimiento',
+        # 'seguimiento',
         'cierre',
         'pdfCompleto'
     ]
+
 
 class SupervisoresAdmin(admin.ModelAdmin):
     fields = ['cct',
@@ -264,17 +296,18 @@ class SupervisoresAdmin(admin.ModelAdmin):
               'escuelas_zona',
               ]
 
-admin.site.register(Fechas_Finales,Fechas_FinalesAdmin)
-admin.site.register(Escuelas,EscuelaAdmin)
-admin.site.register(Directores,DirectoresAdmin)
-admin.site.register(Supervisores,SupervisoresAdmin)
 
-admin.site.register(Constitucion,ConstitucionAdmin)
-admin.site.register(Cedula,CedulaAdmin)
-admin.site.register(Anual,AnualAdmin)
-admin.site.register(Contraloria_Social,Contraloria_SocialAdmin)
+admin.site.register(Fechas_Finales, Fechas_FinalesAdmin)
+admin.site.register(Escuelas, EscuelaAdmin)
+admin.site.register(Directores, DirectoresAdmin)
+admin.site.register(Supervisores, SupervisoresAdmin)
 
-admin.site.register(InicioS,InicioSAdmin)
-admin.site.register(SeguimientoS,SeguimientoAdmin)
-admin.site.register(CierreS,CierreSAdmin)
-admin.site.register(SISPRE,SISPREAdmin)
+admin.site.register(Constitucion, ConstitucionAdmin)
+admin.site.register(Cedula, CedulaAdmin)
+admin.site.register(Anual, AnualAdmin)
+admin.site.register(Contraloria_Social, Contraloria_SocialAdmin)
+
+admin.site.register(InicioS, InicioSAdmin)
+admin.site.register(SeguimientoS, SeguimientoAdmin)
+admin.site.register(CierreS, CierreSAdmin)
+admin.site.register(SISPRE, SISPREAdmin)

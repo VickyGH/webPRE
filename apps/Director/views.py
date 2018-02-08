@@ -43,7 +43,7 @@ def InicioDir(request):
         data_contra =   get_object_or_404(Contraloria_Social, pk=data_escuela.contraloria_s.id)
 
         inicio = get_object_or_404(InicioS, pk=data_sispre.inicio.id)
-        seguimiento = get_object_or_404(SeguimientoS, pk=data_sispre.seguimiento.id)
+        #seguimiento = get_object_or_404(SeguimientoS, pk=data_sispre.seguimiento.id)
         cierre = get_object_or_404(CierreS, pk=data_sispre.cierre.id)
 
         const = get_object_or_404(Constitucion, pk=data_contra.constitucion.id)
@@ -53,7 +53,7 @@ def InicioDir(request):
         return render(request, 'Director/Inicio.html',
                   {'escuela': data_escuela,
                    'inicio':inicio,
-                   'seguimiento': seguimiento,
+                   #'seguimiento': seguimiento,
                    'cierre': cierre,
                    'const':const,
                    'cedula':cedula,

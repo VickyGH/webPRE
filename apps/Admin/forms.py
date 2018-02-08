@@ -84,14 +84,21 @@ class InicioSForm(forms.ModelForm):
         fields = '__all__'
         labels = {
             'estatus': 'Estatus de Inicio',
+            'compromiso_comunidad': 'Carta de Compromiso de la Comunidad Escolar',
+            'compromiso_cArchivo': 'Archivo del Carta de Compromiso de la Comunidad Escolar',
+            'compromiso_cObservacion': 'Observaciones',
+
+            'compromiso_inmueble': 'Acta de Compromiso de Inmueble',
+            'compromiso_iArchivo': 'Archivo del Acta de Compromiso de Inmueble',
+            'compromiso_iObservacion': 'Observaciones',
 
             'acta_mancomunado': 'Acta de Acuerdo Mancomunado',
             'acta_mArchivo': 'Archivo de Acta de Acuerdo Mancomunado',
             'acta_mObservacion': 'Observaciones',
 
-            'constancia_cepse': 'Constancia de CEPSE',
-            'constancia_cArchivo': 'Archivo de Constancia de CEPSE',
-            'constancia_cObservacion': 'Observaciones',
+            'registro_asignado': 'Registro Monto Asignado',
+            'registro_aArchivo': '',
+            'registro_aObservacion': '',
 
             'acta_planeacion': 'Acta de Planeación',
             'acta_pArchivo': 'Archivo',
@@ -109,14 +116,6 @@ class InicioSForm(forms.ModelForm):
             'acuse_prog_aArchivo': 'Archivo de Acuse del Programa del Ciclo Anterior',
             'acuse_prog_aObservacion': 'Observaciones',
 
-            'compromiso_inmueble': 'Acta de Compromiso de Inmueble',
-            'compromiso_iArchivo': 'Archivo del Acta de Compromiso de Inmueble',
-            'compromiso_iObservacion': 'Observaciones',
-
-            'compromiso_comunidad': 'Carta de Compromiso de la Comunidad Escolar',
-            'compromiso_cArchivo': 'Archivo del Carta de Compromiso de la Comunidad Escolar',
-            'compromiso_cObservacion': 'Observaciones',
-
             'contrato': 'Documento de Contrato',
             'contratoArchivo': 'Archivo de Documento de Contrato',
             'contratoObservacion': 'Observaciones',
@@ -124,6 +123,10 @@ class InicioSForm(forms.ModelForm):
             'ife_cepse': 'Copia del INE del CEPSE',
             'ife_cArchivo': 'Archivo Copia del INE del CEPSE',
             'ife_cObservacion': 'Observaciones',
+
+            'constancia_cepse': 'Constancia de CEPSE',
+            'constancia_cArchivo': 'Archivo de Constancia de CEPSE',
+            'constancia_cObservacion': 'Observaciones',
 
             'ife_plantel': 'Copia del INE del Director',
             'ife_pArchivo': 'Archivo Copia del INE del Director',
@@ -139,13 +142,21 @@ class InicioSForm(forms.ModelForm):
         widgets = {
             'estatus': Select(attrs=attrEstatus),
 
+            'compromiso_comunidad': Select(attrs=attrSelec),
+            'compromiso_cArchivo': FileInput(attrs=attrArchivo),
+            'compromiso_cObservacion': Textarea(attrs=attrObj),
+
+            'compromiso_inmueble': Select(attrs=attrSelec),
+            'compromiso_iArchivo': FileInput(attrs=attrArchivo),
+            'compromiso_iObservacion': Textarea(attrs=attrObj),
+
             'acta_mancomunado': Select(attrs=attrSelec),
             'acta_mArchivo': FileInput(attrs=attrArchivo),
             'acta_mObservacion': Textarea(attrs=attrObj),
 
-            'constancia_cepse': Select(attrs=attrSelec),
-            'constancia_cArchivo': FileInput(attrs=attrArchivo),
-            'constancia_cObservacion': Textarea(attrs=attrObj),
+            'registro_asignado': Select(attrs=attrSelec),
+            'registro_aArchivo': FileInput(attrs=attrArchivo),
+            'registro_aObservacion': Textarea(attrs=attrObj),
 
             'acta_planeacion': Select(attrs=attrSelec),
             'acta_pArchivo': FileInput(attrs=attrArchivo),
@@ -163,14 +174,6 @@ class InicioSForm(forms.ModelForm):
             'acuse_prog_aArchivo': FileInput(attrs=attrArchivo),
             'acuse_prog_aObservacion': Textarea(attrs=attrObj),
 
-            'compromiso_inmueble': Select(attrs=attrSelec),
-            'compromiso_iArchivo': FileInput(attrs=attrArchivo),
-            'compromiso_iObservacion': Textarea(attrs=attrObj),
-
-            'compromiso_comunidad': Select(attrs=attrSelec),
-            'compromiso_cArchivo': FileInput(attrs=attrArchivo),
-            'compromiso_cObservacion': Textarea(attrs=attrObj),
-
             'contrato': Select(attrs=attrSelec),
             'contratoArchivo': FileInput(attrs=attrArchivo),
             'contratoObservacion': Textarea(attrs=attrObj),
@@ -178,6 +181,10 @@ class InicioSForm(forms.ModelForm):
             'ife_cepse': Select(attrs=attrSelec),
             'ife_cArchivo': FileInput(attrs=attrArchivo),
             'ife_cObservacion': Textarea(attrs=attrObj),
+
+            'constancia_cepse': Select(attrs=attrSelec),
+            'constancia_cArchivo': FileInput(attrs=attrArchivo),
+            'constancia_cObservacion': Textarea(attrs=attrObj),
 
             'ife_plantel': Select(attrs=attrSelec),
             'ife_pArchivo': FileInput(attrs=attrArchivo),
@@ -239,53 +246,68 @@ class CierreForm(forms.ModelForm):
         model = CierreS
         fields = '__all__'
         labels = {
-            'estatus': 'Estatus de Cierre',
+            'estatusCierreS': 'Estatus de Cierre',
+
             'acta_cierre': 'Acta de Cierre',
             'acta_cArchivo': '',
             'acta_cObservacion': '',
-            'acta_entrega': 'Acta de Entrega Recepción',
-            'acta_eArchivo': '',
-            'acta_eObservacion': '',
-            'acta_rendicion': 'Acta de Rendición de Cuentas',
-            'acta_rArchivo ': '',
-            'acta_rObservacion': '',
-            'facturas': 'Facturas',
-            'facturasArchivo': '',
-            'facturasObservacion': '',
-            'ficha_reintegro': 'Ficha de Reintegro',
-            'ficha_rArchivo': '',
-            'ficha_rObservacion': '',
-            'form_inventario': 'Formato de Inventario',
-            'form_iArchivo': '',
-            'form_iObservacion': '',
-            'form_transferencia': 'Formato de Transferencia',
-            'form_tArchivo': '',
-            'form_tObservacion': '',
-            'evid_obra_concluida': 'Evidencia de Obra Concluida',
-            'evid_obraArchivo': '',
-            'evid_obraObservacion': '',
-            'evid_compras': 'Evidencias de Compras',
-            'evid_cArchivo': '',
-            'evid_cObservacion': '',
+
             'registro_gastos': 'Registro de Gastos',
             'registro_gArchivo': '',
             'registro_gObservacion': '',
-            'resumen_gastos': 'Resumen de Gastos',
-            'resumen_gArchivo': '',
-            'resumen_gObservacion': '',
+
+            'acta_entrega': 'Acta de Entrega Recepción',
+            'acta_eArchivo': '',
+            'acta_eObservacion': '',
+
+            'acta_rendicion': 'Acta de Rendición de Cuentas',
+            'acta_rArchivo ': '',
+            'acta_rObservacion': '',
+
+            'facturas': 'Facturas',
+            'facturasArchivo': '',
+            'facturasObservacion': '',
+
+            'ficha_reintegro': 'Ficha de Reintegro',
+            'ficha_rArchivo': '',
+            'ficha_rObservacion': '',
+
+            'form_inventario': 'Formato de Inventario',
+            'form_iArchivo': '',
+            'form_iObservacion': '',
+
+            'form_transferencia': 'Formato de Transferencia',
+            'form_tArchivo': '',
+            'form_tObservacion': '',
+
+            'evid_obra_concluida': 'Evidencia de Obra Concluida',
+            'evid_obraArchivo': '',
+            'evid_obraObservacion': '',
+
+            'evid_compras': 'Evidencias de Compras',
+            'evid_cArchivo': '',
+            'evid_cObservacion': '',
+
             'verificacion_sat': 'Verificacin SAT',
             'verificacionArchivo': '',
             'verificacionObservacion': '',
+
             'xml': 'XML',
             'xmlArchivo': '',
             'xmlObservacion': '',
-            'observacion': 'Observaciones Generales'
+
+            'observacionCierre': 'Observaciones Generales'
         }
         widgets = {
-            'estatus': Select(attrs=attrEstatus),
+            'estatusCierreS': Select(attrs=attrEstatus),
+
             'acta_cierre': Select(attrs=attrSelec),
             'acta_cArchivo': FileInput(attrs=attrArchivo),
             'acta_cObservacion': Textarea(attrs=attrObj),
+
+            'registro_gastos': Select(attrs=attrSelec),
+            'registro_gArchivo': FileInput(attrs=attrArchivo),
+            'registro_gObservacion': Textarea(attrs=attrObj),
 
             'acta_entrega': Select(attrs=attrSelec),
             'acta_eArchivo': FileInput(attrs=attrArchivo),
@@ -319,14 +341,6 @@ class CierreForm(forms.ModelForm):
             'evid_cArchivo': FileInput(attrs=attrArchivo),
             'evid_cObservacion': Textarea(attrs=attrObj),
 
-            'registro_gastos': Select(attrs=attrSelec),
-            'registro_gArchivo': FileInput(attrs=attrArchivo),
-            'registro_gObservacion': Textarea(attrs=attrObj),
-
-            'resumen_gastos': Select(attrs=attrSelec),
-            'resumen_gArchivo': FileInput(attrs=attrArchivo),
-            'resumen_gObservacion': Textarea(attrs=attrObj),
-
             'verificacion_sat': Select(attrs=attrSelec),
             'verificacionArchivo': FileInput(attrs=attrArchivo),
             'verificacionObservacion': Textarea(attrs=attrObj),
@@ -335,7 +349,7 @@ class CierreForm(forms.ModelForm):
             'xmlArchivo': FileInput(attrs=attrArchivo),
             'xmlObservacion': Textarea(attrs=attrObj),
 
-            'observacion': Textarea(attrs=attrObj)
+            'observacionCierre': Textarea(attrs=attrObj)
         }
 
 

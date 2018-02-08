@@ -4,24 +4,30 @@
 {% load staticfiles %}
 <!-- Sart Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-					<i class="material-icons">clear</i>
-				</button>
-				<h4 class="modal-title">Modal title</h4>
-			</div>
-			<div class="modal-body">
-				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
-				</p>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default btn-simple">Nice Button</button>
-				<button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
-			</div>
-		</div>
-	</div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <i class="material-icons">clear</i>
+                </button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                    the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
+                    language ocean. A small river named Duden flows by their place and supplies it with the necessary
+                    regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+                    Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic
+                    life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the
+                    far World of Grammar.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-simple">Nice Button</button>
+                <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
 <!--  End Modal -->
 <div class="section section-tabs">
@@ -77,7 +83,7 @@
         <!-- Tabs with icons on Card input-group-addon -->
         <div class="card card-nav-tabs">
             <!-- Barra de Contenido Principal -->
-            <div class="header header-primary">
+            <div class="header" style="background-color: #D37E31;">
                 <div class="nav-tabs-navigation">
                     <div class="nav-tabs-wrapper">
                         <ul class="nav nav-tabs" data-tabs="tabs">
@@ -105,18 +111,20 @@
                     <!-- SiSPRE -->
                     <div class="tab-pane active" id="sispre">
                         <!-- Tab Inicio, Seguimiento y Cierre -->
-                        <div class="header header-danger">
+                        <div class="header" style="background-color: #BF337C;">
                             <div class="nav-tabs-navigation">
                                 <div class="nav-tabs-wrapper">
                                     <ul class="nav nav-tabs" data-tabs="tabs">
                                         <li class="active">
                                             <a href="#inicio" role="tab" data-toggle="tab">Inicio</a>
                                         </li>
+                                        <!--
                                         {% if sispre.seguimiento != 'No Aplica' %}
                                         <li>
                                             <a href="#seguimiento" role="tab" data-toggle="tab">Seguimiento</a>
                                         </li>
                                         {% endif %}
+                                        -->
                                         <li>
                                             <a href="#cierre" role="tab" data-toggle="tab">Cierre</a>
                                         </li>
@@ -129,10 +137,10 @@
                                 <!-- Inicio -->
                                 <div class="tab-pane active" id="inicio">
                                     <div class="col-sm-12 col-md-12">
-                                        <div class="col-sm-12 col-md-12">
-                                            <div class="col-sm-10 col-md-10">
-                                                <h4>Estatus: </h4><span
-                                                    class="label label-info">{{inicio.estatus}}</span>
+                                        <div class="col-sm-8 col-md-8 col-sm-offset-1">
+                                            <div class="col-sm-10 col-md-10" style="display:inline-block;">
+                                                <h4 style="float: left; width: 50%;">Estatus: </h4>
+                                                <span class="label label-info" style="float: left;">{{inicio.estatusInicioS}}</span>
                                             </div>
                                             <button type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"
                                                     data-toggle="tooltip" data-placement="top"
@@ -141,124 +149,597 @@
                                                 <i class="material-icons">border_color</i>
                                             </button>
                                         </div>
-                                        <div class="col-sm-12 col-md-12">
+                                        <div class="col-sm-12 col-md-12" style="top: 30px;">
                                             <div class="table-responsive">
                                                 <table class="table">
                                                     <thead>
                                                     <tr>
                                                         <th class="text-center col-sm-3">#</th>
                                                         <th class="text-center col-sm-2">Estatus</th>
-                                                        <th class="text-center col-sm-2" >
-                                                            <span data-toggle="tooltip" data-placement="top" title="Descargar los formatos"
-                                                                    data-container="body">Formatos</span>
+                                                        <th class="text-center col-sm-2">
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Descargar los formatos"
+                                                                  data-container="body">Formatos</span>
                                                         </th>
                                                         <th class="text-center col-sm-3">
-                                                            <span data-toggle="tooltip" data-placement="top" title="Visualizar archivo"
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Visualizar archivo"
                                                                   data-container="body">Archivo</span>
                                                         </th>
                                                         <th class="text-center col-sm-3">
-                                                            <span data-toggle="tooltip" data-placement="top" title="Visualizar las observaciones"
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Visualizar las observaciones"
                                                                   data-container="body">Observaciones</span>
                                                         </th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
                                                     <tr>
+                                                        <td>Carta de Compromiso de la Comunidad Escolar</td>
+                                                        <td>{{inicio.compromiso_comunidad}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.compromiso_cArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.compromiso_cArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.compromiso_cObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.compromiso_cObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    {% if inicio.compromiso_inmueble != 'No Aplica' %}
+                                                    <tr>
+                                                        <td>Acta de Compromiso de Inmueble</td>
+                                                        <td>{{inicio.compromiso_inmueble}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.compromiso_iArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.compromiso_iArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.compromiso_iObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.compromiso_iObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    {% endif %}
+                                                    <tr>
                                                         <td>Acta de Acuerdo Mancomunado</td>
                                                         <td>{{inicio.acta_mancomunado}}</td>
                                                         <td>
-                                                            <button class="btn btn-primary btn-fab btn-fab-mini btn-round">
-                                                                <i class="material-icons">cloud_download</i>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
                                                             </button>
                                                         </td>
                                                         <td>
-                                                            <button type="button" class="btn btn-primary btn-fab btn-fab-mini btn-round"
-                                                                    data-toggle="modal" data-target="#myModal" data-whatever="Archivo"
-                                                            data-datas="{{inicio.acta_mArchivo}}">
+                                                            {% if inicio.acta_mArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.acta_mArchivo}}">
                                                                 <i class="material-icons">file_upload</i>
                                                             </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
                                                         </td>
                                                         <td>
-                                                            <button type="button" class="btn btn-primary btn-fab btn-fab-mini btn-round"
-                                                                    data-toggle="modal" data-target="#myModal" data-whatever="Observaciones"
-                                                            data-datas="{{inicio.acta_mObservacion}}">
+                                                            {% if inicio.acta_mObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.acta_mObservacion}}">
                                                                 <i class="material-icons">comment</i>
                                                             </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Constancia de CEPSE</td>
-                                                        <td>{{inicio.constancia_cepse}}</td>
-                                                        <td>{{inicio.constancia_cArchivo}}</td>
-                                                        <td>{{inicio.constancia_cObservacion}}</td>
+                                                        <td>Registro de Monto Asignado</td>
+                                                        <td>{{inicio.registro_asignado}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.registro_aArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.acta_mArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.registro_aObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.registro_aObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>Acta de Planeación</td>
                                                         <td>{{inicio.acta_planeacion}}</td>
-                                                        <td>{{inicio.acta_pArchivo}}</td>
-                                                        <td>{{inicio.acta_pObservacion}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.acta_pArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.acta_pArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.acta_pObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.acta_pObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
                                                     </tr>
                                                     {% if inicio.acuse_banco != 'No Aplica' %}
                                                     <tr>
                                                         <td>Acuse de Tarjeta Bancaria</td>
                                                         <td>{{inicio.acuse_banco}}</td>
-                                                        <td>{{inicio.acuse_bArchivo}}</td>
-                                                        <td>{{inicio.acuse_bObservacion}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.acuse_bArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.acuse_bArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.acuse_bObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.acuse_bObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
                                                     </tr>
                                                     {% endif %}
                                                     <tr>
                                                         <td>Acuse del Programa</td>
                                                         <td>{{inicio.acuse_prog}}</td>
-                                                        <td>{{inicio.acuse_pArchivo}}</td>
-                                                        <td>{{inicio.acuse_pObservacion}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.acuse_pArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.acuse_pArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.acuse_pObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.acuse_pObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
                                                     </tr>
                                                     {% if inicio.acuse_prog_anterior != 'No Aplica' %}
                                                     <tr>
                                                         <td>Acuse del Programa del Ciclo Anterior</td>
                                                         <td>{{inicio.acuse_prog_anterior}}</td>
-                                                        <td>{{inicio.acuse_prog_aArchivo}}</td>
-                                                        <td>{{inicio.acuse_prog_aObservacion}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.acuse_prog_aArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.acuse_prog_aArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.acuse_prog_aObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.acuse_prog_aObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
                                                     </tr>
                                                     {% endif %}
-                                                    {% if inicio.compromiso_inmueble != 'No Aplica' %}
-                                                    <tr>
-                                                        <td>Acta de Compromiso de Inmueble</td>
-                                                        <td>{{inicio.compromiso_inmueble}}</td>
-                                                        <td>{{inicio.compromiso_iArchivo}}</td>
-                                                        <td>{{inicio.compromiso_iObservacion}}</td>
-                                                    </tr>
-                                                    {% endif %}
-                                                    <tr>
-                                                        <td>Carta de Compromiso de la Comunidad Escolar</td>
-                                                        <td>{{inicio.compromiso_comunidad}}</td>
-                                                        <td>{{inicio.compromiso_cArchivo}}</td>
-                                                        <td>{{inicio.compromiso_cObservacion}}</td>
-                                                    </tr>
                                                     {% if inicio.contrato != 'No Aplica' %}
                                                     <tr>
                                                         <td>Documento de Contrato</td>
                                                         <td>{{inicio.contrato}}</td>
-                                                        <td>{{inicio.contratoArchivo}}</td>
-                                                        <td>{{inicio.contratoObservacion.}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.contratoArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.contratoArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.contratoObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.contratoObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
                                                     </tr>
                                                     {% endif %}
                                                     <tr>
                                                         <td>Copia del INE del CEPSE</td>
                                                         <td>{{inicio.ife_cepse}}</td>
-                                                        <td>{{inicio.ife_cArchivo}}</td>
-                                                        <td>{{inicio.ife_cObservacion}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.ife_cArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.ife_cArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.ife_cObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.ife_cObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Constancia de CEPSE</td>
+                                                        <td>{{inicio.constancia_cepse}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.constancia_cArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.constancia_cArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.constancia_cObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.constancia_cObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>Copia del INE del Director</td>
                                                         <td>{{inicio.ife_plantel}}</td>
-                                                        <td>{{inicio.ife_pArchivo}}</td>
-                                                        <td>{{inicio.ife_pObservacion}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.ife_pArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.ife_pArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.ife_pObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.ife_pObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>Acta de Comisión del Director</td>
                                                         <td>{{inicio.comision_director}}</td>
-                                                        <td>{{inicio.comision_dArchivo}}</td>
-                                                        <td>{{inicio.comision_dObservacion}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.comision_dArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.comision_dArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if inicio.comision_dObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{inicio.comision_dObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
@@ -266,10 +747,10 @@
                                         </div>
                                         <div class="col-sm-12 col-md-12 ">
                                             <label class="control-Title">Observaciones Generales</label>
-                                            <label class="control-Content">{{inicio.observacion}}</label>
+                                            <pre class="prettyprint"><label>{{inicio.observacion}}</label></pre>
                                         </div>
                                         <div class="col-sm-12 col-md-12">
-                                            <div class="col-sm-6 col-sm-offset-3">
+                                            <div class="col-sm-5 col-md-5 col-sm-offset-3">
                                                 <h4>Foto de la Fachada</h4>
                                                 <img src="{% static 'assets/img/logo.jpg'%}" alt="Raised Image"
                                                      class="img-rounded img-responsive img-raised">
@@ -278,6 +759,7 @@
                                     </div>
                                 </div>
                                 <!-- Seguimiento -->
+                                <!--
                                 <div class="tab-pane" id="seguimiento">
                                     <div class="col-sm-12 col-md-12">
                                         <div class="col-sm-12 col-md-12">
@@ -342,13 +824,13 @@
                                         <p class="col-md-12"></p>
                                     </div>
                                 </div>
+                                -->
                                 <!-- Cierre -->
                                 <div class="tab-pane" id="cierre">
                                     <div class="col-sm-12 col-md-12">
                                         <div class="col-sm-12 col-md-12">
                                             <div class="col-sm-10 col-md-10">
-                                                <h4>Estatus: </h4><span
-                                                    class="label label-info">{{cierre.estatus}}</span>
+                                                <h4>Estatus: </h4><span class="label label-info">{{cierre.estatusCierreS}}</span>
                                             </div>
                                             <button type="button" class="btn btn-danger btn-fab btn-fab-mini btn-round"
                                                     data-toggle="tooltip" data-placement="top"
@@ -364,22 +846,152 @@
                                                     <tr>
                                                         <th class="text-center col-sm-3">#</th>
                                                         <th class="text-center col-sm-2">Estatus</th>
-                                                        <th class="text-center col-sm-3">Archivo</th>
-                                                        <th class="text-center col-sm-4">Observaciones</th>
+                                                        <th class="text-center col-sm-2">
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Descargar los formatos"
+                                                                  data-container="body">Formatos</span>
+                                                        </th>
+                                                        <th class="text-center col-sm-3">
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Visualizar archivo"
+                                                                  data-container="body">Archivo</span>
+                                                        </th>
+                                                        <th class="text-center col-sm-3">
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Visualizar las observaciones"
+                                                                  data-container="body">Observaciones</span>
+                                                        </th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
                                                     <tr>
                                                         <td>Acta de Cierre</td>
                                                         <td>{{cierre.acta_cierre}}</td>
-                                                        <td>{{cierre.acta_cArchivo}}</td>
-                                                        <td>{{cierre.acta_cObservacion}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.acta_cArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.acta_cArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.acta_cObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.acta_cObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>Acta de Entrega Recepción</td>
                                                         <td>{{cierre.acta_entrega}}</td>
-                                                        <td>{{cierre.acta_eArchivo}}</td>
-                                                        <td>{{cierre.acta_eObservacion}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.acta_eArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.acta_eArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.acta_eObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.acta_eObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>{{cierre.}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.Archivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.Archivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.Observacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.Observacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>Acta de Rendición de Cuentas</td>
@@ -388,10 +1000,96 @@
                                                         <td>{{cierre.acta_rObservacion}}</td>
                                                     </tr>
                                                     <tr>
+                                                        <td></td>
+                                                        <td>{{cierre.}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.Archivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.Archivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.Observacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.Observacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
                                                         <td>Facturas</td>
                                                         <td>{{cierre.facturas}}</td>
                                                         <td>{{cierre.facturasArchivo}}</td>
                                                         <td>{{cierre.facturasObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>{{cierre.}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.Archivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.Archivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.Observacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.Observacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>Ficha de Reintegro</td>
@@ -400,16 +1098,145 @@
                                                         <td>{{cierre.ficha_rObservacion}}</td>
                                                     </tr>
                                                     <tr>
+                                                        <td></td>
+                                                        <td>{{cierre.}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.Archivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.Archivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.Observacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.Observacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
                                                         <td>Formato de Inventario</td>
                                                         <td>{{cierre.form_inventario}}</td>
                                                         <td>{{cierre.form_iArchivo}}</td>
                                                         <td>{{cierre.form_iObservacion}}</td>
                                                     </tr>
                                                     <tr>
+                                                        <td></td>
+                                                        <td>{{cierre.}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.Archivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.Archivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.Observacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.Observacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
                                                         <td>Formato de Transferencia</td>
                                                         <td>{{cierre.form_transferencia}}</td>
                                                         <td>{{cierre.form_tArchivo}}</td>
                                                         <td>{{cierre.form_tObservacion}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>{{cierre.}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.Archivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.Archivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.Observacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.Observacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>Evidencia de Obra Concluida</td>
@@ -430,17 +1257,54 @@
                                                         <td>{{cierre.registro_gObservacion}}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Resumen de Gastos</td>
-                                                        <td>{{cierre.resumen_gastos}}</td>
-                                                        <td>{{cierre.resumen_gArchivo}}</td>
-                                                        <td>{{cierre.resumen_gObservacion}}</td>
-                                                    </tr>
-                                                    <tr>
                                                         <td>Verificacin SAT</td>
                                                         <td>{{cierre.verificacion_sat}}</td>
                                                         <td>{{cierre.verificacionArchivo}}</td>
                                                         <td>{{cierre.verificacionObservacion}}</td>
                                                     </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>{{cierre.}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">get_app</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.Archivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.Archivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.Observacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.Observacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>                                
                                                     <tr>
                                                         <td>XML</td>
                                                         <td>{{cierre.xml}}</td>
@@ -516,7 +1380,7 @@
                                                         <td>Acta Constitución</td>
                                                         <td>{{const.actaC}}</td>
                                                         <td>
-                                                            <button class="btn btn-primary btn-fab btn-fab-mini btn-round"
+                                                            <button class="btn btn-fab btn-fab-mini btn-round"
                                                                     data-toggle="tooltip" data-placement="top"
                                                                     title="Descargar formato"
                                                                     data-container="body">
@@ -524,7 +1388,7 @@
                                                             </button>
                                                         </td>
                                                         <td>
-                                                            <button class="btn btn-primary btn-fab btn-fab-mini btn-round"
+                                                            <button class="btn btn-fab btn-fab-mini btn-round"
                                                                     data-toggle="tooltip" data-placement="top"
                                                                     title="Visualizar Archivo"
                                                                     data-container="body">
@@ -532,7 +1396,7 @@
                                                             </button>
                                                         </td>
                                                         <td>
-                                                            <button class="btn btn-primary btn-fab btn-fab-mini btn-round"
+                                                            <button class="btn btn-fab btn-fab-mini btn-round"
                                                                     data-toggle="tooltip" data-placement="top"
                                                                     title="Visualizar Observaciones"
                                                                     data-container="body">
@@ -564,6 +1428,9 @@
 window.onload = (function(){
 alert(randomColorChange());
 }
+
+
+
 
 </script>
 

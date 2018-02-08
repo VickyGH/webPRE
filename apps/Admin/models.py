@@ -92,6 +92,24 @@ class Fechas_Finales (models.Model):
         ordering = ['actualizacion']
         verbose_name_plural = "Fecha de Entregas"
 
+class Documentos(models.Model):
+    PDF_acta_mancomunado =  models.FileField(upload_to='Cuadernillo/Inicio/', blank=True, null=True)
+    PDF_constancia_cepse = models.FileField(upload_to='Cuadernillo/Inicio/', blank=True, null=True)
+    PDF_acta_planeacion = models.FileField(upload_to='Cuadernillo/Inicio/', blank=True, null=True)
+    PDF_acuse_prog = models.FileField(upload_to='Cuadernillo/Inicio/', blank=True, null=True)
+    PDF_compromiso_inmueble = models.FileField(upload_to='Cuadernillo/Inicio/', blank=True, null=True)
+    PDF_compromiso_comunidad = models.FileField(upload_to='Cuadernillo/Inicio/', blank=True, null=True)
+    PDF_contrato = models.FileField(upload_to='Cuadernillo/Inicio/', blank=True, null=True)
+
+    PDF_acta_cierre = models.FileField(upload_to='Cuadernillo/Cierre/', blank=True, null=True)
+    PDF_acta_entrega = models.FileField(upload_to='Cuadernillo/Cierre/', blank=True, null=True)
+    PDF_acta_rendicion = models.FileField(upload_to='Cuadernillo/Cierre/', blank=True, null=True)
+    PDF_ficha_reintegro = models.FileField(upload_to='Cuadernillo/Cierre/', blank=True, null=True)
+    PDF_form_inventario = models.FileField(upload_to='Cuadernillo/Cierre/', blank=True, null=True)
+    PDF_form_transferencia = models.FileField(upload_to='Cuadernillo/Cierre/', blank=True, null=True)
+    PDF_registro_gastos = models.FileField(upload_to='Cuadernillo/Cierre/', blank=True, null=True)
+    PDF_verificacion_sat = models.FileField(upload_to='Cuadernillo/Cierre/', blank=True, null=True)
+
 class Directores (models.Model):
     nombre = models.CharField(max_length=100)
     a_paterno = models.CharField(max_length=100)
@@ -225,19 +243,27 @@ class Contraloria_Social (models.Model):
         verbose_name_plural = "Contraloria Social"
 #<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->-<->
 class InicioS (models.Model):
-    estatus = models.CharField(max_length=20, choices=IC, default='Incompleto')
+    estatusInicioS = models.CharField(max_length=20, choices=IC, default='Incompleto')
+
+    compromiso_comunidad = models.CharField(max_length=40, choices=DT, default=False)
+    compromiso_cArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
+    compromiso_cObservacion = models.CharField(max_length=250, blank=True)
+
+    compromiso_inmueble = models.CharField(max_length=25, choices=DT, default='No Aplica')
+    compromiso_iArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
+    compromiso_iObservacion = models.CharField(max_length=250, blank=True)
 
     acta_mancomunado = models.CharField(max_length=40,choices=DT, default=False)
     acta_mArchivo = models.FileField(upload_to='PDF/SiSPRE/Inicio/', blank=True, null=True)
     acta_mObservacion = models.CharField(max_length=250,blank=True)
 
-    constancia_cepse = models.CharField(max_length=40,choices=DT, default=False)
-    constancia_cArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
-    constancia_cObservacion = models.CharField(max_length=250,blank=True)
+    registro_asignado = models.CharField(max_length=40, choices=DT, default='No Aplica')
+    registro_aArchivo = models.FileField(upload_to='PDF/SiSPRE/Cierre/', blank=True, null=True)
+    registro_aObservacion = models.CharField(max_length=250, blank=True)
 
-    acta_planeacion = models.CharField(max_length=40,choices=DT, default=False)
+    acta_planeacion = models.CharField(max_length=40, choices=DT, default=False)
     acta_pArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
-    acta_pObservacion = models.CharField(max_length=250,blank=True)
+    acta_pObservacion = models.CharField(max_length=250, blank=True)
 
     acuse_banco = models.CharField(max_length=25, choices=DTN, default='No Aplica')
     acuse_bArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
@@ -251,14 +277,6 @@ class InicioS (models.Model):
     acuse_prog_aArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
     acuse_prog_aObservacion = models.CharField(max_length=250,blank=True)
 
-    compromiso_inmueble = models.CharField(max_length=25, choices=DT, default='No Aplica')
-    compromiso_iArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
-    compromiso_iObservacion = models.CharField(max_length=250,blank=True)
-
-    compromiso_comunidad = models.CharField(max_length=40,choices=DT, default=False)
-    compromiso_cArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
-    compromiso_cObservacion = models.CharField(max_length=250,blank=True)
-
     contrato = models.CharField(max_length=25, choices=DTN, default='No Aplica')
     contratoArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
     contratoObservacion = models.CharField(max_length=250,blank=True)
@@ -266,6 +284,10 @@ class InicioS (models.Model):
     ife_cepse = models.CharField(max_length=40,choices=DT, default=False)
     ife_cArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
     ife_cObservacion = models.CharField(max_length=250,blank=True)
+
+    constancia_cepse = models.CharField(max_length=40, choices=DT, default=False)
+    constancia_cArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
+    constancia_cObservacion = models.CharField(max_length=250, blank=True)
 
     ife_plantel = models.CharField(max_length=40,choices=DT, default=False)
     ife_pArchivo = models.FileField(upload_to='SiSPRE/Inicio/', blank=True, null=True)
@@ -280,7 +302,7 @@ class InicioS (models.Model):
                                      blank=True)
 
     def __str__(self):
-        return '%s' % (self.estatus)
+        return '%s' % (self.estatusInicioS)
 
     class Meta:
         verbose_name_plural = "SISPRE Inicio"
@@ -312,10 +334,14 @@ class SeguimientoS (models.Model):
         verbose_name_plural = "SISPRE Seguimiento"
 
 class CierreS (models.Model):
-    estatus = models.CharField(max_length=40, choices=IC, default='Incompleto')
+    estatusCierreS = models.CharField(max_length=40, choices=IC, default='Incompleto')
     acta_cierre = models.CharField(max_length=40, choices=DT, default=False)
     acta_cArchivo = models.FileField(upload_to='PDF/SiSPRE/Cierre/', blank=True, null=True)
     acta_cObservacion = models.CharField(max_length=250, blank=True)
+
+    registro_gastos = models.CharField(max_length=40, choices=DT, default='No Aplica')
+    registro_gArchivo = models.FileField(upload_to='PDF/SiSPRE/Cierre/', blank=True, null=True)
+    registro_gObservacion = models.CharField(max_length=250, blank=True)
 
     acta_entrega = models.CharField(max_length=40, choices=DT, default='No Aplica')
     acta_eArchivo = models.FileField(upload_to='PDF/SiSPRE/Cierre/', blank=True, null=True)
@@ -349,14 +375,6 @@ class CierreS (models.Model):
     evid_cArchivo = models.FileField(upload_to='PDF/SiSPRE/Cierre/', blank=True, null=True)
     evid_cObservacion = models.CharField(max_length=250, blank=True)
 
-    registro_gastos = models.CharField(max_length=40, choices=DT, default='No Aplica')
-    registro_gArchivo = models.FileField(upload_to='PDF/SiSPRE/Cierre/', blank=True, null=True)
-    registro_gObservacion = models.CharField(max_length=250, blank=True)
-
-    resumen_gastos = models.CharField(max_length=40, choices=DT, default='No Aplica')
-    resumen_gArchivo = models.FileField(upload_to='PDF/SiSPRE/Cierre/', blank=True, null=True)
-    resumen_gObservacion = models.CharField(max_length=250, blank=True)
-
     verificacion_sat = models.CharField(max_length=40,choices=DT, default=False)
     verificacionArchivo = models.FileField(upload_to='PDF/SiSPRE/Cierre/', blank=True, null=True)
     verificacionObservacion = models.CharField(max_length=250, blank=True)
@@ -365,17 +383,17 @@ class CierreS (models.Model):
     xmlArchivo = models.FileField(upload_to='PDF/SiSPRE/Cierre/', blank=True, null=True)
     xmlObservacion = models.CharField(max_length=250, blank=True)
 
-    observacion = models.TextField(default=sinOb)
+    observacionCierre = models.TextField(default=sinOb)
 
     def __str__(self):
-        return '%s' % (self.estatus)
+        return '%s' % (self.estatusCierreS)
 
     class Meta:
         verbose_name_plural = "SISPRE Cierre"
 
 class SISPRE (models.Model):
     inicio = models.ForeignKey(InicioS, on_delete=False)
-    seguimiento = models.ForeignKey(SeguimientoS,on_delete=False)
+    #seguimiento = models.ForeignKey(SeguimientoS,on_delete=False)
     cierre = models.ForeignKey(CierreS,on_delete=False)
     pdfCompleto = models.FileField(upload_to='PDF/SiSPRE/', blank=True, null=True)
     actualizacion = models.DateTimeField(auto_now_add=True)
