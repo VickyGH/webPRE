@@ -83,7 +83,7 @@
         <!-- Tabs with icons on Card input-group-addon -->
         <div class="card card-nav-tabs">
             <!-- Barra de Contenido Principal -->
-            <div class="header" style="background-color: #D37E31;">
+            <div class="header" style="background-color: #ffa500;">
                 <div class="nav-tabs-navigation">
                     <div class="nav-tabs-wrapper">
                         <ul class="nav nav-tabs" data-tabs="tabs">
@@ -111,7 +111,7 @@
                     <!-- SiSPRE -->
                     <div class="tab-pane active" id="sispre">
                         <!-- Tab Inicio, Seguimiento y Cierre -->
-                        <div class="header" style="background-color: #BF337C;">
+                        <div class="header" style="background-color: #d2287b;">
                             <div class="nav-tabs-navigation">
                                 <div class="nav-tabs-wrapper">
                                     <ul class="nav nav-tabs" data-tabs="tabs">
@@ -137,15 +137,19 @@
                                 <!-- Inicio -->
                                 <div class="tab-pane active" id="inicio">
                                     <div class="col-sm-12 col-md-12">
-                                        <div class="col-sm-8 col-md-8 col-sm-offset-1">
+                                        <div class="col-sm-12 col-md-12">
                                             <div class="col-sm-10 col-md-10" style="display:inline-block;">
-                                                <h4 style="float: left; width: 50%;">Estatus: </h4>
-                                                <span class="label label-info" style="float: left;">{{inicio.estatusInicioS}}</span>
+                                                <div class="col-sm-3 col-md-3">
+                                                    <h4 style="float: right;">Estatus: </h4>
+                                                </div>
+                                                <div class="col-sm-3 col-md-3">
+                                                    <span class="label label-info" style="float: left;margin-top: 5%;">{{inicio.estatusInicioS}}</span>
+                                                </div>
                                             </div>
                                             <button type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"
                                                     data-toggle="tooltip" data-placement="top"
                                                     title="Agregar Información"
-                                                    data-container="body">
+                                                    data-container="body" style="float: right;">
                                                 <i class="material-icons">border_color</i>
                                             </button>
                                         </div>
@@ -179,7 +183,7 @@
                                                         <td>{{inicio.compromiso_comunidad}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
@@ -223,7 +227,7 @@
                                                         <td>{{inicio.compromiso_inmueble}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
@@ -267,7 +271,7 @@
                                                         <td>{{inicio.acta_mancomunado}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
@@ -310,7 +314,7 @@
                                                         <td>{{inicio.registro_asignado}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
@@ -353,7 +357,7 @@
                                                         <td>{{inicio.acta_planeacion}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
@@ -397,7 +401,7 @@
                                                         <td>{{inicio.acuse_banco}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
@@ -441,7 +445,7 @@
                                                         <td>{{inicio.acuse_prog}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
@@ -485,7 +489,7 @@
                                                         <td>{{inicio.acuse_prog_anterior}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
@@ -530,7 +534,7 @@
                                                         <td>{{inicio.contrato}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
@@ -574,7 +578,7 @@
                                                         <td>{{inicio.ife_cepse}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
@@ -617,7 +621,7 @@
                                                         <td>{{inicio.constancia_cepse}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
@@ -660,7 +664,7 @@
                                                         <td>{{inicio.ife_plantel}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
@@ -703,7 +707,7 @@
                                                         <td>{{inicio.comision_director}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
@@ -754,6 +758,7 @@
                                                 <h4>Foto de la Fachada</h4>
                                                 <img src="{% static 'assets/img/logo.jpg'%}" alt="Raised Image"
                                                      class="img-rounded img-responsive img-raised">
+                                                <p class="col-md-12"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -829,13 +834,18 @@
                                 <div class="tab-pane" id="cierre">
                                     <div class="col-sm-12 col-md-12">
                                         <div class="col-sm-12 col-md-12">
-                                            <div class="col-sm-10 col-md-10">
-                                                <h4>Estatus: </h4><span class="label label-info">{{cierre.estatusCierreS}}</span>
+                                            <div class="col-sm-10 col-md-10" style="display:inline-block;">
+                                                <div class="col-sm-3 col-md-3">
+                                                    <h4 style="float: right;">Estatus: </h4>
+                                                </div>
+                                                <div class="col-sm-3 col-md-3">
+                                                    <span class="label label-info" style="float: left;margin-top: 5%;">{{cierre.estatusCierreS}}</span>
+                                                </div>
                                             </div>
-                                            <button type="button" class="btn btn-danger btn-fab btn-fab-mini btn-round"
+                                            <button type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"
                                                     data-toggle="tooltip" data-placement="top"
                                                     title="Agregar Información"
-                                                    data-container="body">
+                                                    data-container="body" style="float: right;">
                                                 <i class="material-icons">border_color</i>
                                             </button>
                                         </div>
@@ -869,7 +879,7 @@
                                                         <td>{{cierre.acta_cierre}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
@@ -912,7 +922,7 @@
                                                         <td>{{cierre.acta_entrega}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
@@ -951,69 +961,20 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td></td>
-                                                        <td>{{cierre.}}</td>
-                                                        <td>
-                                                            <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
-                                                            </button>
-                                                        </td>
-                                                        <td>
-                                                            {% if cierre.Archivo != '' %}
-                                                            <button type="button"
-                                                                    class="btn btn-fab btn-fab-mini btn-round"
-                                                                    data-toggle="modal" data-target="#myModal"
-                                                                    data-whatever="Archivo"
-                                                                    data-datas="{{cierre.Archivo}}">
-                                                                <i class="material-icons">file_upload</i>
-                                                            </button>
-                                                            {% else %}
-                                                            <span data-toggle="tooltip" data-placement="top"
-                                                                  title="Sin Datos"
-                                                                  data-container="body">
-                                                                <i class="material-icons">not_interested</i>
-                                                            </span>
-                                                            {% endif %}
-                                                        </td>
-                                                        <td>
-                                                            {% if cierre.Observacion != '' %}
-                                                            <button type="button"
-                                                                    class="btn btn-fab btn-fab-mini btn-round"
-                                                                    data-toggle="modal" data-target="#myModal"
-                                                                    data-whatever="Archivo"
-                                                                    data-datas="{{cierre.Observacion}}">
-                                                                <i class="material-icons">comment</i>
-                                                            </button>
-                                                            {% else %}
-                                                            <span data-toggle="tooltip" data-placement="top"
-                                                                  title="Sin Datos"
-                                                                  data-container="body">
-                                                                <i class="material-icons">not_interested</i>
-                                                            </span>
-                                                            {% endif %}
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
                                                         <td>Acta de Rendición de Cuentas</td>
                                                         <td>{{cierre.acta_rendicion}}</td>
-                                                        <td>{{cierre.acta_rArchivo}}</td>
-                                                        <td>{{cierre.acta_rObservacion}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td>{{cierre.}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
-                                                            {% if cierre.Archivo != '' %}
+                                                            {% if cierre.acta_rArchivo != '' %}
                                                             <button type="button"
                                                                     class="btn btn-fab btn-fab-mini btn-round"
                                                                     data-toggle="modal" data-target="#myModal"
                                                                     data-whatever="Archivo"
-                                                                    data-datas="{{cierre.Archivo}}">
+                                                                    data-datas="{{cierre.acta_rArchivo}}">
                                                                 <i class="material-icons">file_upload</i>
                                                             </button>
                                                             {% else %}
@@ -1025,12 +986,12 @@
                                                             {% endif %}
                                                         </td>
                                                         <td>
-                                                            {% if cierre.Observacion != '' %}
+                                                            {% if cierre.acta_rObservacion != '' %}
                                                             <button type="button"
                                                                     class="btn btn-fab btn-fab-mini btn-round"
                                                                     data-toggle="modal" data-target="#myModal"
                                                                     data-whatever="Archivo"
-                                                                    data-datas="{{cierre.Observacion}}">
+                                                                    data-datas="{{cierre.acta_rObservacion}}">
                                                                 <i class="material-icons">comment</i>
                                                             </button>
                                                             {% else %}
@@ -1045,24 +1006,18 @@
                                                     <tr>
                                                         <td>Facturas</td>
                                                         <td>{{cierre.facturas}}</td>
-                                                        <td>{{cierre.facturasArchivo}}</td>
-                                                        <td>{{cierre.facturasObservacion}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td>{{cierre.}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
-                                                            {% if cierre.Archivo != '' %}
+                                                            {% if cierre.facturasArchivo != '' %}
                                                             <button type="button"
                                                                     class="btn btn-fab btn-fab-mini btn-round"
                                                                     data-toggle="modal" data-target="#myModal"
                                                                     data-whatever="Archivo"
-                                                                    data-datas="{{cierre.Archivo}}">
+                                                                    data-datas="{{cierre.facturasArchivo}}">
                                                                 <i class="material-icons">file_upload</i>
                                                             </button>
                                                             {% else %}
@@ -1074,12 +1029,12 @@
                                                             {% endif %}
                                                         </td>
                                                         <td>
-                                                            {% if cierre.Observacion != '' %}
+                                                            {% if cierre.facturasObservacion != '' %}
                                                             <button type="button"
                                                                     class="btn btn-fab btn-fab-mini btn-round"
                                                                     data-toggle="modal" data-target="#myModal"
                                                                     data-whatever="Archivo"
-                                                                    data-datas="{{cierre.Observacion}}">
+                                                                    data-datas="{{cierre.facturasObservacion}}">
                                                                 <i class="material-icons">comment</i>
                                                             </button>
                                                             {% else %}
@@ -1094,24 +1049,18 @@
                                                     <tr>
                                                         <td>Ficha de Reintegro</td>
                                                         <td>{{cierre.ficha_reintegro}}</td>
-                                                        <td>{{cierre.ficha_rArchivo}}</td>
-                                                        <td>{{cierre.ficha_rObservacion}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td>{{cierre.}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
-                                                            {% if cierre.Archivo != '' %}
+                                                            {% if cierre.ficha_rArchivo != '' %}
                                                             <button type="button"
                                                                     class="btn btn-fab btn-fab-mini btn-round"
                                                                     data-toggle="modal" data-target="#myModal"
                                                                     data-whatever="Archivo"
-                                                                    data-datas="{{cierre.Archivo}}">
+                                                                    data-datas="{{cierre.ficha_rArchivo}}">
                                                                 <i class="material-icons">file_upload</i>
                                                             </button>
                                                             {% else %}
@@ -1123,12 +1072,12 @@
                                                             {% endif %}
                                                         </td>
                                                         <td>
-                                                            {% if cierre.Observacion != '' %}
+                                                            {% if cierre.ficha_rObservacion != '' %}
                                                             <button type="button"
                                                                     class="btn btn-fab btn-fab-mini btn-round"
                                                                     data-toggle="modal" data-target="#myModal"
                                                                     data-whatever="Archivo"
-                                                                    data-datas="{{cierre.Observacion}}">
+                                                                    data-datas="{{cierre.ficha_rObservacion}}">
                                                                 <i class="material-icons">comment</i>
                                                             </button>
                                                             {% else %}
@@ -1143,24 +1092,18 @@
                                                     <tr>
                                                         <td>Formato de Inventario</td>
                                                         <td>{{cierre.form_inventario}}</td>
-                                                        <td>{{cierre.form_iArchivo}}</td>
-                                                        <td>{{cierre.form_iObservacion}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td>{{cierre.}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
-                                                            {% if cierre.Archivo != '' %}
+                                                            {% if cierre.form_iArchivo != '' %}
                                                             <button type="button"
                                                                     class="btn btn-fab btn-fab-mini btn-round"
                                                                     data-toggle="modal" data-target="#myModal"
                                                                     data-whatever="Archivo"
-                                                                    data-datas="{{cierre.Archivo}}">
+                                                                    data-datas="{{cierre.form_iArchivo}}">
                                                                 <i class="material-icons">file_upload</i>
                                                             </button>
                                                             {% else %}
@@ -1172,12 +1115,12 @@
                                                             {% endif %}
                                                         </td>
                                                         <td>
-                                                            {% if cierre.Observacion != '' %}
+                                                            {% if cierre.form_iObservacion != '' %}
                                                             <button type="button"
                                                                     class="btn btn-fab btn-fab-mini btn-round"
                                                                     data-toggle="modal" data-target="#myModal"
                                                                     data-whatever="Archivo"
-                                                                    data-datas="{{cierre.Observacion}}">
+                                                                    data-datas="{{cierre.form_iObservacion}}">
                                                                 <i class="material-icons">comment</i>
                                                             </button>
                                                             {% else %}
@@ -1192,24 +1135,18 @@
                                                     <tr>
                                                         <td>Formato de Transferencia</td>
                                                         <td>{{cierre.form_transferencia}}</td>
-                                                        <td>{{cierre.form_tArchivo}}</td>
-                                                        <td>{{cierre.form_tObservacion}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td>{{cierre.}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
-                                                            {% if cierre.Archivo != '' %}
+                                                            {% if cierre.form_tArchivo != '' %}
                                                             <button type="button"
                                                                     class="btn btn-fab btn-fab-mini btn-round"
                                                                     data-toggle="modal" data-target="#myModal"
                                                                     data-whatever="Archivo"
-                                                                    data-datas="{{cierre.Archivo}}">
+                                                                    data-datas="{{cierre.form_tArchivo}}">
                                                                 <i class="material-icons">file_upload</i>
                                                             </button>
                                                             {% else %}
@@ -1221,12 +1158,12 @@
                                                             {% endif %}
                                                         </td>
                                                         <td>
-                                                            {% if cierre.Observacion != '' %}
+                                                            {% if cierre.form_tObservacion != '' %}
                                                             <button type="button"
                                                                     class="btn btn-fab btn-fab-mini btn-round"
                                                                     data-toggle="modal" data-target="#myModal"
                                                                     data-whatever="Archivo"
-                                                                    data-datas="{{cierre.Observacion}}">
+                                                                    data-datas="{{cierre.form_tObservacion}}">
                                                                 <i class="material-icons">comment</i>
                                                             </button>
                                                             {% else %}
@@ -1241,42 +1178,190 @@
                                                     <tr>
                                                         <td>Evidencia de Obra Concluida</td>
                                                         <td>{{cierre.evid_obra_concluida}}</td>
-                                                        <td>{{cierre.evid_obraArchivo}}</td>
-                                                        <td>{{cierre.evid_obraObservacion}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Evidencias de Compras</td>
-                                                        <td>{{cierre.evid_compras}}</td>
-                                                        <td>{{cierre.evid_cArchivo}}</td>
-                                                        <td>{{cierre.evid_cObservacion}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Registro de Gastos</td>
-                                                        <td>{{cierre.registro_gastos}}</td>
-                                                        <td>{{cierre.registro_gArchivo}}</td>
-                                                        <td>{{cierre.registro_gObservacion}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Verificacin SAT</td>
-                                                        <td>{{cierre.verificacion_sat}}</td>
-                                                        <td>{{cierre.verificacionArchivo}}</td>
-                                                        <td>{{cierre.verificacionObservacion}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td>{{cierre.}}</td>
                                                         <td>
                                                             <button class="btn btn-fab btn-fab-mini btn-round">
-                                                                    <i class="material-icons">get_app</i>
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
-                                                            {% if cierre.Archivo != '' %}
+                                                            {% if cierre.evid_obraArchivo != '' %}
                                                             <button type="button"
                                                                     class="btn btn-fab btn-fab-mini btn-round"
                                                                     data-toggle="modal" data-target="#myModal"
                                                                     data-whatever="Archivo"
-                                                                    data-datas="{{cierre.Archivo}}">
+                                                                    data-datas="{{cierre.evid_obraArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.evid_obraObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.evid_obraObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Evidencias de Compras</td>
+                                                        <td>{{cierre.evid_compras}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.evid_cArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.evid_cArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.evid_cObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.evid_cObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Registro de Gastos</td>
+                                                        <td>{{cierre.registro_gastos}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.registro_gArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.registro_gArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.registro_gObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.registro_gObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Verificacin SAT</td>
+                                                        <td>{{cierre.verificacion_sat}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.verificacionArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.verificacionArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.verificacionObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.verificacionObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>XML</td>
+                                                        <td>{{cierre.xml}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cierre.xmlArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cierre.xmlArchivo}}">
                                                                 <i class="material-icons">file_upload</i>
                                                             </button>
                                                             {% else %}
@@ -1293,7 +1378,7 @@
                                                                     class="btn btn-fab btn-fab-mini btn-round"
                                                                     data-toggle="modal" data-target="#myModal"
                                                                     data-whatever="Archivo"
-                                                                    data-datas="{{cierre.Observacion}}">
+                                                                    data-datas="{{cierre.xmlObservacion}}">
                                                                 <i class="material-icons">comment</i>
                                                             </button>
                                                             {% else %}
@@ -1304,12 +1389,6 @@
                                                             </span>
                                                             {% endif %}
                                                         </td>
-                                                    </tr>                                
-                                                    <tr>
-                                                        <td>XML</td>
-                                                        <td>{{cierre.xml}}</td>
-                                                        <td>{{cierre.xmlArchivo}}</td>
-                                                        <td>{{cierre.xmlObservacion}}</td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
@@ -1317,12 +1396,9 @@
                                         </div>
                                         <div class="col-sm-12 col-md-12 ">
                                             <label class="control-Title">Observaciones Generales</label>
-                                            <label class="control-Content">{{cierre.observacion}}</label>
+                                            <pre class="prettyprint"><label>{{cierre.observacionCierre}}</label></pre>
+                                            <p class="col-md-12"></p>
                                         </div>
-                                        <p class="col-md-12"></p>
-                                        <p class="col-md-12"></p>
-                                        <p class="col-md-12"></p>
-                                        <p class="col-md-12"></p>
                                     </div>
                                 </div>
                             </div>
@@ -1332,7 +1408,7 @@
 
                     <!-- Contraloria Social-->
                     <div class="tab-pane" id="contraloria">
-                        <div class="header header-danger">
+                        <div class="header" style="background-color: #6BAD9A;">
                             <div class="nav-tabs-navigation">
                                 <div class="nav-tabs-wrapper">
                                     <ul class="nav nav-tabs" data-tabs="tabs">
@@ -1351,16 +1427,23 @@
                         </div>
                         <div class="content">
                             <div class="tab-content text-center">
-                                <!-- Inicio -->
+                                <!-- Constitucion -->
                                 <div class="tab-pane active" id="consti">
                                     <div class="col-sm-12 col-md-12">
                                         <div class="col-sm-12 col-md-12">
-                                            <div class="col-sm-10 col-md-10">
-                                                <h4>Estatus: </h4><span
-                                                    class="label label-info">{{contraloria.estatus}}</span>
+                                            <div class="col-sm-10 col-md-10" style="display:inline-block;">
+                                                <div class="col-sm-3 col-md-3">
+                                                    <h4 style="float: right;">Estatus: </h4>
+                                                </div>
+                                                <div class="col-sm-3 col-md-3">
+                                                    <span class="label label-info" style="float: left;margin-top: 5%;">{{const.estatusC}}</span>
+                                                </div>
                                             </div>
-                                            <button type="button" class="btn btn-info"><i
-                                                    class="material-icons">edit</i>
+                                            <button type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"
+                                                    data-toggle="tooltip" data-placement="top"
+                                                    title="Agregar Información"
+                                                    data-container="body" style="float: right;">
+                                                <i class="material-icons">border_color</i>
                                             </button>
                                         </div>
                                         <div class="col-sm-12 col-md-12">
@@ -1370,9 +1453,21 @@
                                                     <tr>
                                                         <th class="text-center col-sm-3">#</th>
                                                         <th class="text-center col-sm-2">Estatus</th>
-                                                        <th class="text-center col-sm-2">Descargar</th>
-                                                        <th class="text-center col-sm-3">Archivo</th>
-                                                        <th class="text-center col-sm-4">Observaciones</th>
+                                                        <th class="text-center col-sm-2">
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Descargar los formatos"
+                                                                  data-container="body">Formatos</span>
+                                                        </th>
+                                                        <th class="text-center col-sm-3">
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Visualizar archivo"
+                                                                  data-container="body">Archivo</span>
+                                                        </th>
+                                                        <th class="text-center col-sm-3">
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Visualizar las observaciones"
+                                                                  data-container="body">Observaciones</span>
+                                                        </th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -1380,37 +1475,696 @@
                                                         <td>Acta Constitución</td>
                                                         <td>{{const.actaC}}</td>
                                                         <td>
-                                                            <button class="btn btn-fab btn-fab-mini btn-round"
-                                                                    data-toggle="tooltip" data-placement="top"
-                                                                    title="Descargar formato"
-                                                                    data-container="body">
-                                                                <i class="material-icons">cloud_download</i>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
                                                             </button>
                                                         </td>
                                                         <td>
-                                                            <button class="btn btn-fab btn-fab-mini btn-round"
-                                                                    data-toggle="tooltip" data-placement="top"
-                                                                    title="Visualizar Archivo"
-                                                                    data-container="body">
+                                                            {% if const.acta_CArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{const.acta_CArchivo}}">
                                                                 <i class="material-icons">file_upload</i>
                                                             </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
                                                         </td>
                                                         <td>
-                                                            <button class="btn btn-fab btn-fab-mini btn-round"
-                                                                    data-toggle="tooltip" data-placement="top"
-                                                                    title="Visualizar Observaciones"
-                                                                    data-container="body">
+                                                            {% if const.acta_CObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{const.acta_CObservacion}}">
                                                                 <i class="material-icons">comment</i>
                                                             </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Minuta</td>
+                                                        <td>{{const.minutaC}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if const.minuta_CArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{const.minuta_CArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if const.minuta_CObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{const.minuta_CObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Lista de Asistencia</td>
+                                                        <td>{{const.listaC}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if const.lista_CArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{const.lista_CArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if const.lista_CObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{const.lista_CObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Fotografias</td>
+                                                        <td>{{const.fotoC}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if const.foto_CArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{const.foto_CArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if const.foto_CObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{const.foto_CObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
                                                         </td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
+                                        <div class="col-sm-12 col-md-12" style="display:inline-block;">
+                                            <div class="col-sm-6 col-md-6" style="display:inline-block;">
+                                                <div class="col-sm-6 col-md-6">
+                                                    <h4 style="float: right;">Entrega de CD: </h4>
+                                                </div>
+                                                <div class="col-sm-3 col-md-3">
+                                                    <span class="label label-info" style="float: left;margin-top: 5%;">{{const.cdC}}</span>
+                                                </div>
+                                            </div>
+                                            {% if const.pdfC != '' %}
+                                            <div class="col-sm-6 col-md-6" style="display:inline-block;">
+                                                <div class="col-sm-6 col-md-6">
+                                                    <h4 style="float: right;">Documentación completa: </h4>
+                                                </div>
+                                                <div class="col-sm-3 col-md-3">
+                                                    <span class="label label-info" style="float: left;margin-top: 5%;">{{const.pdfC}}</span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                        </div>
                                         <div class="col-sm-12 col-md-12 ">
                                             <label class="control-Title">Observaciones Generales</label>
-                                            <label class="control-Content">{{inicio.observacion}}</label>
+                                            <pre class="prettyprint"><label>{{const.observacionC}}</label></pre>
+                                            <p class="col-md-12"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Seguimiento -->
+                                <div class="tab-pane" id="segui">
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="col-sm-10 col-md-10" style="display:inline-block;">
+                                                <div class="col-sm-3 col-md-3">
+                                                    <h4 style="float: right;">Estatus: </h4>
+                                                </div>
+                                                <div class="col-sm-3 col-md-3">
+                                                    <span class="label label-info" style="float: left;margin-top: 5%;">{{cedula.estatusCe}}</span>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"
+                                                    data-toggle="tooltip" data-placement="top"
+                                                    title="Agregar Información"
+                                                    data-container="body" style="float: right;">
+                                                <i class="material-icons">border_color</i>
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-center col-sm-3">#</th>
+                                                        <th class="text-center col-sm-2">Estatus</th>
+                                                        <th class="text-center col-sm-2">
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Descargar los formatos"
+                                                                  data-container="body">Formatos</span>
+                                                        </th>
+                                                        <th class="text-center col-sm-3">
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Visualizar archivo"
+                                                                  data-container="body">Archivo</span>
+                                                        </th>
+                                                        <th class="text-center col-sm-3">
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Visualizar las observaciones"
+                                                                  data-container="body">Observaciones</span>
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>Cedula de Seguimiento</td>
+                                                        <td>{{cedula.actaCe}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cedula.acta_CeArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cedula.acta_CeArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cedula.acta_CeObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cedula.acta_CeObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Minuta</td>
+                                                        <td>{{cedula.minutaCe}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cedula.minuta_CeArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cedula.minuta_CeArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cedula.minuta_CeObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cedula.minuta_CeObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Lista de Asistencia</td>
+                                                        <td>{{cedula.listaCe}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cedula.lista_CeArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cedula.lista_CeArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cedula.lista_CeObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cedula.lista_CeObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Fotografias</td>
+                                                        <td>{{cedula.fotoCe}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if cedula.foto_CeArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cedula.foto_CeArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if cedula.foto_CeObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{cedula.foto_CeObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12" style="display:inline-block;">
+                                            <div class="col-sm-6 col-md-6" style="display:inline-block;">
+                                                <div class="col-sm-6 col-md-6">
+                                                    <h4 style="float: right;">Entrega de CD: </h4>
+                                                </div>
+                                                <div class="col-sm-3 col-md-3">
+                                                    <span class="label label-info" style="float: left;margin-top: 5%;">{{cedula.cdCe}}</span>
+                                                </div>
+                                            </div>
+                                            {% if cedula.pdfCe != '' %}
+                                            <div class="col-sm-6 col-md-6" style="display:inline-block;">
+                                                <div class="col-sm-6 col-md-6">
+                                                    <h4 style="float: right;">Documentación completa: </h4>
+                                                </div>
+                                                <div class="col-sm-3 col-md-3">
+                                                    <span class="label label-info" style="float: left;margin-top: 5%;">{{cedula.pdfCe}}</span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 ">
+                                            <label class="control-Title">Observaciones Generales</label>
+                                            <pre class="prettyprint"><label>{{cedula.observacionCe}}</label></pre>
+                                            <p class="col-md-12"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Anual -->
+                                <div class="tab-pane" id="anual">
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="col-sm-10 col-md-10" style="display:inline-block;">
+                                                <div class="col-sm-3 col-md-3">
+                                                    <h4 style="float: right;">Estatus: </h4>
+                                                </div>
+                                                <div class="col-sm-3 col-md-3">
+                                                    <span class="label label-info" style="float: left;margin-top: 5%;">{{anual.estatusA}}</span>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-info btn-fab btn-fab-mini btn-round"
+                                                    data-toggle="tooltip" data-placement="top"
+                                                    title="Agregar Información"
+                                                    data-container="body" style="float: right;">
+                                                <i class="material-icons">border_color</i>
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th class="text-center col-sm-3">#</th>
+                                                        <th class="text-center col-sm-2">Estatus</th>
+                                                        <th class="text-center col-sm-2">
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Descargar los formatos"
+                                                                  data-container="body">Formatos</span>
+                                                        </th>
+                                                        <th class="text-center col-sm-3">
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Visualizar archivo"
+                                                                  data-container="body">Archivo</span>
+                                                        </th>
+                                                        <th class="text-center col-sm-3">
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Visualizar las observaciones"
+                                                                  data-container="body">Observaciones</span>
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>Informe Anual</td>
+                                                        <td>{{anual.actaA}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if anual.acta_AArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{anual.acta_AArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if anual.acta_AObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{anual.acta_AObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Minuta</td>
+                                                        <td>{{anual.minutaA}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if anual.minuta_AArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{anual.minuta_AArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if anual.minuta_AObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{anual.minuta_AObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Lista de Asistencia</td>
+                                                        <td>{{anual.listaA}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if anual.lista_AArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{anual.lista_AArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if anual.lista_AObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{anual.lista_AObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Fotografias</td>
+                                                        <td>{{anual.fotoA}}</td>
+                                                        <td>
+                                                            <button class="btn btn-fab btn-fab-mini btn-round">
+                                                                    <i class="material-icons">cloud_download</i>
+                                                            </button>
+                                                        </td>
+                                                        <td>
+                                                            {% if anual.foto_AArchivo != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{anual.foto_AArchivo}}">
+                                                                <i class="material-icons">file_upload</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if anual.foto_AObservacion != '' %}
+                                                            <button type="button"
+                                                                    class="btn btn-fab btn-fab-mini btn-round"
+                                                                    data-toggle="modal" data-target="#myModal"
+                                                                    data-whatever="Archivo"
+                                                                    data-datas="{{anual.foto_AObservacion}}">
+                                                                <i class="material-icons">comment</i>
+                                                            </button>
+                                                            {% else %}
+                                                            <span data-toggle="tooltip" data-placement="top"
+                                                                  title="Sin Datos"
+                                                                  data-container="body">
+                                                                <i class="material-icons">not_interested</i>
+                                                            </span>
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12" style="display:inline-block;">
+                                            <div class="col-sm-6 col-md-6" style="display:inline-block;">
+                                                <div class="col-sm-6 col-md-6">
+                                                    <h4 style="float: right;">Entrega de CD: </h4>
+                                                </div>
+                                                <div class="col-sm-3 col-md-3">
+                                                    <span class="label label-info" style="float: left;margin-top: 5%;">{{anual.cdA}}</span>
+                                                </div>
+                                            </div>
+                                            {% if anual.pdfA != '' %}
+                                            <div class="col-sm-6 col-md-6" style="display:inline-block;">
+                                                <div class="col-sm-6 col-md-6">
+                                                    <h4 style="float: right;">Documentación completa: </h4>
+                                                </div>
+                                                <div class="col-sm-3 col-md-3">
+                                                    <span class="label label-info" style="float: left;margin-top: 5%;">{{anual.pdfA}}</span>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 ">
+                                            <label class="control-Title">Observaciones Generales</label>
+                                            <pre class="prettyprint"><label>{{anual.observacionA}}</label></pre>
+                                            <p class="col-md-12"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1424,14 +2178,4 @@
         <!-- End Tabs with icons on Card -->
     </div>
 </div>
-<script>
-window.onload = (function(){
-alert(randomColorChange());
-}
-
-
-
-
-</script>
-
 {% endblock %}

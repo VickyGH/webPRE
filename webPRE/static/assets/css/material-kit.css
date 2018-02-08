@@ -142,7 +142,7 @@ a .material-icons, a:hover .material-icons, a:focus .material-icons {
 .navbar .navbar-nav > li > a.btn.btn-default.dropdown-toggle, .open >
 .navbar .navbar-nav > li > a.btn.btn-default.dropdown-toggle:focus, .open >
 .navbar .navbar-nav > li > a.btn.btn-default.dropdown-toggle:hover {
-  background-color: #669CCB;
+  background-color: #2183A6;
   color: #FFFFFF;
 }
 .btn:focus, .btn:active, .btn:hover, .btn.btn-default:focus, .btn.btn-default:active, .btn.btn-default:hover,
@@ -2396,7 +2396,7 @@ legend {
   /*background-color: #BF337C;
   color: #ffffff;
 */
-  background-color: rgba(102,156,203, 0.95);
+  background-color: rgba(33,131,166, 0.98);
 }
 .navbar.navbar-new .navbar-form .form-group input.form-control::-moz-placeholder,
 .navbar.navbar-new .navbar-form input.form-control::-moz-placeholder {
@@ -2415,10 +2415,10 @@ legend {
 }
 .navbar.navbar-new .dropdown-menu li > a:hover, .navbar.navbar-new .dropdown-menu li > a:focus {
   color: #FFFFFF;
-  background-color: #669CCB;
+  background-color: #2183A6;
 }
 .navbar.navbar-new .dropdown-menu .active > a {
-  background-color: #669CCB;
+  background-color: #2183A6;
   color: #ffffff;
 }
 .navbar.navbar-new .dropdown-menu .active > a:hover, .navbar.navbar-new .dropdown-menu .active > a:focus {
@@ -3746,10 +3746,10 @@ h2.title {
   padding-top: 15px;
 }
 .index-page .header-filter:after, .headerInicio {
-  background: rgba(102,156,203, 0.6);
-  background: linear-gradient(45deg, rgba(102,156,203, 0.8) 0%, rgba(191,51,124, 0.8) 100%);
-  background: -moz-linear-gradient(135deg, rgba(102,156,203, 0.8) 0%, rgba(191,51,124, 0.8) 100%);
-  background: -webkit-linear-gradient(135deg, rgba(102,156,203, 0.8) 0%, rgba(191,51,124, 0.8) 100%);
+  background: rgba(33,131,166, 0.6);
+  background: linear-gradient(45deg, rgba(33,131,166, 0.8) 0%, rgba(211,126,49, 0.8) 100%);
+  background: -moz-linear-gradient(135deg, rgba(33,131,166, 0.8) 0%, rgba(211,126,49, 0.8) 100%);
+  background: -webkit-linear-gradient(135deg, rgba(33,131,166, 0.8) 0%, rgba(211,126,49, 0.8) 100%);
 }
 
 .landing-page .header {

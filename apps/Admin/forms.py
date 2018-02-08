@@ -358,48 +358,48 @@ class ConstitucionForm(forms.ModelForm):
         model = Constitucion
         fields = '__all__'
         labels = {
-            'estatus': 'Estatus Constitución',
-            'acta': 'Acta Constitución',
-            'acta_Archivo': '',
-            'acta_Observacion': '',
+            'estatusC': 'Estatus Constitución',
+            'actaC': 'Acta Constitución',
+            'acta_CArchivo': '',
+            'acta_CObservacion': '',
 
-            'minuta': 'Minuta',
-            'minuta_Archivo': '',
-            'minuta_Observacion': '',
+            'minutaC': 'Minuta',
+            'minuta_CArchivo': '',
+            'minuta_CObservacion': '',
 
-            'lista': 'Lista de Asistencia',
-            'lista_Archivo': '',
-            'lista_Observacion': '',
+            'listaC': 'Lista de Asistencia',
+            'lista_CArchivo': '',
+            'lista_CObservacion': '',
 
-            'foto': 'Fotografias',
-            'foto_Archivo': '',
-            'foto_Observacion': '',
+            'fotoC': 'Fotografias',
+            'foto_CArchivo': '',
+            'foto_CObservacion': '',
 
-            'cd': 'Entrega de CD',
-            'pdf': 'PDF Completo',
-            'observacion': 'Observaciones'
+            'cdC': 'Entrega de CD',
+            'pdfC': 'PDF Completo',
+            'observacionC': 'Observaciones'
         }
         widgets = {
-            'estatus': Select(attrs=attrEstatus),
-            'acta': Select(attrs=attrSelec),
-            'acta_Archivo': FileInput(attrs=attrArchivo),
-            'acta_Observacion': Textarea(attrs=attrObj),
+            'estatusC': Select(attrs=attrEstatus),
+            'actaC': Select(attrs=attrSelec),
+            'acta_CArchivo': FileInput(attrs=attrArchivo),
+            'acta_CObservacion': Textarea(attrs=attrObj),
 
-            'minuta': Select(attrs=attrSelec),
-            'minuta_Archivo': FileInput(attrs=attrArchivo),
-            'minuta_Observacion': Textarea(attrs=attrObj),
+            'minutaC': Select(attrs=attrSelec),
+            'minuta_CArchivo': FileInput(attrs=attrArchivo),
+            'minuta_CObservacion': Textarea(attrs=attrObj),
 
-            'lista': Select(attrs=attrSelec),
-            'lista_Archivo': FileInput(attrs=attrArchivo),
-            'lista_Observacion': Textarea(attrs=attrObj),
+            'listaC': Select(attrs=attrSelec),
+            'lista_CArchivo': FileInput(attrs=attrArchivo),
+            'lista_CObservacion': Textarea(attrs=attrObj),
 
-            'foto': Select(attrs=attrSelec),
-            'foto_Archivo': FileInput(attrs=attrArchivo),
-            'foto_Observacion': Textarea(attrs=attrObj),
+            'fotoC': Select(attrs=attrSelec),
+            'foto_CArchivo': FileInput(attrs=attrArchivo),
+            'foto_CObservacion': Textarea(attrs=attrObj),
 
-            'cd': Select(attrs=attrEstatus),
-            'pdf': FileInput(attrs=attrArchivo),
-            'observacion': Textarea(attrs=attrObj),
+            'cdC': Select(attrs=attrEstatus),
+            'pdfC': FileInput(attrs=attrArchivo),
+            'observacionC': Textarea(attrs=attrObj),
         }
 
 
@@ -408,48 +408,48 @@ class CedulaForm(forms.ModelForm):
         model = Cedula
         fields = '__all__'
         labels = {
-            'estatus': 'Estatus Cedula',
-            'acta': 'Acta Cedula',
-            'acta_Archivo': '',
-            'acta_Observacion': '',
+            'estatusCe': 'Estatus Cedula',
+            'actaCe': 'Acta Cedula',
+            'acta_CeArchivo': '',
+            'acta_CeObservacion': '',
 
-            'minuta': 'Minuta',
-            'minuta_Archivo': '',
-            'minuta_Observacion': '',
+            'minutaCe': 'Minuta',
+            'minuta_CeArchivo': '',
+            'minuta_CeObservacion': '',
 
-            'lista': 'Lista de Asistencia',
-            'lista_Archivo': '',
-            'lista_Observacion': '',
+            'listaCe': 'Lista de Asistencia',
+            'lista_CeArchivo': '',
+            'lista_CeObservacion': '',
 
-            'foto': 'Fotografias',
-            'foto_Archivo': '',
-            'foto_Observacion': '',
+            'fotoCe': 'Fotografias',
+            'foto_CeArchivo': '',
+            'foto_CeObservacion': '',
 
-            'cd': 'Entrega de CD',
-            'pdf': 'PDF Completo',
-            'observacion': 'Observaciones'
+            'cdCe': 'Entrega de CD',
+            'pdfCe': 'PDF Completo',
+            'observacionCe': 'Observaciones'
         }
         widgets = {
-            'estatus': Select(attrs=attrEstatus),
-            'acta': Select(attrs=attrSelec),
-            'acta_Archivo': FileInput(attrs=attrArchivo),
-            'acta_Observacion': Textarea(attrs=attrObj),
+            'estatusCe': Select(attrs=attrEstatus),
+            'actaCe': Select(attrs=attrSelec),
+            'acta_CeArchivo': FileInput(attrs=attrArchivo),
+            'acta_CeObservacion': Textarea(attrs=attrObj),
 
-            'minuta': Select(attrs=attrSelec),
-            'minuta_Archivo': FileInput(attrs=attrArchivo),
-            'minuta_Observacion': Textarea(attrs=attrObj),
+            'minutaCe': Select(attrs=attrSelec),
+            'minuta_CeArchivo': FileInput(attrs=attrArchivo),
+            'minuta_CeObservacion': Textarea(attrs=attrObj),
 
-            'lista': Select(attrs=attrSelec),
-            'lista_Archivo': FileInput(attrs=attrArchivo),
-            'lista_Observacion': Textarea(attrs=attrObj),
+            'listaCe': Select(attrs=attrSelec),
+            'lista_CeArchivo': FileInput(attrs=attrArchivo),
+            'lista_CeObservacion': Textarea(attrs=attrObj),
 
-            'foto': Select(attrs=attrSelec),
-            'foto_Archivo': FileInput(attrs=attrArchivo),
-            'foto_Observacion': Textarea(attrs=attrObj),
+            'fotoCe': Select(attrs=attrSelec),
+            'foto_CeArchivo': FileInput(attrs=attrArchivo),
+            'foto_CeObservacion': Textarea(attrs=attrObj),
 
-            'cd': Select(attrs=attrEstatus),
-            'pdf': FileInput(attrs=attrArchivo),
-            'observacion': Textarea(attrs=attrObj),
+            'cdCe': Select(attrs=attrEstatus),
+            'pdfCe': FileInput(attrs=attrArchivo),
+            'observacionCe': Textarea(attrs=attrObj),
         }
 
 
@@ -458,48 +458,48 @@ class AnualForm(forms.ModelForm):
         model = Anual
         fields = '__all__'
         labels = {
-            'estatus': 'Estatus Anual',
-            'acta': 'Acta Anual',
-            'acta_Archivo': '',
-            'acta_Observacion': '',
+            'estatusA': 'Estatus Anual',
+            'actaA': 'Acta Anual',
+            'acta_AArchivo': '',
+            'acta_AObservacion': '',
 
-            'minuta': 'Minuta',
-            'minuta_Archivo': '',
-            'minuta_Observacion': '',
+            'minutaA': 'Minuta',
+            'minuta_AArchivo': '',
+            'minuta_AObservacion': '',
 
-            'lista': 'Lista de Asistencia',
-            'lista_Archivo': '',
-            'lista_Observacion': '',
+            'listaA': 'Lista de Asistencia',
+            'lista_AArchivo': '',
+            'lista_AObservacion': '',
 
-            'foto': 'Fotografias',
-            'foto_Archivo': '',
-            'foto_Observacion': '',
+            'fotoA': 'Fotografias',
+            'foto_AArchivo': '',
+            'foto_AObservacion': '',
 
-            'cd': 'Entrega de CD',
-            'pdf': 'PDF Completo',
-            'observacion': 'Observaciones'
+            'cdA': 'Entrega de CD',
+            'pdfA': 'PDF Completo',
+            'observacionA': 'Observaciones'
         }
         widgets = {
-            'estatus': Select(attrs=attrEstatus),
-            'acta': Select(attrs=attrSelec),
-            'acta_Archivo': FileInput(attrs=attrArchivo),
-            'acta_Observacion': Textarea(attrs=attrObj),
+            'estatusA': Select(attrs=attrEstatus),
+            'actaA': Select(attrs=attrSelec),
+            'acta_AArchivo': FileInput(attrs=attrArchivo),
+            'acta_AObservacion': Textarea(attrs=attrObj),
 
-            'minuta': Select(attrs=attrSelec),
-            'minuta_Archivo': FileInput(attrs=attrArchivo),
-            'minuta_Observacion': Textarea(attrs=attrObj),
+            'minutaA': Select(attrs=attrSelec),
+            'minuta_AArchivo': FileInput(attrs=attrArchivo),
+            'minuta_AObservacion': Textarea(attrs=attrObj),
 
-            'lista': Select(attrs=attrSelec),
-            'lista_Archivo': FileInput(attrs=attrArchivo),
-            'lista_Observacion': Textarea(attrs=attrObj),
+            'listaA': Select(attrs=attrSelec),
+            'lista_AArchivo': FileInput(attrs=attrArchivo),
+            'lista_AObservacion': Textarea(attrs=attrObj),
 
-            'foto': Select(attrs=attrSelec),
-            'foto_Archivo': FileInput(attrs=attrArchivo),
-            'foto_Observacion': Textarea(attrs=attrObj),
+            'fotoA': Select(attrs=attrSelec),
+            'foto_AArchivo': FileInput(attrs=attrArchivo),
+            'foto_AObservacion': Textarea(attrs=attrObj),
 
-            'cd': Select(attrs=attrEstatus),
-            'pdf': FileInput(attrs=attrArchivo),
-            'observacion': Textarea(attrs=attrObj),
+            'cdA': Select(attrs=attrEstatus),
+            'pdfA': FileInput(attrs=attrArchivo),
+            'observacionA': Textarea(attrs=attrObj),
         }
 
 
