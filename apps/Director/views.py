@@ -60,3 +60,10 @@ def InicioDir(request):
                    'anual':anual})
     else :
         return render(request, 'Director/NoData.html')
+
+
+class Edit_Inicio(UpdateView):
+    form_class = InicioForm
+    model = InicioS
+    template_name = 'Admin/General.html'
+    success_url = reverse_lazy('Admin:Inicio')

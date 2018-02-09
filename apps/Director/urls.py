@@ -14,5 +14,6 @@ urlpatterns = [
     url(r'^Salir/$', logout, name="CerrarSesion", kwargs={'next_page': '/Director'}),
     url(r'^Inicio/$', login_required(views.InicioDir), name='InicioD'),
     #url(r'^NoData/$', login_required(NoData.InicioDir), name='Inicio'),
+    url(r'Edicion//(?P<pk>\d+)$', login_required(Edit_Inicio.as_view()), name='Edit-Inicio'),
 
 ]
