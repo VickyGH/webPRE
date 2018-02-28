@@ -1,14 +1,20 @@
 from django.db import models
 
+tipo = (
+    ('Administrador','Administrador'),
+    ('Auxiliar','Auxiliar'),
+    ('Director','Director'),
+)
+
 comp  = (
-    #('1 - A Infraestructura','1 - A Infraestructura'),
+    ('1 - A Infraestructura','1 - A Infraestructura'),
     #('2 - B Aut. Gest. Escolar', '2 - B Aut. Gest. Escolar'),
     #('2 - C Eval. de Impacto','2 - C Eval. de Impacto')
     ('2 - Aut. Gest. Escolar', '2 - Aut. Gest. Escolar'),
 )
 
 acciones = (
-    #('No Aplica','No Aplica'),
+    ('No Aplica','No Aplica'),
     ('Mayor', 'Mayor'),
     ('Menor','Menor'),
 )
@@ -393,7 +399,7 @@ class CierreS (models.Model):
 
 class SISPRE (models.Model):
     inicio = models.ForeignKey(InicioS, on_delete=False)
-    #seguimiento = models.ForeignKey(SeguimientoS,on_delete=False)
+    seguimiento = models.ForeignKey(SeguimientoS,on_delete=False)
     cierre = models.ForeignKey(CierreS,on_delete=False)
     pdfCompleto = models.FileField(upload_to='PDF/SiSPRE/', blank=True, null=True)
     actualizacion = models.DateTimeField(auto_now_add=True)
@@ -413,7 +419,7 @@ class Escuelas (models.Model):
     nombre = models.CharField(max_length=250, verbose_name='Nombre de la Escuela')
     nivel = models.CharField(max_length=50, choices=nivelE,verbose_name='Nivel Educativo')
     componente = models.CharField(max_length=50, choices=comp, default='2 - Aut. Gest. Escolar', verbose_name='Componente')
-    accion = models.CharField(max_length=25,choices=acciones, default='Menor',verbose_name='Accion')
+    accion = models.CharField(max_length=25,choices=acciones, default='No Aplica',verbose_name='Accion')
     cambio_accion = models.CharField(max_length=25, default='No', choices=SN, verbose_name='Cambio de Acción')
     ciclo_esc = models.CharField(max_length=100,default="2017-2018")
     municipio = models.CharField(max_length=50,choices=Municipios)
@@ -461,15 +467,6 @@ class Supervisores (models.Model):
         ordering = ['cct']
         verbose_name_plural = "Supervisores"
 
-
-from django.db import models
-from django.contrib.auth.models import AbstractUser
-
-#class Usuarios(AbstractUser):
-#    escuela = models.ForeignKey(Escuelas,null=True)
-#    director = models.ForeignKey(Directores, null=True)
-
-
 from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.signals import post_save
@@ -477,7 +474,7 @@ from django.dispatch import receiver
 
 class Perfil(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    admin = models.CharField(max_length=25, choices=SN,default='No')
+    tipo_user = models.CharField(max_length=25, choices=tipo,default='Director')
     escuela = models.ForeignKey(Escuelas, blank=True,null=True,on_delete=False)
     director = models.ForeignKey(Directores, blank=True,null=True,on_delete=False)
 

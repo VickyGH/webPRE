@@ -62,6 +62,10 @@ def InicioDir(request):
         return render(request, 'Director/NoData.html')
 
 
+class InicioForm(object):
+    pass
+
+
 class Edit_Inicio(UpdateView):
     form_class = InicioForm
     model = InicioS
